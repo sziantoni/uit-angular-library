@@ -2,5 +2,166 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "uit-routing-animation-lib": {
+      "projectType": "library",
+      "root": "projects/uit-routing-animation-lib",
+      "sourceRoot": "projects/uit-routing-animation-lib/src",
+      "prefix": "nk",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/uit-routing-animation-lib/tsconfig.lib.json",
+            "project": "projects/uit-routing-animation-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/uit-routing-animation-lib/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/uit-routing-animation-lib/src/test.ts",
+            "tsConfig": "projects/uit-routing-animation-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/uit-routing-animation-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/uit-routing-animation-lib/tsconfig.lib.json",
+              "projects/uit-routing-animation-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "uit-routing-animation-example": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/uit-routing-animation-example",
+      "sourceRoot": "projects/uit-routing-animation-example/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/uit-routing-animation-example",
+            "index": "projects/uit-routing-animation-example/src/index.html",
+            "main": "projects/uit-routing-animation-example/src/main.ts",
+            "polyfills": "projects/uit-routing-animation-example/src/polyfills.ts",
+            "tsConfig": "projects/uit-routing-animation-example/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/uit-routing-animation-example/src/favicon.ico",
+              "projects/uit-routing-animation-example/src/assets"
+            ],
+            "styles": [
+              "projects/uit-routing-animation-example/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/uit-routing-animation-example/src/environments/environment.ts",
+                  "with": "projects/uit-routing-animation-example/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "uit-routing-animation-example:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "uit-routing-animation-example:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "uit-routing-animation-example:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/uit-routing-animation-example/src/test.ts",
+            "polyfills": "projects/uit-routing-animation-example/src/polyfills.ts",
+            "tsConfig": "projects/uit-routing-animation-example/tsconfig.spec.json",
+            "karmaConfig": "projects/uit-routing-animation-example/karma.conf.js",
+            "assets": [
+              "projects/uit-routing-animation-example/src/favicon.ico",
+              "projects/uit-routing-animation-example/src/assets"
+            ],
+            "styles": [
+              "projects/uit-routing-animation-example/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/uit-routing-animation-example/tsconfig.app.json",
+              "projects/uit-routing-animation-example/tsconfig.spec.json",
+              "projects/uit-routing-animation-example/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/uit-routing-animation-example/e2e/protractor.conf.js",
+            "devServerTarget": "uit-routing-animation-example:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "uit-routing-animation-example:serve:production"
+            }
+          }
+        }
+      }
+    }},
+  "cli": {
+    "analytics": false
+  },
+  "defaultProject": "uit-routing-animation-lib"
 }

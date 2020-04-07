@@ -14,7 +14,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "uit-routing-animation-lib": [
+        "dist/uit-routing-animation-lib/uit-routing-animation-lib",
+        "dist/uit-routing-animation-lib"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
