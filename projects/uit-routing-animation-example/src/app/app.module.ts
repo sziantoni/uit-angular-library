@@ -20,9 +20,9 @@ import {UitRoutingAnimationLibModule} from "uit-routing-animation-lib";
     BrowserAnimationsModule,
     RouterModule.forRoot([
       { path: '', pathMatch: 'full', redirectTo: 'home' },
-      { path: 'home', component: HomeComponent},
+      { path: 'home', component: HomeComponent,  data: {animation: 'scrollLeft'} },
       { path: 'about', component: AboutComponent },
-      { path: 'features', component: FeaturesOfSiteComponent }
+      { path: 'features', component: FeaturesOfSiteComponent ,  data: {animation: 'scrollRight'} }
     ])
   ],
   providers: [],
