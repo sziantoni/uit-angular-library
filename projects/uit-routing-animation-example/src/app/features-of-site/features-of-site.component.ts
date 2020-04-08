@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ROUTE_ANIMATIONS_ELEMENTS, ROUTE_ANIMATIONS_TEXT} from "uit-routing-animation-lib";
+import { ROUTE_ANIMATIONS_ELEMENTS, ROUTE_ANIMATIONS_TEXT} from '../../../../uit-routing-animation-lib/src/public-api';
 
 
 @Component({

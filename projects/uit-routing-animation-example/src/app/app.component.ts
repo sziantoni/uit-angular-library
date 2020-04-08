@@ -1,7 +1,7 @@
 import { Component, HostBinding } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {slideBottom} from "../../../uit-routing-animation-lib/src/lib/slideBottom";
-import {scrollSide} from "../../../uit-routing-animation-lib/src/lib/scrollSide";
+import {slideBottom , scrollSide} from '../../../uit-routing-animation-lib/src/public-api';
+
 
 @Component({
   selector: 'app-root',

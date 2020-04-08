@@ -3,14 +3,11 @@ import {
   transition,
   style,
   query,
-  group,
-  animateChild,
   animate,
-  keyframes, sequence, stagger,
+ sequence, stagger,
 } from '@angular/animations';
 
-import {ROUTE_ANIMATIONS_ELEMENTS, ROUTE_ANIMATIONS_TEXT} from "uit-routing-animation-lib";
-
+const ROUTE_ANIMATIONS_ELEMENTS = 'route-animations-element';
 
 export const slideBottom =
   trigger('slideBottom', [

@@ -6,7 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { FeaturesOfSiteComponent } from './features-of-site/features-of-site.component';
 import {RouterModule} from '@angular/router';
-import {UitRoutingAnimationLibModule} from "uit-routing-animation-lib";
+
 
 @NgModule({
   declarations: [

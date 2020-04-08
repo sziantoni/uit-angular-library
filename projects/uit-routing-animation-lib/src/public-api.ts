@@ -2,7 +2,8 @@
  * Public API Surface of uit-routing-animation-lib
  */
 
-export * from './lib/uit-routing-animation-lib.service';
-export * from './lib/uit-routing-animation-lib.component';
-export * from './lib/uit-routing-animation-lib.module';
-export * from './lib/slideBottom'
+export const ROUTE_ANIMATIONS_ELEMENTS = 'route-animations-elements';
+export const ROUTE_ANIMATIONS_TEXT = 'route-animation-text';
+
+export * from './lib/slideBottom';
+export * from './lib/scrollSide';
