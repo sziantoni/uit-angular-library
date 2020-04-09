@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ROUTE_ANIMATIONS_ELEMENTS, ROUTE_ANIMATIONS_TEXT} from '../../../../uit-routing-animation-lib/src/public-api';
+import { ROUTING_ELEMENT} from '../../../../uit-routing-animation-lib/src/public-api';
 
 
 @Component({
@@ -8,8 +8,7 @@ import { ROUTE_ANIMATIONS_ELEMENTS, ROUTE_ANIMATIONS_TEXT} from '../../../../uit
   styleUrls: ['./features-of-site.component.css']
 })
 export class FeaturesOfSiteComponent implements OnInit {
-  routeElement = ROUTE_ANIMATIONS_ELEMENTS;
-  routeTextElement = ROUTE_ANIMATIONS_TEXT;
+  routeElement = ROUTING_ELEMENT;
 
   ngOnInit(): void {
   }

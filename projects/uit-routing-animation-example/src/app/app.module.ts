@@ -11,6 +11,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import { SlideBottomComponent } from './loading/slide-bottom/slide-bottom.component';
 import { ScrollSideComponent } from './loading/scroll-side/scroll-side.component';
+import { SlideTopComponent } from './loading/slide-top/slide-top.component';
+import { RotateSxComponent } from './loading/rotate-sx/rotate-sx.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { ScrollSideComponent } from './loading/scroll-side/scroll-side.component
     AboutComponent,
     FeaturesOfSiteComponent,
     SlideBottomComponent,
-    ScrollSideComponent
+    ScrollSideComponent,
+    SlideTopComponent,
+    RotateSxComponent,
   ],
   imports: [
     BrowserModule,

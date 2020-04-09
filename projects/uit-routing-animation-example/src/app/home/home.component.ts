@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ROUTE_ANIMATIONS_ELEMENTS} from '../../../../uit-routing-animation-lib/src/public-api';
+import { ROUTING_ELEMENT} from '../../../../uit-routing-animation-lib/src/public-api';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +7,7 @@ import { ROUTE_ANIMATIONS_ELEMENTS} from '../../../../uit-routing-animation-lib/
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  routeElement = ROUTE_ANIMATIONS_ELEMENTS;
+  routeElement = ROUTING_ELEMENT;
 
   ngOnInit(): void {
   }

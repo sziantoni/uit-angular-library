@@ -43,6 +43,6 @@ function scroll(direction) {
       query(':enter', [
         animate('400ms ease-out', style({transform: 'translateX(' + [direction] + '0%)' }))
       ] , { optional: true })
-    ])
+    ] )
   ];
 }

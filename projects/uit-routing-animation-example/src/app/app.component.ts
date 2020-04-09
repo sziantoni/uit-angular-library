@@ -7,6 +7,9 @@ import {
 } from '../../../uit-routing-animation-lib/src/public-api';
 import {SlideBottomComponent} from './loading/slide-bottom/slide-bottom.component';
 import {ScrollSideComponent} from './loading/scroll-side/scroll-side.component';
+import {SlideTopComponent} from './loading/slide-top/slide-top.component';
+import {RotateSxComponent} from './loading/rotate-sx/rotate-sx.component';
+
 
 @Component({
   selector: 'app-root',
@@ -31,6 +34,14 @@ export class AppComponent {
       }
       case 'scrollSide': {
         this.animationSelected = ScrollSideComponent;
+        break;
+      }
+      case 'slideTop': {
+        this.animationSelected = SlideTopComponent;
+        break;
+      }
+      case 'rotateSx': {
+        this.animationSelected = RotateSxComponent;
         break;
       }
       default : {
