@@ -35,14 +35,14 @@ function scroll(direction) {
     ], { optional: true }),
     query(':enter', [
       style({transform: 'translateX(' + [direction] + '100%)'})
-    ]),
+    ] , { optional: true }),
     sequence([
       query(':leave', [
         animate('400ms ease-out', style({ transform: 'translateX(' + [opposite] + '100%)'}))
       ], { optional: true }),
       query(':enter', [
         animate('400ms ease-out', style({transform: 'translateX(' + [direction] + '0%)' }))
-      ])
+      ] , { optional: true })
     ])
   ];
 }

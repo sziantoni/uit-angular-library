@@ -7,7 +7,7 @@ import {
  sequence, stagger,
 } from '@angular/animations';
 
-const ROUTE_ANIMATIONS_ELEMENTS = 'route-animations-element';
+const ROUTE_ANIMATIONS_ELEMENTS = 'route-animations-elements';
 
 export const slideBottom =
   trigger('slideBottom', [
@@ -26,7 +26,7 @@ export const slideBottom =
       sequence([
         query(':leave > *', [
           style({ opacity: 1, transform: 'translateY(0%)' }),
-          animate('0.2s 0s ease-in-out',
+          animate('0.3s 0s ease-in-out',
             style({ transform: 'translateY(-30%)', opacity: 0}) ),
           style({position: 'fixed'})
         ] , {
@@ -35,7 +35,7 @@ export const slideBottom =
         query(':enter >*', [
           style({transform: 'translateY(-30%)', opacity: 0, position: 'static' }),
           animate(
-            '0.5s ease-in-out',
+            '0.6s ease-in-out',
             style({ transform: 'translateY(0%)', opacity: 1 })
           )
         ] , {

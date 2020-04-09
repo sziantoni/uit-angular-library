@@ -1,7 +1,12 @@
 import { Component, HostBinding } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {slideBottom , scrollSide} from '../../../uit-routing-animation-lib/src/public-api';
+import {
+  slideBottom,
+  scrollSide
 
+} from '../../../uit-routing-animation-lib/src/public-api';
+import {SlideBottomComponent} from './loading/slide-bottom/slide-bottom.component';
+import {ScrollSideComponent} from './loading/scroll-side/scroll-side.component';
 
 @Component({
   selector: 'app-root',
@@ -14,13 +19,26 @@ import {slideBottom , scrollSide} from '../../../uit-routing-animation-lib/src/p
 })
 
 export class AppComponent {
+  animationSelected = SlideBottomComponent;
   @HostBinding('@.disabled')
   public animationsDisabled = false;
 
-  prepareRoute(outlet: RouterOutlet) {
-    return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
+  assignComponent(component) {
+    switch (component) {
+      case 'slideBottom': {
+        this.animationSelected = SlideBottomComponent;
+        break;
+      }
+      case 'scrollSide': {
+        this.animationSelected = ScrollSideComponent;
+        break;
+      }
+      default : {
+        this.animationSelected = SlideBottomComponent;
+        break;
+      }
+    }
   }
-
   toggleAnimations() {
     this.animationsDisabled = !this.animationsDisabled;
   }

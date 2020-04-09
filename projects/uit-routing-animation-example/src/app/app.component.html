@@ -1,3 +1,4 @@
+<body>
 <h1>Animations</h1>
 <nav>
   <a id="home" routerLink="/home" routerLinkActive="active">Home</a>
@@ -5,7 +6,21 @@
   <a id="features" routerLink="/features" routerLinkActive="active">Features</a>
 
 </nav>
+<div *ngComponentOutlet="animationSelected">
 
-<div [@scrollSide]="prepareRoute(outlet)" >
-  <router-outlet #outlet="outlet"></router-outlet>
 </div>
+
+
+  <div class = 'animation_selector' >
+    <button class="buttonStyle" mat-raised-button color="primary" (click)="assignComponent('slideBottom')">
+      Slide Bottom
+    </button>
+    <button class="buttonStyle" mat-raised-button color="primary" (click)="assignComponent('scrollSide')">
+      Scroll Side
+    </button>
+  </div>
+
+</body>
+
+
+

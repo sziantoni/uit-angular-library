@@ -6,6 +6,11 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { FeaturesOfSiteComponent } from './features-of-site/features-of-site.component';
 import {RouterModule} from '@angular/router';
+import {FormsModule} from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
+import {MatMenuModule} from '@angular/material/menu';
+import { SlideBottomComponent } from './loading/slide-bottom/slide-bottom.component';
+import { ScrollSideComponent } from './loading/scroll-side/scroll-side.component';
 
 
 @NgModule({
@@ -13,17 +18,22 @@ import {RouterModule} from '@angular/router';
     AppComponent,
     HomeComponent,
     AboutComponent,
-    FeaturesOfSiteComponent
+    FeaturesOfSiteComponent,
+    SlideBottomComponent,
+    ScrollSideComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MatButtonModule,
+    MatMenuModule,
     RouterModule.forRoot([
-      { path: '', pathMatch: 'full', redirectTo: 'home' },
-      { path: 'home', component: HomeComponent,  data: {animation: 'scrollLeft'} },
-      { path: 'about', component: AboutComponent },
-      { path: 'features', component: FeaturesOfSiteComponent ,  data: {animation: 'scrollRight'} }
-    ])
+      {path: '', pathMatch: 'full', redirectTo: 'home'},
+      {path: 'home', component: HomeComponent, data: {animation: 'scrollLeft'}},
+      {path: 'about', component: AboutComponent},
+      {path: 'features', component: FeaturesOfSiteComponent, data: {animation: 'scrollRight'}}
+    ]),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
