@@ -16,6 +16,8 @@ import { RotateSxComponent } from './loading/rotate-sx/rotate-sx.component';
 import { PageExampleComponent } from './page-example/page-example.component';
 import { LeftUpComponent } from './loading/left-up/left-up.component';
 import { RightUpComponent } from './loading/right-up/right-up.component';
+import { RotateDxComponent } from './loading/rotate-dx/rotate-dx.component';
+import { FlipComponent } from './loading/flip/flip.component';
 
 
 @NgModule({
@@ -31,6 +33,8 @@ import { RightUpComponent } from './loading/right-up/right-up.component';
     PageExampleComponent,
     LeftUpComponent,
     RightUpComponent,
+    RotateDxComponent,
+    FlipComponent,
   ],
   imports: [
     BrowserModule,

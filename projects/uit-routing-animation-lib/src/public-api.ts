@@ -10,5 +10,7 @@ export * from './lib/slideBottom';
 export * from './lib/scrollSide';
 export * from './lib/slideTop';
 export * from './lib/rotateSx';
+export * from './lib/rotateDx';
 export * from './lib/leftUp';
 export * from './lib/rightUp';
+export * from './lib/flip';
