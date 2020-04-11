@@ -4,6 +4,7 @@
   <a id="home" routerLink="/home" routerLinkActive="active">Home</a>
   <a id="about" routerLink="/about" routerLinkActive="active">About</a>
   <a id="features" routerLink="/features" routerLinkActive="active">Features</a>
+<a id="pageExample" routerLink="/page-example" routerLinkActive="active">Page</a>
 
 </nav>
 <div *ngComponentOutlet="animationSelected">
@@ -23,6 +24,12 @@
   </button>
     <button class="buttonStyle" mat-raised-button color="primary" (click)="assignComponent('rotateSx')">
       Rotate Sx
+    </button>
+    <button class="buttonStyle" mat-raised-button color="primary" (click)="assignComponent('leftUp')">
+      Left Up
+    </button>
+    <button class="buttonStyle" mat-raised-button color="primary" (click)="assignComponent('rightUp')">
+      Right Up
     </button>
   </div>
 

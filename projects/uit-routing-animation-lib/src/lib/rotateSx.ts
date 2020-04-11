@@ -27,19 +27,19 @@ export const rotateSx =
     sequence([
       query(':leave', [
         style({opacity : 1 , transformOrigin: 'left bottom', transform: 'translate3d(0,0,0)'}),
-        animate( '{{leaveT}}s {{leaveD}}s ease-in-out' ,
+        animate( '{{leaveT}}s {{leaveD}}s ease-in' ,
           style({opacity: 0.5 , transform: ' rotate3d(0,0,1,90deg) translate3d(50%,0,0)' , transformOrigin: 'left bottom'})
         )
       ], {optional: true }),
-      query(':enter ', stagger( 5, [
+      query(':enter ', stagger( 0, [
         style({ opacity: 0, transformOrigin: 'left bottom', transform: 'rotate3d(0, 0, 1, -90deg)'}),
-        animate('{{enterT}}s {{enterD}}s  ease-in-out',
+        animate('{{enterT}}s {{enterD}}s  ease-out',
           style({opacity: 1, transformOrigin: 'left bottom' , transform: 'translate3d(0,0,0)'}))
       ]), {optional: true })
     ]),
       query(':enter .' + ROUTING_ELEMENT, stagger( 75, [
         style({ opacity: 0, transformOrigin: 'left bottom', transform: 'rotate3d(0, 0, 1, -90deg)'}),
-        animate('{{enterT}}s {{enterD}}s ease-in-out',
+        animate('{{enterT}}s {{enterD}}s ease-out',
           style({opacity: 1, transformOrigin: 'left bottom' , transform: 'translate3d(0,0,0)'}))
       ]), {optional: true })
     ] , {params: {enterT: '0.7', leaveT: '0.7',  enterD: '0', leaveD: '0'}})

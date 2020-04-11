@@ -13,6 +13,9 @@ import { SlideBottomComponent } from './loading/slide-bottom/slide-bottom.compon
 import { ScrollSideComponent } from './loading/scroll-side/scroll-side.component';
 import { SlideTopComponent } from './loading/slide-top/slide-top.component';
 import { RotateSxComponent } from './loading/rotate-sx/rotate-sx.component';
+import { PageExampleComponent } from './page-example/page-example.component';
+import { LeftUpComponent } from './loading/left-up/left-up.component';
+import { RightUpComponent } from './loading/right-up/right-up.component';
 
 
 @NgModule({
@@ -25,6 +28,9 @@ import { RotateSxComponent } from './loading/rotate-sx/rotate-sx.component';
     ScrollSideComponent,
     SlideTopComponent,
     RotateSxComponent,
+    PageExampleComponent,
+    LeftUpComponent,
+    RightUpComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +41,8 @@ import { RotateSxComponent } from './loading/rotate-sx/rotate-sx.component';
       {path: '', pathMatch: 'full', redirectTo: 'home'},
       {path: 'home', component: HomeComponent, data: {animation: 'scrollLeft'}},
       {path: 'about', component: AboutComponent},
-      {path: 'features', component: FeaturesOfSiteComponent, data: {animation: 'scrollRight'}}
+      {path: 'features', component: FeaturesOfSiteComponent, data: {animation: 'scrollRight'}},
+      {path: 'page-example', component: PageExampleComponent, data: {animation: 'scrollRight'}}
     ]),
     FormsModule
   ],

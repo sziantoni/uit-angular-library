@@ -1,5 +1,5 @@
 const ROUTING_ELEMENT = 'route-animations-elements';
-
+const ROUTING_ELEMENT_SECOND_LEVEL = 'route-animations-elements-2-level';
 import {
   trigger,
   transition,
@@ -32,7 +32,7 @@ export const slideBottom =
         ] , {
           optional: true
         }),
-        query(':enter >*', [
+        query(':enter > *', [
           style({transform: 'translateY(-30%)', opacity: 0, position: 'static' }),
           animate(
             '{{enterT}}s {{enterD}}s ease-in-out',
@@ -40,10 +40,9 @@ export const slideBottom =
           )
         ] , {
           optional: true
-        })
-      ]),
+        })]),
       query(
-        ':enter .' + ROUTING_ELEMENT,
+        '.' + ROUTING_ELEMENT,
         stagger(75, [
           style({ transform: 'translateY(-30%)', opacity: 0 }),
           animate(
