@@ -20,7 +20,7 @@ export const rightUp =
       }) , {optional: true}),
       sequence([
         query(':leave', [
-          style({ transform: 'translateX(0%) translateY(0)', opacity: 1}),
+          style({ transform: 'translateX(0%) translateY(0%)', opacity: 1}),
           stagger( 300, [
             animate('{{leaveT}}s {{leaveD}}s ease-in', keyframes([
                 // tslint:disable-next-line:max-line-length

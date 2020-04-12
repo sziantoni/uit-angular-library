@@ -4,7 +4,7 @@ import {
   slideBottom,
   scrollSide,
   slideTop,
-  rotateSx, leftUp, rightUp, rotateDx, flip
+  rotateSx, leftUp, rightUp, rotateDx, flip, fadeBack
 } from '../../../uit-routing-animation-lib/src/public-api';
 import {SlideBottomComponent} from './loading/slide-bottom/slide-bottom.component';
 import {ScrollSideComponent} from './loading/scroll-side/scroll-side.component';
@@ -14,6 +14,7 @@ import {LeftUpComponent} from './loading/left-up/left-up.component';
 import {RightUpComponent} from './loading/right-up/right-up.component';
 import {RotateDxComponent} from './loading/rotate-dx/rotate-dx.component';
 import {FlipComponent} from './loading/flip/flip.component';
+import {FadeBackComponent} from './loading/fade-back/fade-back.component';
 
 
 @Component({
@@ -28,12 +29,13 @@ import {FlipComponent} from './loading/flip/flip.component';
     leftUp,
     rightUp,
     rotateDx,
-    flip
+    flip,
+    fadeBack
   ]
 })
 
 export class AppComponent {
-  animationSelected = LeftUpComponent;
+  animationSelected = FadeBackComponent;
   @HostBinding('@.disabled')
   public animationsDisabled = false;
 
@@ -71,8 +73,8 @@ export class AppComponent {
         this.animationSelected = FlipComponent;
         break;
       }
-      default : {
-        this.animationSelected = LeftUpComponent;
+      case 'fadeBack': {
+        this.animationSelected = FadeBackComponent;
         break;
       }
     }
