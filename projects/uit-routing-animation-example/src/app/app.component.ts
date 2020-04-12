@@ -33,7 +33,7 @@ import {FlipComponent} from './loading/flip/flip.component';
 })
 
 export class AppComponent {
-  animationSelected = FlipComponent;
+  animationSelected = LeftUpComponent;
   @HostBinding('@.disabled')
   public animationsDisabled = false;
 

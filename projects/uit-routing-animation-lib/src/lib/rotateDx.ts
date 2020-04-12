@@ -34,13 +34,13 @@ export const rotateDx =
         query(':enter ', stagger( 0, [
           style({ opacity: 0, transformOrigin: 'right bottom', transform: 'rotate3d(0, 0, 1, -90deg)'}),
           animate('{{enterT}}s {{enterD}}s  ease-out',
-            style({opacity: 1, transformOrigin: 'right bottom' , transform: 'translate3d(0,0,0)'}))
+            style({opacity: 1, transformOrigin: 'right bottom' , transform: 'translate3d(0,0,0)', position: 'fixed'}))
         ]), {optional: true })
       ]),
       query(':enter .' + ROUTING_ELEMENT, stagger( 75, [
         style({ opacity: 0, transformOrigin: 'right bottom', transform: 'rotate3d(0, 0, 1, -90deg)'}),
         animate('{{enterT}}s {{enterD}}s ease-out',
-          style({opacity: 1, transformOrigin: 'right bottom' , transform: 'translate3d(0,0,0)'}))
+          style({opacity: 1, transformOrigin: 'right bottom' , transform: 'translate3d(0,0,0)',  position: 'relative'}))
       ]), {optional: true })
     ] , {params: {enterT: '0.7', leaveT: '0.7',  enterD: '0', leaveD: '0'}})
   ] );
