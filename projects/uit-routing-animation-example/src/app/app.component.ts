@@ -35,7 +35,7 @@ import {FadeBackComponent} from './loading/fade-back/fade-back.component';
 })
 
 export class AppComponent {
-  animationSelected = FadeBackComponent;
+  animationSelected = RotateDxComponent;
   @HostBinding('@.disabled')
   public animationsDisabled = false;
 
