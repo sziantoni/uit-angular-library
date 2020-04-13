@@ -36,6 +36,7 @@ import {FadeBackComponent} from './loading/fade-back/fade-back.component';
 
 export class AppComponent {
   animationSelected = RotateDxComponent;
+  animationString = 'Rotate Dx';
   @HostBinding('@.disabled')
   public animationsDisabled = false;
 
@@ -43,38 +44,47 @@ export class AppComponent {
     switch (component) {
       case 'slideBottom': {
         this.animationSelected = SlideBottomComponent;
+        this.animationString = 'Slide Bottom';
         break;
       }
       case 'scrollSide': {
         this.animationSelected = ScrollSideComponent;
+        this.animationString = 'Scroll Side';
         break;
       }
       case 'slideTop': {
         this.animationSelected = SlideTopComponent;
+        this.animationString = 'Slide Top';
         break;
       }
       case 'rotateSx': {
         this.animationSelected = RotateSxComponent;
+        this.animationString = 'Rotate Sx';
         break;
       }
       case 'rotateDx': {
         this.animationSelected = RotateDxComponent;
+        this.animationString = 'Rotate Dx';
         break;
       }
       case 'leftUp': {
         this.animationSelected = LeftUpComponent;
+        this.animationString = 'Left Up';
         break;
       }
       case 'rightUp': {
         this.animationSelected = RightUpComponent;
+        this.animationString = 'Right Up';
         break;
       }
       case 'flip': {
         this.animationSelected = FlipComponent;
+        this.animationString = 'Flip';
         break;
       }
       case 'fadeBack': {
         this.animationSelected = FadeBackComponent;
+        this.animationString = 'Fade Back';
         break;
       }
     }
