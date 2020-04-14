@@ -4,7 +4,7 @@ import {
   slideBottom,
   scrollSide,
   slideTop,
-  rotateSx, leftUp, rightUp, rotateDx, flip, fadeBack
+  rotateSx, leftUp, rightUp, rotateDx, flip, fadeBack, scaleAndSlide
 } from '../../../uit-routing-animation-lib/src/public-api';
 import {SlideBottomComponent} from './loading/slide-bottom/slide-bottom.component';
 import {ScrollSideComponent} from './loading/scroll-side/scroll-side.component';
@@ -15,6 +15,7 @@ import {RightUpComponent} from './loading/right-up/right-up.component';
 import {RotateDxComponent} from './loading/rotate-dx/rotate-dx.component';
 import {FlipComponent} from './loading/flip/flip.component';
 import {FadeBackComponent} from './loading/fade-back/fade-back.component';
+import {ScaleAndSlideComponent} from './loading/scale-and-slide/scale-and-slide.component';
 
 
 @Component({
@@ -30,13 +31,14 @@ import {FadeBackComponent} from './loading/fade-back/fade-back.component';
     rightUp,
     rotateDx,
     flip,
-    fadeBack
+    fadeBack,
+    scaleAndSlide
   ]
 })
 
 export class AppComponent {
-  animationSelected = RotateDxComponent;
-  animationString = 'Rotate Dx';
+  animationSelected = FlipComponent;
+  animationString = 'Slide Bottom';
   @HostBinding('@.disabled')
   public animationsDisabled = false;
 
@@ -85,6 +87,11 @@ export class AppComponent {
       case 'fadeBack': {
         this.animationSelected = FadeBackComponent;
         this.animationString = 'Fade Back';
+        break;
+      }
+      case 'scaleAndSlide': {
+        this.animationSelected = ScaleAndSlideComponent;
+        this.animationString = 'Scale and Slide';
         break;
       }
     }

@@ -19,6 +19,7 @@ import { RightUpComponent } from './loading/right-up/right-up.component';
 import { RotateDxComponent } from './loading/rotate-dx/rotate-dx.component';
 import { FlipComponent } from './loading/flip/flip.component';
 import { FadeBackComponent } from './loading/fade-back/fade-back.component';
+import { ScaleAndSlideComponent } from './loading/scale-and-slide/scale-and-slide.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { FadeBackComponent } from './loading/fade-back/fade-back.component';
     RotateDxComponent,
     FlipComponent,
     FadeBackComponent,
+    ScaleAndSlideComponent,
   ],
   imports: [
     BrowserModule,

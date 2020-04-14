@@ -15,3 +15,4 @@ export * from './lib/leftUp';
 export * from './lib/rightUp';
 export * from './lib/flip';
 export * from './lib/fadeBack';
+export * from './lib/scaleAndSlide';
