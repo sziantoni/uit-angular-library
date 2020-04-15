@@ -55,7 +55,7 @@ export const leftUp =
         stagger(150, [
           style({ transform: 'translateX(-50%) translateY(-100%)',  opacity: 0, flex: 'inherit'}),
           animate(
-            '{{enterT}}s {{enterD}}s ease-out', keyframes([
+            '{{enterTR}}s {{enterDR}}s ease-out', keyframes([
               // tslint:disable-next-line:max-line-length
               style({transform: 'translateX(-50%) translateY(-50%) scaleY(0.4) scaleX(0.4)',  opacity: 0.1,  offset: 0.1}),
               // tslint:disable-next-line:max-line-length
@@ -68,6 +68,6 @@ export const leftUp =
         ]),
         { optional: true }
       )
-    ], {params: {enterT: '0.6', leaveT: '0.6',  enterD: '0', leaveD: '0'} }),
+    ], {params: {enterT: '0.6', leaveT: '0.6',  enterD: '0', leaveD: '0', enterTR: '0.6', enterDR: '0'} }),
 
   ]);

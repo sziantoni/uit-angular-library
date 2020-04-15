@@ -47,12 +47,12 @@ export const slideTop =
         stagger(75, [
           style({ transform: 'translateY(30%)', opacity: 0 }),
           animate(
-            '{{enterT}}s {{enterD}}s ease-in-out',
+            '{{enterTR}}s {{enterDR}}s ease-in-out',
             style({ transform: 'translateY(0%)', opacity: 1 })
           )
         ]),
         { optional: true }
       )
-    ] , { params: {enterT: '0.7', leaveT: '0.7',  enterD: '0', leaveD: '0'}} )
+    ] , {params: {enterT: '0.5', leaveT: '0.3',  enterD: '0', leaveD: '0', enterTR: '0.5', enterDR: '0'} })
 
   ]);

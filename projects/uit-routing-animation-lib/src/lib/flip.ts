@@ -28,7 +28,7 @@ export const flip = trigger('flip', [
         stagger(-200, [
           style({ transform: 'perspective(3000px) rotate3d(0, 1, 0, 0)', position: 'relative',  opacity: 1, flex: 'inherit' }),
           animate(
-            '{{enterT}}s {{enterD}}s ease-in',
+            '{{enterTR}}s {{enterDR}}s ease-in',
             style({transform: 'perspective(2000px) rotate3d(0, 1, 0, 90deg)',
               opacity: 0, offset: 1, flex: 'inherit' }),
           )
@@ -62,13 +62,13 @@ export const flip = trigger('flip', [
       stagger(200, [
         style({ transform: 'perspective(2000px) rotate3d(0, 1, 0, -90deg)', opacity: 0,   flex: 'inherit'}),
         animate(
-          '{{enterT}}s {{enterD}}s ease-out',
+          '{{enterTR}}s {{enterDR}}s ease-out',
           style({transform: 'perspective(2000px) rotate3d(0, 1, 0, 0deg)',  opacity: 1,  offset: 1,  flex: 'inherit'}),
         )
       ]),
       { optional: true }
     )])
-  ], {params: {enterT: '0.5', leaveT: '0.5',  enterD: '0', leaveD: '0'} })
+  ], {params: {enterT: '0.6', leaveT: '0.6',  enterD: '0', leaveD: '0', enterTR: '0.6', enterDR: '0', leaveTR: '0.6', leaveDR: '0'} })
 ]);
 
 

@@ -16,6 +16,7 @@ import {RotateDxComponent} from './loading/rotate-dx/rotate-dx.component';
 import {FlipComponent} from './loading/flip/flip.component';
 import {FadeBackComponent} from './loading/fade-back/fade-back.component';
 import {ScaleAndSlideComponent} from './loading/scale-and-slide/scale-and-slide.component';
+import {SurpriseComponent} from './loading/surprise/surprise.component';
 
 
 @Component({
@@ -37,7 +38,7 @@ import {ScaleAndSlideComponent} from './loading/scale-and-slide/scale-and-slide.
 })
 
 export class AppComponent {
-  animationSelected = FadeBackComponent;
+  animationSelected = SurpriseComponent;
   animationString = 'Slide Bottom';
   @HostBinding('@.disabled')
   public animationsDisabled = false;
@@ -90,8 +91,13 @@ export class AppComponent {
         break;
       }
       case 'scaleAndSlide': {
-        this.animationSelected = ScaleAndSlideComponent;
-        this.animationString = 'Scale and Slide';
+          this.animationSelected = ScaleAndSlideComponent;
+          this.animationString = 'Scale and Slide';
+          break;
+      }
+      case 'surprise': {
+        this.animationSelected = SurpriseComponent;
+        this.animationString = 'Surprise';
         break;
       }
     }
