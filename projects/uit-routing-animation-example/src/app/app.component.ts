@@ -37,7 +37,7 @@ import {ScaleAndSlideComponent} from './loading/scale-and-slide/scale-and-slide.
 })
 
 export class AppComponent {
-  animationSelected = FlipComponent;
+  animationSelected = FadeBackComponent;
   animationString = 'Slide Bottom';
   @HostBinding('@.disabled')
   public animationsDisabled = false;

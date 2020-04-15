@@ -12,54 +12,51 @@ import {
 
 export const fadeBack = trigger('fadeBack', [
   transition('* <=> *', [
-    query(':enter > *' ,
+    query(':enter' ,
       style({
         opacity: 0,
         position: 'fixed'
       }), {optional: true} ),
-    query(':leave > *' ,
+    query(':leave' ,
       style({
         position: 'relative'
       }), {optional: true} ),
     query(':enter .' + ROUTING_ELEMENT , style({
-      opacity: 0,
-      position: 'relative'
+      opacity: 0
     }) , {optional: true}),
     sequence([
     query(
       ':leave .' + ROUTING_ELEMENT, [
         stagger(-100, [
-          style({ transform: 'scale3d(1, 1, 1) rotate3d(1,0,0,0)',  opacity: 1}),
-          animate('{{leaveT}}s {{leaveD}}s ease-out',
-            style({transform: ' scale3d(0.3, 0.3, 0.3)',   opacity: 0,  }),
-          ),
-        ]), style({position: 'relative'})], { optional: true }
+          animate('{{leaveT}}s {{leaveD}}s ease-out', keyframes([
+            style({ transform: 'scale(1)',  opacity: 1, offset: 0 }),
+            style({transform: 'scale(0.5)',   opacity: 0, offset: 1 }),
+          ]))
+        ])], { optional: true }
     ),
-    sequence([
-      query(':leave > *', [
-          style({ transform: 'scale3d(1, 1, 1) rotate3d(1,0,0,0deg)',   opacity: 1}),
-          animate('{{leaveT}}s {{leaveD}}s ease-out',
-              style({transform: 'scale3d(0.3, 0.3, 0.3)',  opacity: 0, }),
-          ),
-        style({position: 'fixed'})
+      query(':leave', [
+          animate('{{leaveT}}s {{leaveD}}s ease-out', keyframes([
+              style({ transform: 'scale(1)',  opacity: 1, offset: 0 }),
+              style({transform: ' scale(0.5)',   opacity: 0, offset: 1 })
+            ])
+          ), style({ position: 'fixed'})
         ], {optional: true} ),
-    query(':enter > *', [
-        style({ transform: 'scale3d(0.3, 0.3, 0.3)', opacity: 0}),
-          animate('{{enterT}}s {{enterD}}s ease-out',
-            style({transform: 'scale3d(1, 1, 1)',  opacity: 1,  position: 'relative'}),
-          )
+    query(':enter', [
+          animate('{{enterT}}s {{enterD}}s ease-out', keyframes([
+            style({ transform: 'scale(0.5)', opacity: 0, offset: 0}),
+            style({transform: 'scale(1)',  opacity: 1, offset: 1, position: 'relative'}),
+          ]))
         ], {optional: true} ),
-    ])
-    ,
-        query('.' + ROUTING_ELEMENT, [
-          style({ transform: 'scale3d(0.3, 0.3, 0.3)', opacity: 0}),
-          stagger( 10, [
-            animate('{{enterT}}s {{enterD}}s ease-out',
-                style({transform: 'scale3d(1, 1, 1)',  opacity: 1,  position: 'relative' }),
+      query(':enter .' + ROUTING_ELEMENT, [
+          stagger( 100, [
+            animate('{{enterT}}s {{enterD}}s ease-out', keyframes([
+              style({ transform: 'scale(0.5)', opacity: 0, offset: 0, position: 'relative'}),
+              style({transform: 'scale(1)',  opacity: 1, offset: 1, flex: 'inherit', position: 'relative'}),
+              ])
             )
           ] )], {optional: true} )])
 
-  ], {params: {enterT: '0.5', leaveT: '0.5',  enterD: '0', leaveD: '0'} })
+  ], {params: {enterT: '0.6', leaveT: '0.6',  enterD: '0', leaveD: '0'} })
 ]);
 
 

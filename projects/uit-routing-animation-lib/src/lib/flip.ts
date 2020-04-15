@@ -37,10 +37,9 @@ export const flip = trigger('flip', [
       ),
       query(':leave', [
         style({ transform: 'perspective(2000px) rotate3d(0, 1, 0, 0)', opacity: 1}),
-          animate('{{leaveT}}s {{leaveD}}s ease-in', keyframes([
+          animate('{{leaveT}}s {{leaveD}}s ease-in',
               style({
                 transform: 'perspective(2000px) rotate3d(0, 1, 0, 90deg)',  opacity: 0, width: '100%', offset: 1}),
-            ])
           )
         ], {optional: true} ),
         query(':leave', [
