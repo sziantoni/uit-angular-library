@@ -13,10 +13,10 @@ const ROUTING_ELEMENT = 'route-animations-element';
 
 export const scrollSide =
   trigger('scrollSide', [
-    transition('* => scrollLeft', scroll('-'), {params: {enterT: '0.7', leaveT: '0.6',  enterD: '0', leaveD: '0'} } ),
-    transition('* => scrollRight', scroll('+'), {params: {enterT: '0.7', leaveT: '0.6',  enterD: '0', leaveD: '0'} }),
-    transition('scrollRight => *', scroll('-'), {params: {enterT: '0.7', leaveT: '0.6',  enterD: '0', leaveD: '0'} }),
-    transition('scrollLeft => *', scroll('+'), {params: {enterT: '0.7', leaveT: '0.6',  enterD: '0', leaveD: '0'} } )
+    transition('* => scrollLeft', scroll('-'), {params: {enterT: '0.5', leaveT: '0.5',  enterD: '0', leaveD: '0'} } ),
+    transition('* => scrollRight', scroll('+'), {params: {enterT: '0.5', leaveT: '0.5',  enterD: '0', leaveD: '0'} }),
+    transition('scrollRight => *', scroll('-'), {params: {enterT: '0.5', leaveT: '0.5',  enterD: '0', leaveD: '0'} }),
+    transition('scrollLeft => *', scroll('+'), {params: {enterT: '0.5', leaveT: '0.5',  enterD: '0', leaveD: '0'} } )
   ]);
 
 function scroll(direction) {

@@ -4,7 +4,7 @@ import {
   slideBottom,
   scrollSide,
   slideTop,
-  rotateSx, leftUp, rightUp, rotateDx, flip, fadeBack, scaleAndSlide
+  rotateSx, leftUp, rightUp, rotateDx, flip, fadeBack, scaleAndSlide, slideTitleDownBlocks
 } from '../../../uit-routing-animation-lib/src/public-api';
 import {SlideBottomComponent} from './loading/slide-bottom/slide-bottom.component';
 import {ScrollSideComponent} from './loading/scroll-side/scroll-side.component';
@@ -17,6 +17,7 @@ import {FlipComponent} from './loading/flip/flip.component';
 import {FadeBackComponent} from './loading/fade-back/fade-back.component';
 import {ScaleAndSlideComponent} from './loading/scale-and-slide/scale-and-slide.component';
 import {SurpriseComponent} from './loading/surprise/surprise.component';
+import {SlideTitleDownBlocksComponent} from './loading/slide-title-down-blocks/slide-title-down-blocks.component';
 
 
 @Component({
@@ -33,12 +34,13 @@ import {SurpriseComponent} from './loading/surprise/surprise.component';
     rotateDx,
     flip,
     fadeBack,
-    scaleAndSlide
+    scaleAndSlide,
+    slideTitleDownBlocks
   ]
 })
 
 export class AppComponent {
-  animationSelected = SurpriseComponent;
+  animationSelected = SlideTitleDownBlocksComponent;
   animationString = 'Slide Bottom';
   @HostBinding('@.disabled')
   public animationsDisabled = false;
@@ -98,6 +100,11 @@ export class AppComponent {
       case 'surprise': {
         this.animationSelected = SurpriseComponent;
         this.animationString = 'Surprise';
+        break;
+      }
+      case 'stdb': {
+        this.animationSelected = SlideTitleDownBlocksComponent;
+        this.animationString = 'Slide Title Down Blocks';
         break;
       }
     }

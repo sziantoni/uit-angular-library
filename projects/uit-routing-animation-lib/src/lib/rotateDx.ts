@@ -28,7 +28,7 @@ export const rotateDx =
         query(':leave', [
           style({opacity : 1 , transformOrigin: 'right bottom', transform: 'translate3d(0,0,0)'}),
           animate( '{{leaveT}}s {{leaveD}}s ease-in' ,
-            style({opacity: 0.5 , transform: ' rotate3d(0,0,1,90deg) translate3d(-50%,0,0)' , transformOrigin: 'right bottom'})
+            style({opacity: 0.5 , transform: ' rotate3d(0,0,1,-90deg) translate3d(-50%,0,0)' , transformOrigin: 'right bottom'})
           )
         ], {optional: true }),
         query(':enter ', stagger( 0, [
@@ -42,5 +42,5 @@ export const rotateDx =
         animate('{{enterTR}}s {{enterDR}}s ease-out',
           style({opacity: 1, transformOrigin: 'right bottom' , transform: 'translate3d(0,0,0)', position: 'relative'}))
       ]), {optional: true })
-    ] , {params: {enterT: '0.7', leaveT: '0.7',  enterD: '0', leaveD: '0', enterTR: '0.7', enterDR: '0'} })
+    ] , {params: {enterT: '0.5', leaveT: '0.5',  enterD: '0', leaveD: '0', enterTR: '0.5', enterDR: '0'} })
   ] );

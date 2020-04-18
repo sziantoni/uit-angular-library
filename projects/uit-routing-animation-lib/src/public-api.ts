@@ -17,3 +17,4 @@ export * from './lib/flip';
 export * from './lib/fadeBack';
 export * from './lib/scaleAndSlide';
 export * from './lib/surprise';
+export * from './lib/slideTitleDownBlocks';

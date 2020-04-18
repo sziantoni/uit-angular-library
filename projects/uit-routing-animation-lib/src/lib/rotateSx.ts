@@ -32,15 +32,15 @@ export const rotateSx =
         )
       ], {optional: true }),
       query(':enter ', stagger( 0, [
-        style({ opacity: 0, transformOrigin: 'left bottom', transform: 'rotate3d(0, 0, 1, -90deg)'}),
+        style({ opacity: 0, transformOrigin: 'left bottom', transform: 'rotate3d(0, 0, 1, 90deg)'}),
         animate('{{enterT}}s {{enterD}}s  ease-out',
           style({opacity: 1, transformOrigin: 'left bottom' , transform: 'translate3d(0,0,0)', position: 'relative'}))
       ]), {optional: true })
     ]),
       query(':enter .' + ROUTING_ELEMENT, stagger( 75, [
-        style({ opacity: 0, transformOrigin: 'left bottom', transform: 'rotate3d(0, 0, 1, -90deg)'}),
+        style({ opacity: 0, transformOrigin: 'left bottom', transform: 'rotate3d(0, 0, 1, 90deg)'}),
         animate('{{enterTR}}s {{enterDR}}s ease-out',
           style({opacity: 1, transformOrigin: 'left bottom' , transform: 'translate3d(0,0,0)', position: 'relative'}))
       ]), {optional: true })
-    ] , {params: {enterT: '0.7', leaveT: '0.7',  enterD: '0', leaveD: '0', enterTR: '0.7', enterDR: '0'} })
+    ] , {params: {enterT: '0.5', leaveT: '0.5',  enterD: '0', leaveD: '0', enterTR: '0.5', enterDR: '0'} })
   ] );

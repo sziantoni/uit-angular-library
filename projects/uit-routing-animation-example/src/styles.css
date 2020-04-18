@@ -27,6 +27,15 @@
 
 }
 
-.output{
-  min-height: 500px;
+
+@media screen and (max-height: 800px) {
+  .output{
+    min-height: 520px;
+  }
+}
+
+@media screen and (min-height: 800px) {
+  .output{
+    min-height: 730px;
+  }
 }

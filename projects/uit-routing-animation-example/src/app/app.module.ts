@@ -21,6 +21,7 @@ import { FlipComponent } from './loading/flip/flip.component';
 import { FadeBackComponent } from './loading/fade-back/fade-back.component';
 import { ScaleAndSlideComponent } from './loading/scale-and-slide/scale-and-slide.component';
 import { SurpriseComponent } from './loading/surprise/surprise.component';
+import { SlideTitleDownBlocksComponent } from './loading/slide-title-down-blocks/slide-title-down-blocks.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { SurpriseComponent } from './loading/surprise/surprise.component';
     FadeBackComponent,
     ScaleAndSlideComponent,
     SurpriseComponent,
+    SlideTitleDownBlocksComponent,
   ],
   imports: [
     BrowserModule,
