@@ -1,59 +1,60 @@
 <body>
-<div class="head">
-<h1>Animations Tester</h1>
-<nav>
-  <a id="home" routerLink="/home" routerLinkActive="active">Home</a>
-  <a id="about" routerLink="/about" routerLinkActive="active">About</a>
-  <a id="features" routerLink="/features" routerLinkActive="active">Features</a>
-  <a id="pageExample" routerLink="/page-example" routerLinkActive="active">Page</a>
+<div class="head" >
+  <h1>Animations Tester</h1>
+  <nav>
+    <a id="home" routerLink="/home" routerLinkActive="active">Home</a>
+    <a id="about" routerLink="/about" routerLinkActive="active">About</a>
+    <a id="features" routerLink="/features" routerLinkActive="active">Features</a>
+    <a id="pageExample" routerLink="/page-example" routerLinkActive="active">Page</a>
 
-</nav>
-</div>
-<div *ngComponentOutlet="animationSelected">
-
+  </nav>
 </div>
 
 <div class = 'activeAnimation'>
   <p> Animation active: {{animationString}} </p>
 </div>
 
-  <div class = 'animation_selector' >
-    <button class="buttonStyle" mat-raised-button color="primary" (click)="assignComponent('slideBottom')">
-      Slide Bottom
-    </button>
-    <button class="buttonStyle" mat-raised-button color="primary" (click)="assignComponent('slideTop')">
-      Slide Top
-    </button>
-    <button class="buttonStyle" mat-raised-button color="primary" (click)="assignComponent('scrollSide')">
-      Scroll Side
-    </button>
-    <button class="buttonStyle" mat-raised-button color="primary" (click)="assignComponent('rotateSx')">
-      Rotate Sx
-    </button>
-    <button class="buttonStyle" mat-raised-button color="primary" (click)="assignComponent('rotateDx')">
-      Rotate Dx
-    </button>
-    <button class="buttonStyle" mat-raised-button color="primary" (click)="assignComponent('leftUp')">
-      Left Up
-    </button>
-    <button class="buttonStyle" mat-raised-button color="primary" (click)="assignComponent('rightUp')">
-      Right Up
-    </button>
-    <button class="buttonStyle" mat-raised-button color="primary" (click)="assignComponent('flip')">
-      Flip
-    </button>
-    <button class="buttonStyle" mat-raised-button color="primary" (click)="assignComponent('fadeBack')">
+<div class="outlet">
+<div *ngComponentOutlet="animationSelected">
+
+</div>
+</div>
+
+<div class = 'animation_selector' >
+  <button class="buttonStyle" mat-raised-button color="primary" (click)="assignComponent('slideBottom')">
+    Slide Bottom
+  </button>
+  <button class="buttonStyle" mat-raised-button color="primary" (click)="assignComponent('slideTop')">
+    Slide Top
+  </button>
+  <button class="buttonStyle" mat-raised-button color="primary" (click)="assignComponent('scrollSide')">
+    Scroll Side
+  </button>
+  <button class="buttonStyle" mat-raised-button color="primary" (click)="assignComponent('rotateSx')">
+    Rotate Sx
+  </button>
+  <button class="buttonStyle" mat-raised-button color="primary" (click)="assignComponent('rotateDx')">
+    Rotate Dx
+  </button>
+  <button class="buttonStyle" mat-raised-button color="primary" (click)="assignComponent('leftUp')">
+    Left Up
+  </button>
+  <button class="buttonStyle" mat-raised-button color="primary" (click)="assignComponent('rightUp')">
+    Right Up
+  </button>
+  <button class="buttonStyle" mat-raised-button color="primary" (click)="assignComponent('flip')">
+    Flip
+  </button>
+  <button class="buttonStyle" mat-raised-button color="primary" (click)="assignComponent('fadeBack')">
     Fade Back
   </button>
-    <button class="buttonStyle" mat-raised-button color="primary" (click)="assignComponent('scaleAndSlide')">
+  <button class="buttonStyle" mat-raised-button color="primary" (click)="assignComponent('scaleAndSlide')">
     Scale and slide
   </button>
-    <button class="buttonStyle" mat-raised-button color="primary" (click)="assignComponent('surprise')">
-      Surprise
-    </button>
-  </div>
+  <button class="buttonStyle" mat-raised-button color="primary" (click)="assignComponent('surprise')">
+    Surprise
+  </button>
+</div>
 
 </body>
-
-
 

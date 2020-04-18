@@ -1,17 +1,23 @@
+
+html {
+  margin: 0px;
+  height: 100%;
+  width: 300px;
+  overflow:hidden;
+}
+
+body {
+  margin: 0px;
+  min-height: 100%;
+  overflow: hidden;
+  width: 100%;
+}
+
 h1 {
-  font-size: 4em;
+  font-size: 2.5em;
   margin-bottom: 0;
   text-align: center;
   color: #039be5;
-}
-h2 {
-  font-size: 2em;
-  margin-top: 0;
-  padding-top: 0;
-}
-
-.head{
-  position: relative;
 }
 
 nav a {
@@ -42,15 +48,19 @@ a {
   margin-left: 5px;
 }
 
+.head{
+  overflow: hidden;
+}
+
 .animation_selector{
   position: fixed;
   bottom: 0px;
   height: 40px;
   width: 100%;
-  z-index: 999999;
   text-align: center;
   background-color: #0f2753;
   padding-top: 15px;
+  overflow: hidden;
 }
 
 .buttonStyle{
@@ -78,4 +88,3 @@ a {
   text-align: center;
   border-radius: 4px;
 }
-

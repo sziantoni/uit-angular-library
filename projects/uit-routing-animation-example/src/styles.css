@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 .titolo{
 
-  font-size: 3em;
+  font-size: 2em;
   color: #039be5;
   background-color: #dddddd;
   width: 50%;
@@ -14,15 +14,19 @@
 
 
 .testo{
-
-  font-size: 1.5em;
+  font-size: 1.2em;
   color: #039be5;
   background-color: #dddddd;
   width: 50%;
-  text-align: center;
   margin-left: 25%;
   margin-right: 25%;
   border-radius: 4px;
   padding: 10px;
+  height: 150px;
+  text-align: justify;
 
+}
+
+.output{
+  min-height: 500px;
 }

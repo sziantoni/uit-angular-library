@@ -27,16 +27,21 @@ function scroll(direction) {
     opposite = '-';
   }
   return [
-    query(':enter, :leave', [
+    query(' :leave', [
       style({
         position: 'fixed',
-        transform: 'translateX(' + [direction] + '0%)',
+        overflow: 'hidden',
+        backfaceVisibility: 'hidden',
+        transformStyle: 'preserve-3d',
         width: '100%'
       })
     ], { optional: true }),
     query(':enter', [
       style({
-      transform: 'translateX(' + [direction] + '100%)'
+        transform: 'translateX(' + [direction] + '100%)',
+        opacity: 0,
+        position: 'fixed',
+        width: '100%'
       })
     ] , { optional: true }),
     sequence([
@@ -44,17 +49,14 @@ function scroll(direction) {
           animate('{{leaveT}}s {{leaveD}}s ease-in',
             keyframes([
               style({
-                position: 'fixed',
                 opacity: 1,
                 transform: 'translateX(' + [direction] + '0%)',
                 offset: 0}),
               style({
-                position: 'fixed',
                 opacity: 1,
                 transform: 'translateX(' + [direction] + '10%)',
                 offset: 0.3}),
               style({
-              position: 'fixed',
               opacity: 1,
               transform: 'translateX(' + [opposite] + '100%)',
               offset: 1})

@@ -7,7 +7,7 @@
 }
 
 .title{
-  font-size: 2em;
+  font-size: 1.5em;
   color: rgba(27, 49, 229, 0.69);
 }
 
@@ -40,8 +40,8 @@
   height: 20%;
   color: #039be5;
   background-color: #dddddd;
-  margin-left: 7%;
-  margin-right: 7%;
+  margin-left: 8%;
+  margin-right: 6%;
   margin-top: 5%;
 }
 
