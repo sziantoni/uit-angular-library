@@ -7,8 +7,6 @@ import { AboutComponent } from './about/about.component';
 import { FeaturesOfSiteComponent } from './features-of-site/features-of-site.component';
 import {RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
-import {MatButtonModule} from '@angular/material/button';
-import {MatMenuModule} from '@angular/material/menu';
 import { SlideBottomComponent } from './loading/slide-bottom/slide-bottom.component';
 import { ScrollSideComponent } from './loading/scroll-side/scroll-side.component';
 import { SlideTopComponent } from './loading/slide-top/slide-top.component';
@@ -47,8 +45,6 @@ import { SlideTitleDownBlocksComponent } from './loading/slide-title-down-blocks
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatMenuModule,
     RouterModule.forRoot([
       {path: '', pathMatch: 'full', redirectTo: 'home'},
       {path: 'home', component: HomeComponent, data: {animation: 'scrollLeft'}},

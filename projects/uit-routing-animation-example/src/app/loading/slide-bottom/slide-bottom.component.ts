@@ -1,6 +1,6 @@
 import {Component, HostBinding, OnInit} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
-import {slideBottom} from '../../../../../uit-routing-animation-lib/src/public-api';
+import {slideBottom} from 'uit-routing-animation-lib';
 @Component({
   selector: 'app-slide-bottom',
   templateUrl: './slide-bottom.component.html',

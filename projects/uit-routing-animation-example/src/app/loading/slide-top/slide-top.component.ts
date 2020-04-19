@@ -1,6 +1,6 @@
 import {Component, HostBinding, OnInit} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
-import {slideTop} from '../../../../../uit-routing-animation-lib/src/public-api';
+import {slideTop} from 'uit-routing-animation-lib';
 @Component({
   selector: 'app-slide-top',
   templateUrl: './slide-top.component.html',

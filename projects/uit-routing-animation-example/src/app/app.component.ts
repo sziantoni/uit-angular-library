@@ -5,7 +5,7 @@ import {
   scrollSide,
   slideTop,
   rotateSx, leftUp, rightUp, rotateDx, flip, fadeBack, scaleAndSlide, slideTitleDownBlocks
-} from '../../../uit-routing-animation-lib/src/public-api';
+} from 'uit-routing-animation-lib';
 import {SlideBottomComponent} from './loading/slide-bottom/slide-bottom.component';
 import {ScrollSideComponent} from './loading/scroll-side/scroll-side.component';
 import {SlideTopComponent} from './loading/slide-top/slide-top.component';

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RouterOutlet} from '@angular/router';
-import {fadeBack} from '../../../../../uit-routing-animation-lib/src/public-api';
+import {fadeBack} from 'uit-routing-animation-lib';
 
 @Component({
   selector: 'app-fade-back',

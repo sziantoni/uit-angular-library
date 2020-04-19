@@ -1,8 +1,6 @@
 import {Component, HostBinding, OnInit} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {scrollSide} from '../../../../../uit-routing-animation-lib/src/public-api';
+import {scrollSide} from 'uit-routing-animation-lib';
 
 @Component({
   selector: 'app-scroll-side',

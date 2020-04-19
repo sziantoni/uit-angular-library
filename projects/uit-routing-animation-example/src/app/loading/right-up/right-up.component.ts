@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RouterOutlet} from '@angular/router';
-import {rightUp} from '../../../../../uit-routing-animation-lib/src/public-api';
+import {rightUp} from 'uit-routing-animation-lib';
 
 @Component({
   selector: 'app-right-up',

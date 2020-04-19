@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RouterOutlet} from '@angular/router';
-import {rotateSx} from '../../../../../uit-routing-animation-lib/src/public-api';
+import {rotateSx} from 'uit-routing-animation-lib';
 @Component({
   selector: 'app-rotate-sx',
   templateUrl: './rotate-sx.component.html',
