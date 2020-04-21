@@ -11,7 +11,7 @@ import {scaleAndSlide} from 'uit-routing-animation-lib';
 export class ScaleAndSlideComponent implements OnInit {
 
   prepareRoute(outlet: RouterOutlet) {
-    return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
+    return outlet.activatedRouteData.animation || (outlet && outlet.activatedRouteData);
   }
 
   ngOnInit(): void {

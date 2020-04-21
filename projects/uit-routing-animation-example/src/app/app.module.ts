@@ -20,6 +20,7 @@ import { FadeBackComponent } from './loading/fade-back/fade-back.component';
 import { ScaleAndSlideComponent } from './loading/scale-and-slide/scale-and-slide.component';
 import { SurpriseComponent } from './loading/surprise/surprise.component';
 import { SlideTitleDownBlocksComponent } from './loading/slide-title-down-blocks/slide-title-down-blocks.component';
+import { Rotate3dComponent } from './loading/rotate3d/rotate3d.component';
 
 
 @NgModule({
@@ -41,16 +42,16 @@ import { SlideTitleDownBlocksComponent } from './loading/slide-title-down-blocks
     ScaleAndSlideComponent,
     SurpriseComponent,
     SlideTitleDownBlocksComponent,
+    Rotate3dComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
-      {path: '', pathMatch: 'full', redirectTo: 'home'},
       {path: 'home', component: HomeComponent, data: {animation: 'scrollLeft'}},
       {path: 'about', component: AboutComponent},
       {path: 'features', component: FeaturesOfSiteComponent, data: {animation: 'scrollRight'}},
-      {path: 'page-example', component: PageExampleComponent, data: {animation: 'scrollRight'}}
+      {path: 'page-example', component: PageExampleComponent}
     ]),
     FormsModule
   ],

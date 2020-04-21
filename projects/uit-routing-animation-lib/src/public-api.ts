@@ -18,3 +18,4 @@ export * from './lib/fadeBack';
 export * from './lib/scaleAndSlide';
 export * from './lib/surprise';
 export * from './lib/slideTitleDownBlocks';
+export * from './lib/rotate3D';

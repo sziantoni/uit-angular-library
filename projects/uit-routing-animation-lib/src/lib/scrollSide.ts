@@ -16,7 +16,9 @@ export const scrollSide =
     transition('* => scrollLeft', scroll('-'), {params: {enterT: '0.5', leaveT: '0.5',  enterD: '0', leaveD: '0'} } ),
     transition('* => scrollRight', scroll('+'), {params: {enterT: '0.5', leaveT: '0.5',  enterD: '0', leaveD: '0'} }),
     transition('scrollRight => *', scroll('-'), {params: {enterT: '0.5', leaveT: '0.5',  enterD: '0', leaveD: '0'} }),
-    transition('scrollLeft => *', scroll('+'), {params: {enterT: '0.5', leaveT: '0.5',  enterD: '0', leaveD: '0'} } )
+    transition('scrollLeft => *', scroll('+'), {params: {enterT: '0.5', leaveT: '0.5',  enterD: '0', leaveD: '0'} } ),
+    transition('* <=> *', scroll('+'), {params: {enterT: '0.5', leaveT: '0.5',  enterD: '0', leaveD: '0'} } ),
+
   ]);
 
 function scroll(direction) {

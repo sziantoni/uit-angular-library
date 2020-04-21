@@ -4,7 +4,7 @@ import {
   slideBottom,
   scrollSide,
   slideTop,
-  rotateSx, leftUp, rightUp, rotateDx, flip, fadeBack, scaleAndSlide, slideTitleDownBlocks
+  rotateSx, leftUp, rightUp, rotateDx, flip, fadeBack, scaleAndSlide, slideTitleDownBlocks, rotate3D
 } from 'uit-routing-animation-lib';
 import {SlideBottomComponent} from './loading/slide-bottom/slide-bottom.component';
 import {ScrollSideComponent} from './loading/scroll-side/scroll-side.component';
@@ -18,6 +18,7 @@ import {FadeBackComponent} from './loading/fade-back/fade-back.component';
 import {ScaleAndSlideComponent} from './loading/scale-and-slide/scale-and-slide.component';
 import {SurpriseComponent} from './loading/surprise/surprise.component';
 import {SlideTitleDownBlocksComponent} from './loading/slide-title-down-blocks/slide-title-down-blocks.component';
+import {Rotate3dComponent} from './loading/rotate3d/rotate3d.component';
 
 
 @Component({
@@ -35,13 +36,14 @@ import {SlideTitleDownBlocksComponent} from './loading/slide-title-down-blocks/s
     flip,
     fadeBack,
     scaleAndSlide,
-    slideTitleDownBlocks
+    slideTitleDownBlocks,
+    rotate3D
   ]
 })
 
 export class AppComponent {
-  animationSelected = SlideTitleDownBlocksComponent;
-  animationString = 'Slide Bottom';
+  animationSelected = Rotate3dComponent;
+  animationString = 'Rotate 3D';
   @HostBinding('@.disabled')
   public animationsDisabled = false;
 
@@ -107,6 +109,12 @@ export class AppComponent {
         this.animationString = 'Slide Title Down Blocks';
         break;
       }
+      case 'rotate3d': {
+        this.animationSelected = Rotate3dComponent;
+        this.animationString = 'Rotate 3D';
+        break;
+      }
+
     }
   }
   toggleAnimations() {

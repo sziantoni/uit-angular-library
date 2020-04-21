@@ -13,8 +13,8 @@ import {scrollSide} from 'uit-routing-animation-lib';
 export class ScrollSideComponent implements OnInit {
 
   prepareRoute(outlet: RouterOutlet) {
-    return outlet.activatedRouteData.animation;
-  }
+    return outlet.activatedRouteData.animation || (outlet && outlet.activatedRouteData);
+}
 
   ngOnInit(): void {
   }

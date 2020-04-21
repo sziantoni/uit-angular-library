@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ROUTING_ELEMENT} from '../../../../uit-routing-animation-lib/src/public-api';
+import { ROUTING_ELEMENT} from 'uit-routing-animation-lib';
 
 @Component({
   selector: 'app-home',

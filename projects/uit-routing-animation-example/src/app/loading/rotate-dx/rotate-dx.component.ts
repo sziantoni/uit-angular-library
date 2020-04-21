@@ -11,7 +11,7 @@ import {rotateDx} from 'uit-routing-animation-lib';
 export class RotateDxComponent implements OnInit {
 
   prepareRoute(outlet: RouterOutlet) {
-    return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
+    return outlet && outlet.activatedRouteData;
   }
 
   ngOnInit(): void {

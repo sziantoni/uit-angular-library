@@ -13,7 +13,7 @@ import {leftUp} from 'uit-routing-animation-lib';
 export class LeftUpComponent implements OnInit {
 
   prepareRoute(outlet: RouterOutlet) {
-    return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
+    return outlet && outlet.activatedRouteData;
   }
 
 

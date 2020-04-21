@@ -14,10 +14,11 @@ const ROUTING_ELEMENT = 'route-animations-element';
 
 export const scaleAndSlide =
   trigger('scaleAndSlide', [
-    transition('* => scrollLeft', scale('-'), {params: {enterT: '0.6', leaveT: '0.6', enterD: '0', leaveD: '0'}}),
-    transition('* => scrollRight', scale('+'), {params: {enterT: '0.6', leaveT: '0.6', enterD: '0', leaveD: '0'}}),
-    transition('scrollRight => *', scale('-'), {params: {enterT: '0.6', leaveT: '0.6', enterD: '0', leaveD: '0'}}),
-    transition('scrollLeft => *', scale('+'), {params: {enterT: '0.6', leaveT: '0.6', enterD: '0', leaveD: '0'}})
+    transition('* => scrollLeft', scale('-'), {params: {enterT: '0.5', leaveT: '0.5',  enterD: '0', leaveD: '0'} } ),
+    transition('* => scrollRight', scale('+'), {params: {enterT: '0.5', leaveT: '0.5',  enterD: '0', leaveD: '0'} }),
+    transition('scrollRight => *', scale('-'), {params: {enterT: '0.5', leaveT: '0.5',  enterD: '0', leaveD: '0'} }),
+    transition('scrollLeft => *', scale('+'), {params: {enterT: '0.5', leaveT: '0.5',  enterD: '0', leaveD: '0'} } ),
+    transition('* <=> *', scale('+'), {params: {enterT: '0.5', leaveT: '0.5',  enterD: '0', leaveD: '0'} } ),
   ]);
 
 function scale(direction) {

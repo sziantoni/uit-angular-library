@@ -12,7 +12,7 @@ import {slideTop} from 'uit-routing-animation-lib';
 export class SlideTopComponent implements OnInit {
 
   prepareRoute(outlet: RouterOutlet) {
-    return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
+    return outlet && outlet.activatedRouteData;
   }
 
   ngOnInit(): void {
