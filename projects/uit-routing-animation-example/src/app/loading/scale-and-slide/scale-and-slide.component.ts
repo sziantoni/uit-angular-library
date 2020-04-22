@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {RouterOutlet} from '@angular/router';
-import {scaleAndSlide} from 'uit-routing-animation-lib';
+import {scaleAndSlideAnimation} from 'uit-routing-animation-lib';
 
 @Component({
   selector: 'app-scale-and-slide',
   templateUrl: './scale-and-slide.component.html',
   styleUrls: ['./scale-and-slide.component.css'],
-  animations: [scaleAndSlide ]
+  animations: [scaleAndSlideAnimation() ]
 })
 export class ScaleAndSlideComponent implements OnInit {
 

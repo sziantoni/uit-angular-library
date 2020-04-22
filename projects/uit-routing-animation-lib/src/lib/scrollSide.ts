@@ -3,23 +3,75 @@ import {
   transition,
   style,
   query,
-  group,
-  animateChild,
   animate,
-  keyframes, sequence, stagger,
+  keyframes, sequence, AnimationTriggerMetadata,
 } from '@angular/animations';
-const ROUTING_ELEMENT = 'route-animations-element';
 
-
-export const scrollSide =
-  trigger('scrollSide', [
-    transition('* => scrollLeft', scroll('-'), {params: {enterT: '0.5', leaveT: '0.5',  enterD: '0', leaveD: '0'} } ),
-    transition('* => scrollRight', scroll('+'), {params: {enterT: '0.5', leaveT: '0.5',  enterD: '0', leaveD: '0'} }),
-    transition('scrollRight => *', scroll('-'), {params: {enterT: '0.5', leaveT: '0.5',  enterD: '0', leaveD: '0'} }),
-    transition('scrollLeft => *', scroll('+'), {params: {enterT: '0.5', leaveT: '0.5',  enterD: '0', leaveD: '0'} } ),
-    transition('* <=> *', scroll('+'), {params: {enterT: '0.5', leaveT: '0.5',  enterD: '0', leaveD: '0'} } ),
-
+export function scrollSideAnimation(): AnimationTriggerMetadata {
+  return trigger('scrollSide', [
+    transition('* => scrollLeft', scroll('-'), { params: {
+        enterT: '0.5',
+        leaveT: '0.5',
+        enterD: '0',
+        leaveD: '0' } }),
+    transition('* => scrollRight', scroll('+'), { params: {
+        enterT: '0.5',
+        leaveT: '0.5',
+        enterD: '0',
+        leaveD: '0' } }),
+    transition('scrollRight => *', scroll('-'), { params: {
+        enterT: '0.5',
+        leaveT: '0.5',
+        enterD: '0',
+        leaveD: '0' } }),
+    transition('scrollLeft => *', scroll('+'), { params: {
+        enterT: '0.5',
+        leaveT: '0.5',
+        enterD: '0',
+        leaveD: '0' } }),
+    transition('* <=> *', scroll('+'), { params: {
+        enterT: '0.5',
+        leaveT: '0.5',
+        enterD: '0',
+        leaveD: '0' } }),
   ]);
+}
+
+
+export function scrollSideAnimation_setParametres(
+  entert: string ,
+  enterd: string,
+  leavet: string,
+  leaved: string,
+): AnimationTriggerMetadata {
+  return trigger('scrollSide', [
+    transition('* => scrollLeft', scroll('-'), { params: {
+        enterT: entert,
+        leaveT: leavet,
+        enterD: enterd,
+        leaveD: leaved } }),
+    transition('* => scrollRight', scroll('+'), { params: {
+        enterT: entert,
+        leaveT: leavet,
+        enterD: enterd,
+        leaveD: leaved } }),
+    transition('scrollRight => *', scroll('-'), { params: {
+        enterT: entert,
+        leaveT: leavet,
+        enterD: enterd,
+        leaveD: leaved } }),
+    transition('scrollLeft => *', scroll('+'), { params: {
+        enterT: entert,
+        leaveT: leavet,
+        enterD: enterd,
+        leaveD: leaved } }),
+    transition('* <=> *', scroll('+'), { params: {
+        enterT: entert,
+        leaveT: leavet,
+        enterD: enterd,
+        leaveD: leaved} }),
+  ]);
+}
 
 function scroll(direction) {
   let opposite;

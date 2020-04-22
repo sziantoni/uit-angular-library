@@ -3,18 +3,15 @@ import {
   transition,
   style,
   query,
-  group,
-  animateChild,
   animate,
-  keyframes, sequence, stagger,
+  sequence, stagger, animation, AnimationTriggerMetadata, useAnimation,
 } from '@angular/animations';
 const ROUTING_ELEMENT = 'route-animations-elements';
 
 
-export const slideTitleDownBlocks =
-  trigger('slideTitleDownBlocks', [
-    transition('* <=> *', [
-      query(':leave', style({
+const slideTitleDownBlocks =
+  animation([
+    query(':leave', style({
         position: 'relative'}), {
         optional: true
       }),
@@ -73,6 +70,41 @@ export const slideTitleDownBlocks =
             style({ transform: 'translateY(0%)', opacity: 1 })
           )])
       ]), {optional: true })
-      ]),
-    ] , {params: {enterT: '0.7', leaveT: '0.7',  enterD: '0', leaveD: '0', enterTR: '0.4', enterDR: '0', leaveTR: '0.4', leaveDR: '0'} })
-  ] );
+      ])]);
+
+
+export function slideTitleDownBlocksAnimation_setParametres(
+  entert: string ,
+  enterd: string,
+  leavet: string,
+  leaved: string,
+  entertr: string,
+  leavetr: string,
+  enterdr: string,
+  leavedr: string ): AnimationTriggerMetadata {
+  return trigger('slideTitleDownBlocks', [
+    transition('* <=> *', useAnimation(slideTitleDownBlocks), {params: {
+        enterT: entert,
+        leaveT: leavet,
+        enterD: enterd,
+        leaveD: leaved,
+        enterTR: entertr,
+        leaveTR: leavetr,
+        enterDR: enterdr,
+        leaveDR: leavedr} })
+  ]);
+}
+
+export function slideTitleDownBlocksAnimation(): AnimationTriggerMetadata {
+  return trigger('slideTitleDownBlocks', [
+    transition('* <=> *', useAnimation(slideTitleDownBlocks), {params: {
+        enterT: '0.7',
+        leaveT: '0.7',
+        enterD: '0',
+        leaveD: '0',
+        enterTR: '0.4',
+        leaveTR: '0.4',
+        enterDR: '0',
+        leaveDR: '0'} })
+  ]);
+}

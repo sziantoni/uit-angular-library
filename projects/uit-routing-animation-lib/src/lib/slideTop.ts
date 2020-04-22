@@ -6,12 +6,10 @@ import {
   style,
   query,
   animate,
-  sequence, stagger,
+  sequence, stagger, animation, AnimationTriggerMetadata, useAnimation,
 } from '@angular/animations';
 
-export const slideTop =
-  trigger('slideTop', [
-    transition('* <=> *', [
+const slideTop = animation([
       query(':enter > *', [
         style({
           position: 'fixed',
@@ -52,7 +50,36 @@ export const slideTop =
           )
         ]),
         { optional: true }
-      )
-    ] , {params: {enterT: '0.5', leaveT: '0.3',  enterD: '0', leaveD: '0', enterTR: '0.5', enterDR: '0'} })
+      )])
+    ;
 
+
+export function slideTopAnimation_setParametres(
+  entert: string ,
+  enterd: string,
+  leavet: string,
+  leaved: string,
+  entertr: string,
+  enterdr: string): AnimationTriggerMetadata {
+  return trigger('slideTop', [
+    transition('* <=> *', useAnimation(slideTop), {params: {
+        enterT: entert,
+        leaveT: leavet,
+        enterD: enterd,
+        leaveD: leaved,
+        enterTR: entertr,
+        enterDR: enterdr} })
   ]);
+}
+
+export function slideTopAnimation(): AnimationTriggerMetadata {
+  return trigger('slideTop', [
+    transition('* <=> *', useAnimation(slideTop), {params: {
+        enterT: '0.5',
+        leaveT: '0.3',
+        enterD: '0',
+        leaveD: '0',
+        enterTR: '0.5',
+        enterDR: '0'} })
+  ]);
+}

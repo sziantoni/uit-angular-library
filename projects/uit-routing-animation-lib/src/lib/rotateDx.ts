@@ -3,17 +3,13 @@ import {
   transition,
   style,
   query,
-  group,
-  animateChild,
   animate,
-  keyframes, sequence, stagger,
+  sequence, stagger, animation, AnimationTriggerMetadata, useAnimation,
 } from '@angular/animations';
 
 const ROUTING_ELEMENT = 'route-animations-elements';
 
-export const rotateDx =
-  trigger('rotateDx', [
-    transition('* <=> *', [
+const rotateDx = animation([
       query(':enter, :leave', [
         style({
           position: 'fixed',
@@ -42,5 +38,35 @@ export const rotateDx =
         animate('{{enterTR}}s {{enterDR}}s ease-out',
           style({opacity: 1, transformOrigin: 'right bottom' , transform: 'translate3d(0,0,0)', position: 'relative'}))
       ]), {optional: true })
-    ] , {params: {enterT: '0.5', leaveT: '0.5',  enterD: '0', leaveD: '0', enterTR: '0.5', enterDR: '0'} })
-  ] );
+   ]);
+
+
+export function rotateDxAnimation_setParametres(
+  entert: string ,
+  enterd: string,
+  leavet: string,
+  leaved: string,
+  entertr: string,
+  enterdr: string): AnimationTriggerMetadata {
+  return trigger('rotateDx', [
+    transition('* <=> *', useAnimation(rotateDx), {params: {
+        enterT: entert,
+        leaveT: leavet,
+        enterD: enterd,
+        leaveD: leaved,
+        enterTR: entertr,
+        enterDR: enterdr} })
+  ]);
+}
+
+export function rotateDxAnimation(): AnimationTriggerMetadata {
+  return trigger('rotateDx', [
+    transition('* <=> *', useAnimation(rotateDx), {params: {
+        enterT: '0.5',
+        leaveT: '0.5',
+        enterD: '0',
+        leaveD: '0',
+        enterTR: '0.5',
+        enterDR: '0'} })
+  ]);
+}

@@ -1,12 +1,12 @@
-import {Component, HostBinding, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
-import {slideTop} from 'uit-routing-animation-lib';
+import {slideTopAnimation} from 'uit-routing-animation-lib';
 @Component({
   selector: 'app-slide-top',
   templateUrl: './slide-top.component.html',
   styleUrls: ['./slide-top.component.css'],
   animations: [
-    slideTop
+    slideTopAnimation()
   ]
 })
 export class SlideTopComponent implements OnInit {

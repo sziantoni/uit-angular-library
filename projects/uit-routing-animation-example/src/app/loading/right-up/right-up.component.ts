@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {RouterOutlet} from '@angular/router';
-import {rightUp} from 'uit-routing-animation-lib';
+import {rightUpAnimation} from 'uit-routing-animation-lib';
 
 @Component({
   selector: 'app-right-up',
   templateUrl: './right-up.component.html',
   styleUrls: ['./right-up.component.css'],
   animations: [
-    rightUp
+    rightUpAnimation()
   ]
 })
 export class RightUpComponent implements OnInit {

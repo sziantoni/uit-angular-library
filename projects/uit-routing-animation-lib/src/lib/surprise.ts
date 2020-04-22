@@ -6,12 +6,11 @@ import {
   style,
   query,
   animate,
-  sequence, stagger, keyframes, group,
+  sequence, stagger, keyframes, animation, AnimationTriggerMetadata, useAnimation,
 } from '@angular/animations';
 
 export const surprise =
-  trigger('surprise', [
-    transition('* <=> *', [
+animation([
       query(':enter', [
         style({
           position: 'fixed',
@@ -62,8 +61,42 @@ export const surprise =
             style({ offset: 0.7, opacity: 0.7, transform: 'rotate(3deg)'}),
             style({ offset: 1, opacity: 1, transform: 'scale(1)'})
           ]))]), {optional: true})
-      ])
+      ])]);
 
-    ] , {params: {enterT: '0.7', leaveT: '0.4',  enterD: '0', leaveD: '0', enterTR: '0.5', enterDR: '0', leaveTR: '0.5', leaveDR: '0'} })
 
+
+export function surpriseAnimation_setParametres(
+  entert: string ,
+  enterd: string,
+  leavet: string,
+  leaved: string,
+  entertr: string,
+  leavetr: string,
+  enterdr: string,
+  leavedr: string ): AnimationTriggerMetadata {
+  return trigger('surprise', [
+    transition('* <=> *', useAnimation(surprise), {params: {
+        enterT: entert,
+        leaveT: leavet,
+        enterD: enterd,
+        leaveD: leaved,
+        enterTR: entertr,
+        leaveTR: leavetr,
+        enterDR: enterdr,
+        leaveDR: leavedr} })
   ]);
+}
+
+export function surpriseAnimation(): AnimationTriggerMetadata {
+  return trigger('surprise', [
+    transition('* <=> *', useAnimation(surprise), {params: {
+        enterT: '0.7',
+        leaveT: '0.5',
+        enterD: '0',
+        leaveD: '0',
+        enterTR: '0.5',
+        leaveTR: '0.5',
+        enterDR: '0',
+        leaveDR: '0'} })
+  ]);
+}

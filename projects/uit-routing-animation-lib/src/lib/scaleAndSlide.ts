@@ -3,23 +3,79 @@ import {
   transition,
   style,
   query,
-  group,
-  animateChild,
   animate,
-  keyframes, sequence, stagger,
+  keyframes, sequence,  AnimationTriggerMetadata,
 } from '@angular/animations';
 
 const ROUTING_ELEMENT = 'route-animations-element';
 
-
-export const scaleAndSlide =
-  trigger('scaleAndSlide', [
-    transition('* => scrollLeft', scale('-'), {params: {enterT: '0.5', leaveT: '0.5',  enterD: '0', leaveD: '0'} } ),
-    transition('* => scrollRight', scale('+'), {params: {enterT: '0.5', leaveT: '0.5',  enterD: '0', leaveD: '0'} }),
-    transition('scrollRight => *', scale('-'), {params: {enterT: '0.5', leaveT: '0.5',  enterD: '0', leaveD: '0'} }),
-    transition('scrollLeft => *', scale('+'), {params: {enterT: '0.5', leaveT: '0.5',  enterD: '0', leaveD: '0'} } ),
-    transition('* <=> *', scale('+'), {params: {enterT: '0.5', leaveT: '0.5',  enterD: '0', leaveD: '0'} } ),
+export function scaleAndSlideAnimation(): AnimationTriggerMetadata {
+  return trigger('scaleAndSlide', [
+    transition('* => scrollLeft', scale('-'), { params: {
+        enterT: '0.5',
+        leaveT: '0.5',
+        enterD: '0',
+        leaveD: '0' } }),
+    transition('* => scrollRight', scale('+'), { params: {
+        enterT: '0.5',
+        leaveT: '0.5',
+        enterD: '0',
+        leaveD: '0' } }),
+    transition('scrollRight => *', scale('-'), { params: {
+        enterT: '0.5',
+        leaveT: '0.5',
+        enterD: '0',
+        leaveD: '0' } }),
+    transition('scrollLeft => *', scale('+'), { params: {
+        enterT: '0.5',
+        leaveT: '0.5',
+        enterD: '0',
+        leaveD: '0' } }),
+    transition('* <=> *', scale('+'), { params: {
+        enterT: '0.5',
+        leaveT: '0.5',
+        enterD: '0',
+        leaveD: '0' } }),
   ]);
+}
+
+
+
+export function scaleAndSlideAnimation_setParametres(
+  entert: string ,
+  enterd: string,
+  leavet: string,
+  leaved: string,
+): AnimationTriggerMetadata {
+  return trigger('scaleAndSlide', [
+    transition('* => scrollLeft', scale('-'), { params: {
+        enterT: entert,
+        leaveT: leavet,
+        enterD: enterd,
+        leaveD: leaved } }),
+    transition('* => scrollRight', scale('+'), { params: {
+        enterT: entert,
+        leaveT: leavet,
+        enterD: enterd,
+        leaveD: leaved } }),
+    transition('scrollRight => *', scale('-'), { params: {
+        enterT: entert,
+        leaveT: leavet,
+        enterD: enterd,
+        leaveD: leaved } }),
+    transition('scrollLeft => *', scale('+'), { params: {
+        enterT: entert,
+        leaveT: leavet,
+        enterD: enterd,
+        leaveD: leaved } }),
+    transition('* <=> *', scale('+'), { params: {
+        enterT: entert,
+        leaveT: leavet,
+        enterD: enterd,
+        leaveD: leaved} }),
+  ]);
+}
+
 
 function scale(direction) {
   let opposite;

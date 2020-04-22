@@ -1,17 +1,15 @@
 const ROUTING_ELEMENT = 'route-animations-elements';
-const ROUTING_ELEMENT_SECOND_LEVEL = 'route-animations-elements-2-level';
 import {
   trigger,
   transition,
   style,
   query,
   animate,
-  sequence, stagger, keyframes, group, animation,
+  sequence, stagger, animation, AnimationTriggerMetadata, useAnimation,
 } from '@angular/animations';
 
 
-export const flip = trigger('flip', [
-  transition('* <=> *', [
+const flip = animation([
     query(':enter .' + ROUTING_ELEMENT, style({
       opacity: 0
     }), { optional: true}),
@@ -67,9 +65,41 @@ export const flip = trigger('flip', [
         )
       ]),
       { optional: true }
-    )])
-  ], {params: {enterT: '0.6', leaveT: '0.6',  enterD: '0', leaveD: '0', enterTR: '0.6', enterDR: '0', leaveTR: '0.6', leaveDR: '0'} })
-]);
+    )])])
+;
 
+export function flipAnimation_setParametres(
+  entert: string ,
+  enterd: string,
+  leavet: string,
+  leaved: string,
+  entertr: string,
+  leavetr: string,
+  enterdr: string,
+  leavedr: string ): AnimationTriggerMetadata {
+  return trigger('flip', [
+    transition('* <=> *', useAnimation(flip), {params: {
+        enterT: entert,
+        leaveT: leavet,
+        enterD: enterd,
+        leaveD: leaved,
+        enterTR: entertr,
+        leaveTR: leavetr,
+        enterDR: enterdr,
+        leaveDR: leavedr} })
+  ]);
+}
 
-
+export function flipAnimation(): AnimationTriggerMetadata {
+  return trigger('flip', [
+    transition('* <=> *', useAnimation(flip), {params: {
+        enterT: '0.6',
+        leaveT: '0.6',
+        enterD: '0',
+        leaveD: '0',
+        enterTR: '0.6',
+        leaveTR: '0.6',
+        enterDR: '0',
+        leaveDR: '0'} })
+  ]);
+}

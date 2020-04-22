@@ -1,17 +1,15 @@
 const ROUTING_ELEMENT = 'route-animations-elements';
-const ROUTING_ELEMENT_SECOND_LEVEL = 'route-animations-elements-2-level';
+
 import {
   trigger,
   transition,
   style,
   query,
   animate,
-  sequence, stagger,
+  sequence, stagger, animation, AnimationTriggerMetadata, useAnimation,
 } from '@angular/animations';
 
-export const slideBottom =
-  trigger('slideBottom', [
-    transition('* <=> *', [
+const slideBottom = animation([
       query(':enter > *', [
         style({
           position: 'fixed',
@@ -51,7 +49,37 @@ export const slideBottom =
           )
         ]),
         { optional: true }
-      )
-    ], {params: {enterT: '0.5', leaveT: '0.3',  enterD: '0', leaveD: '0', enterTR: '0.5', enterDR: '0'} })
+      )]);
 
+
+
+
+export function slideBottomAnimation_setParametres(
+  entert: string ,
+  enterd: string,
+  leavet: string,
+  leaved: string,
+  entertr: string,
+  enterdr: string): AnimationTriggerMetadata {
+  return trigger('slideBottom', [
+    transition('* <=> *', useAnimation(slideBottom), {params: {
+        enterT: entert,
+        leaveT: leavet,
+        enterD: enterd,
+        leaveD: leaved,
+        enterTR: entertr,
+        enterDR: enterdr} })
   ]);
+}
+
+export function slideBottomAnimation(): AnimationTriggerMetadata {
+  return trigger('slideBottom', [
+    transition('* <=> *', useAnimation(slideBottom), {params: {
+        enterT: '0.5',
+        leaveT: '0.3',
+        enterD: '0',
+        leaveD: '0',
+        enterTR: '0.5',
+        enterDR: '0'} })
+  ]);
+}

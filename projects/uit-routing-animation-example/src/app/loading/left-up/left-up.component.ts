@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {RouterOutlet} from '@angular/router';
-import {leftUp} from 'uit-routing-animation-lib';
+import {leftUpAnimation } from 'uit-routing-animation-lib';
 
 @Component({
   selector: 'app-left-up',
   templateUrl: './left-up.component.html',
   styleUrls: ['./left-up.component.css'],
   animations: [
-    leftUp
+    leftUpAnimation()
   ]
 })
 export class LeftUpComponent implements OnInit {

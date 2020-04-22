@@ -1,12 +1,15 @@
-const ROUTING_ELEMENT = 'route-animations-elements';
-import { trigger, transition, style, query, animate, sequence, keyframes, group, } from '@angular/animations';
-export const rotate3D = trigger('rotate3D', [
-  transition('* => scrollLeft', rotate('-'), { params: { enterT: '0.6', leaveT: '0.3', enterD: '0', leaveD: '0' } }),
-  transition('* => scrollRight', rotate('+'), { params: { enterT: '0.6', leaveT: '0.3', enterD: '0', leaveD: '0' } }),
-  transition('scrollRight => *', rotate('-'), { params: { enterT: '0.6', leaveT: '0.3', enterD: '0', leaveD: '0' } }),
-  transition('scrollLeft => *', rotate('+'), { params: { enterT: '0.6', leaveT: '0.3', enterD: '0', leaveD: '0' } }),
-  transition('* <=> *', rotate('+'), { params: { enterT: '0.6', leaveT: '0.3', enterD: '0', leaveD: '0' } }),
-]);
+import {
+  trigger,
+  transition,
+  style,
+  query,
+  animate,
+  sequence,
+  keyframes,
+  group,
+  AnimationTriggerMetadata
+} from '@angular/animations';
+
 function rotate(direction) {
   if (direction === '+') {
     return [
@@ -78,4 +81,72 @@ function rotate(direction) {
       ])
     ];
   }
+}
+
+
+export function rotate3DAnimation(): AnimationTriggerMetadata {
+  return trigger('rotate3D', [
+    transition('* => scrollLeft', rotate('-'), { params: {
+        enterT: '0.6',
+        leaveT: '0.3',
+        enterD: '0',
+        leaveD: '0' } }),
+    transition('* => scrollRight', rotate('+'), { params: {
+        enterT: '0.6',
+        leaveT: '0.3',
+        enterD: '0',
+        leaveD: '0' } }),
+    transition('scrollRight => *', rotate('-'), { params: {
+        enterT: '0.6',
+        leaveT: '0.3',
+        enterD: '0',
+        leaveD: '0' } }),
+    transition('scrollLeft => *', rotate('+'), { params: {
+        enterT: '0.6',
+        leaveT: '0.3',
+        enterD: '0',
+        leaveD: '0' } }),
+    transition('* <=> *', rotate('+'), { params: {
+        enterT: '0.6',
+        leaveT: '0.3',
+        enterD: '0',
+        leaveD: '0' } }),
+  ]);
+}
+
+
+
+export function rotate3DAnimation_setParametres(
+  entert: string ,
+  enterd: string,
+  leavet: string,
+  leaved: string,
+): AnimationTriggerMetadata {
+  return trigger('rotate3D', [
+    transition('* => scrollLeft', rotate('-'), { params: {
+        enterT: entert,
+        leaveT: leavet,
+        enterD: enterd,
+        leaveD: leaved } }),
+    transition('* => scrollRight', rotate('+'), { params: {
+        enterT: entert,
+        leaveT: leavet,
+        enterD: enterd,
+        leaveD: leaved } }),
+    transition('scrollRight => *', rotate('-'), { params: {
+        enterT: entert,
+        leaveT: leavet,
+        enterD: enterd,
+        leaveD: leaved } }),
+    transition('scrollLeft => *', rotate('+'), { params: {
+        enterT: entert,
+        leaveT: leavet,
+        enterD: enterd,
+        leaveD: leaved } }),
+    transition('* <=> *', rotate('+'), { params: {
+        enterT: entert,
+        leaveT: leavet,
+        enterD: enterd,
+        leaveD: leaved} }),
+  ]);
 }

@@ -1,13 +1,13 @@
-import {Component, HostBinding, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
-import {scrollSide} from 'uit-routing-animation-lib';
+import {scrollSideAnimation} from 'uit-routing-animation-lib';
 
 @Component({
   selector: 'app-scroll-side',
   templateUrl: './scroll-side.component.html',
   styleUrls: ['./scroll-side.component.css'],
   animations: [
-    scrollSide
+    scrollSideAnimation()
   ]
 })
 export class ScrollSideComponent implements OnInit {

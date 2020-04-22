@@ -1,11 +1,4 @@
 import { Component, HostBinding } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import {
-  slideBottom,
-  scrollSide,
-  slideTop,
-  rotateSx, leftUp, rightUp, rotateDx, flip, fadeBack, scaleAndSlide, slideTitleDownBlocks, rotate3D
-} from 'uit-routing-animation-lib';
 import {SlideBottomComponent} from './loading/slide-bottom/slide-bottom.component';
 import {ScrollSideComponent} from './loading/scroll-side/scroll-side.component';
 import {SlideTopComponent} from './loading/slide-top/slide-top.component';
@@ -21,23 +14,12 @@ import {SlideTitleDownBlocksComponent} from './loading/slide-title-down-blocks/s
 import {Rotate3dComponent} from './loading/rotate3d/rotate3d.component';
 
 
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
   animations: [
-    slideBottom,
-    scrollSide,
-    slideTop,
-    rotateSx,
-    leftUp,
-    rightUp,
-    rotateDx,
-    flip,
-    fadeBack,
-    scaleAndSlide,
-    slideTitleDownBlocks,
-    rotate3D
   ]
 })
 
