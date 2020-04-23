@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SlideBottomComponent } from './slide-bottom.component';
+import { SlideLowTopComponent } from './slide-low-top.component';
 
-describe('SlideBottomComponent', () => {
-  let component: SlideBottomComponent;
-  let fixture: ComponentFixture<SlideBottomComponent>;
+describe('SlideLowTopComponent', () => {
+  let component: SlideLowTopComponent;
+  let fixture: ComponentFixture<SlideLowTopComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SlideBottomComponent ]
+      declarations: [ SlideLowTopComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SlideBottomComponent);
+    fixture = TestBed.createComponent(SlideLowTopComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

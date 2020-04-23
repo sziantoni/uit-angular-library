@@ -1,7 +1,5 @@
 import { Component, HostBinding } from '@angular/core';
-import {SlideBottomComponent} from './loading/slide-bottom/slide-bottom.component';
 import {ScrollSideComponent} from './loading/scroll-side/scroll-side.component';
-import {SlideTopComponent} from './loading/slide-top/slide-top.component';
 import {RotateSxComponent} from './loading/rotate-sx/rotate-sx.component';
 import {LeftUpComponent} from './loading/left-up/left-up.component';
 import {RightUpComponent} from './loading/right-up/right-up.component';
@@ -12,7 +10,12 @@ import {ScaleAndSlideComponent} from './loading/scale-and-slide/scale-and-slide.
 import {SurpriseComponent} from './loading/surprise/surprise.component';
 import {SlideTitleDownBlocksComponent} from './loading/slide-title-down-blocks/slide-title-down-blocks.component';
 import {Rotate3dComponent} from './loading/rotate3d/rotate3d.component';
-
+import {SlideHighBottomComponent} from './loading/slide/slide-high-bottom/slide-high-bottom.component';
+import {SlideHighTopComponent} from './loading/slide/slide-high-top/slide-high-top.component';
+import {SlideLowTopComponent} from './loading/slide/slide-low-top/slide-low-top.component';
+import {SlideLowBottomComponent} from './loading/slide/slide-low-bottom/slide-low-bottom.component';
+import {SlideMediumBottomComponent} from './loading/slide/slide-medium-bottom/slide-medium-bottom.component';
+import {SlideMediumTopComponent} from './loading/slide/slide-medium-top/slide-medium-top.component';
 
 
 @Component({
@@ -24,26 +27,46 @@ import {Rotate3dComponent} from './loading/rotate3d/rotate3d.component';
 })
 
 export class AppComponent {
-  animationSelected = Rotate3dComponent;
-  animationString = 'Rotate 3D';
+  animationSelected = SlideHighBottomComponent;
+  animationString = 'Slide';
   @HostBinding('@.disabled')
   public animationsDisabled = false;
 
   assignComponent(component) {
     switch (component) {
-      case 'slideBottom': {
-        this.animationSelected = SlideBottomComponent;
-        this.animationString = 'Slide Bottom';
+      case 'slideHighBottom': {
+        this.animationSelected = SlideHighBottomComponent;
+        this.animationString = 'Slide - Bottom/High';
+        break;
+      }
+      case 'slideHighTop': {
+        this.animationSelected = SlideHighTopComponent;
+        this.animationString = 'Slide - Top/High';
+        break;
+      }
+      case 'slideLowBottom': {
+        this.animationSelected = SlideLowBottomComponent;
+        this.animationString = 'Slide - Bottom/Low';
+        break;
+      }
+      case 'slideLowTop': {
+        this.animationSelected = SlideLowTopComponent;
+        this.animationString = 'Slide - Top/Low';
+        break;
+      }
+      case 'slideMediumBottom': {
+        this.animationSelected = SlideMediumBottomComponent;
+        this.animationString = 'Slide - Bottom/Medium';
+        break;
+      }
+      case 'slideMediumTop': {
+        this.animationSelected = SlideMediumTopComponent;
+        this.animationString = 'Slide - Top/Medium';
         break;
       }
       case 'scrollSide': {
         this.animationSelected = ScrollSideComponent;
         this.animationString = 'Scroll Side';
-        break;
-      }
-      case 'slideTop': {
-        this.animationSelected = SlideTopComponent;
-        this.animationString = 'Slide Top';
         break;
       }
       case 'rotateSx': {

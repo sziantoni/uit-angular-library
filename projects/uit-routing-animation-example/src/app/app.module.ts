@@ -7,9 +7,7 @@ import { AboutComponent } from './about/about.component';
 import { FeaturesOfSiteComponent } from './features-of-site/features-of-site.component';
 import {RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
-import { SlideBottomComponent } from './loading/slide-bottom/slide-bottom.component';
 import { ScrollSideComponent } from './loading/scroll-side/scroll-side.component';
-import { SlideTopComponent } from './loading/slide-top/slide-top.component';
 import { RotateSxComponent } from './loading/rotate-sx/rotate-sx.component';
 import { PageExampleComponent } from './page-example/page-example.component';
 import { LeftUpComponent } from './loading/left-up/left-up.component';
@@ -21,6 +19,12 @@ import { ScaleAndSlideComponent } from './loading/scale-and-slide/scale-and-slid
 import { SurpriseComponent } from './loading/surprise/surprise.component';
 import { SlideTitleDownBlocksComponent } from './loading/slide-title-down-blocks/slide-title-down-blocks.component';
 import { Rotate3dComponent } from './loading/rotate3d/rotate3d.component';
+import { SlideHighBottomComponent} from './loading/slide/slide-high-bottom/slide-high-bottom.component';
+import { SlideMediumTopComponent } from './loading/slide/slide-medium-top/slide-medium-top.component';
+import { SlideMediumBottomComponent } from './loading/slide/slide-medium-bottom/slide-medium-bottom.component';
+import { SlideLowBottomComponent } from './loading/slide/slide-low-bottom/slide-low-bottom.component';
+import { SlideLowTopComponent } from './loading/slide/slide-low-top/slide-low-top.component';
+import { SlideHighTopComponent } from './loading/slide/slide-high-top/slide-high-top.component';
 
 
 @NgModule({
@@ -29,9 +33,7 @@ import { Rotate3dComponent } from './loading/rotate3d/rotate3d.component';
     HomeComponent,
     AboutComponent,
     FeaturesOfSiteComponent,
-    SlideBottomComponent,
     ScrollSideComponent,
-    SlideTopComponent,
     RotateSxComponent,
     PageExampleComponent,
     LeftUpComponent,
@@ -43,6 +45,12 @@ import { Rotate3dComponent } from './loading/rotate3d/rotate3d.component';
     SurpriseComponent,
     SlideTitleDownBlocksComponent,
     Rotate3dComponent,
+    SlideHighBottomComponent,
+    SlideMediumTopComponent,
+    SlideMediumBottomComponent,
+    SlideLowBottomComponent,
+    SlideLowTopComponent,
+    SlideHighTopComponent,
   ],
   imports: [
     BrowserModule,

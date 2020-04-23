@@ -6,7 +6,7 @@ export const ROUTING_ELEMENT = 'route-animations-elements';
 export const ROUTING_ELEMENT_SECOND_LEVEL = 'route-animations-elements-2-level';
 export const ROUTE_ANIMATIONS_TEXT = 'route-animation-text';
 
-export {slideBottomAnimation, slideBottomAnimation_setParametres} from './lib/slideBottom';
+export {slide, slide_customSpeed} from './lib/slide';
 export {scrollSideAnimation, scrollSideAnimation_setParametres} from './lib/scrollSide';
 export {slideTopAnimation, slideTopAnimation_setParametres} from './lib/slideTop';
 export {rotateSxAnimation, rotateSxAnimation_setParametres} from './lib/rotateSx';

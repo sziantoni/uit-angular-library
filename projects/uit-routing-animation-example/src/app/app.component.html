@@ -20,47 +20,32 @@
 </div>
 </div>
 
-<div class = 'animation_selector' >
-  <button class="buttonStyle" (click)="assignComponent('slideBottom')">
-    Slide Bottom
+<div class="anim_box">
+  <button class="animBoxTitle">Slide</button>
+  <div class="dropContent">
+  <button class="microButtonStyle" (click)="assignComponent('slideHighTop')">
+    Top / High
   </button>
-  <button class="buttonStyle"  (click)="assignComponent('slideTop')">
-    Slide Top
+  <button class="microButtonStyle" (click)="assignComponent('slideHighBottom')">
+    Bottom / High
   </button>
-  <button class="buttonStyle" (click)="assignComponent('scrollSide')">
-    Scroll Side
+    <button class="microButtonStyle" (click)="assignComponent('slideMediumBottom')">
+      Bottom / Medium
+    </button>
+    <button class="microButtonStyle" (click)="assignComponent('slideMediumTop')">
+      Top / Medium
+    </button>
+    <button class="microButtonStyle" (click)="assignComponent('slideLowBottom')">
+      Bottom / Low
+    </button>
+  <button class="microButtonStyle" (click)="assignComponent('slideLowTop')">
+    Top / Low
   </button>
-  <button class="buttonStyle"  (click)="assignComponent('rotateSx')">
-    Rotate Sx
-  </button>
-  <button class="buttonStyle"  (click)="assignComponent('rotateDx')">
-    Rotate Dx
-  </button>
-  <button class="buttonStyle" (click)="assignComponent('leftUp')">
-    Left Up
-  </button>
-  <button class="buttonStyle" (click)="assignComponent('rightUp')">
-    Right Up
-  </button>
-  <button class="buttonStyle" (click)="assignComponent('flip')">
-    Flip
-  </button>
-  <button class="buttonStyle"  (click)="assignComponent('fadeBack')">
-    Fade Back
-  </button>
-  <button class="buttonStyle" (click)="assignComponent('scaleAndSlide')">
-    Scale and slide
-  </button>
-  <button class="buttonStyle" (click)="assignComponent('surprise')">
-    Surprise
-  </button>
-  <button class="buttonStyle" (click)="assignComponent('stdb')">
-    Slide Title Down Blocks
-  </button>
-  <button class="buttonStyle"  (click)="assignComponent('rotate3d')">
-    Rotate 3D
-  </button>
+  </div>
 </div>
+
+
+
 
 </body>
 
