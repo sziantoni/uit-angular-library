@@ -8,7 +8,6 @@ export const ROUTE_ANIMATIONS_TEXT = 'route-animation-text';
 
 export {slide, slide_customSpeed} from './lib/slide';
 export {scrollSideAnimation, scrollSideAnimation_setParametres} from './lib/scrollSide';
-export {slideTopAnimation, slideTopAnimation_setParametres} from './lib/slideTop';
 export {rotateSxAnimation, rotateSxAnimation_setParametres} from './lib/rotateSx';
 export {rotateDxAnimation, rotateDxAnimation_setParametres} from './lib/rotateDx';
 export {leftUpAnimation, leftUp_setParametres} from './lib/leftUp';
