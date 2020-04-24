@@ -9,7 +9,7 @@ import {
 const ROUTING_ELEMENT = 'route-animations-elements';
 
 
-const slideTitleDownBlocks =
+const slideTitleDownBlocksA =
   animation([
     query(':leave', style({
         position: 'relative'}), {
@@ -73,38 +73,157 @@ const slideTitleDownBlocks =
       ])]);
 
 
-export function slideTitleDownBlocksAnimation_setParametres(
-  entert: string ,
-  enterd: string,
-  leavet: string,
-  leaved: string,
-  entertr: string,
-  leavetr: string,
-  enterdr: string,
-  leavedr: string ): AnimationTriggerMetadata {
-  return trigger('slideTitleDownBlocks', [
-    transition('* <=> *', useAnimation(slideTitleDownBlocks), {params: {
-        enterT: entert,
-        leaveT: leavet,
-        enterD: enterd,
-        leaveD: leaved,
-        enterTR: entertr,
-        leaveTR: leavetr,
-        enterDR: enterdr,
-        leaveDR: leavedr} })
-  ]);
-}
+export function slideTitleDownBlocks_customSpeed(slideSpeed: string, downSpeed: string): AnimationTriggerMetadata {
+  switch (slideSpeed){
+    case ('medium') : {
+      switch (downSpeed) {
+        case ('low') : {
+          return trigger('slideTitleDownBlocks', [
+            transition('* <=> *', useAnimation(slideTitleDownBlocksA), {params: {
+                enterT: '0.7',
+                leaveT: '0.7',
+                enterD: '0',
+                leaveD: '0',
+                enterTR: '0.6',
+                leaveTR: '0.6',
+                enterDR: '0',
+                leaveDR: '0'}})
+          ]);
+        }
+        // tslint:disable-next-line:no-switch-case-fall-through
+        case ('medium') : {
+          return trigger('slideTitleDownBlocks', [
+            transition('* <=> *', useAnimation(slideTitleDownBlocksA), {params: {
+                enterT: '0.7',
+                leaveT: '0.7',
+                enterD: '0',
+                leaveD: '0',
+                enterTR: '0.4',
+                leaveTR: '0.4',
+                enterDR: '0',
+                leaveDR: '0'}})
+          ]);
+        }
+        case ('high') : {
+          return trigger('slideTitleDownBlocks', [
+            transition('* <=> *', useAnimation(slideTitleDownBlocksA), {params: {
+                enterT: '0.7',
+                leaveT: '0.7',
+                enterD: '0',
+                leaveD: '0',
+                enterTR: '0.2',
+                leaveTR: '0.2',
+                enterDR: '0',
+                leaveDR: '0'}})
+          ]);
+        }
+      }
 
-export function slideTitleDownBlocksAnimation(): AnimationTriggerMetadata {
-  return trigger('slideTitleDownBlocks', [
-    transition('* <=> *', useAnimation(slideTitleDownBlocks), {params: {
-        enterT: '0.7',
-        leaveT: '0.7',
-        enterD: '0',
-        leaveD: '0',
-        enterTR: '0.4',
-        leaveTR: '0.4',
-        enterDR: '0',
-        leaveDR: '0'} })
-  ]);
-}
+    }
+    // tslint:disable-next-line:no-switch-case-fall-through
+    case ('low') : {
+      switch (downSpeed) {
+        case ('low') : {
+          return trigger('slideTitleDownBlocks', [
+            transition('* <=> *', useAnimation(slideTitleDownBlocksA), {params: {
+                enterT: '1.2',
+                leaveT: '1.2',
+                enterD: '0',
+                leaveD: '0',
+                enterTR: '0.6',
+                leaveTR: '0.6',
+                enterDR: '0',
+                leaveDR: '0'}})
+          ]);
+        }
+        // tslint:disable-next-line:no-switch-case-fall-through
+        case ('medium') : {
+          return trigger('slideTitleDownBlocks', [
+            transition('* <=> *', useAnimation(slideTitleDownBlocksA), {params: {
+                enterT: '1.3',
+                leaveT: '1.3',
+                enterD: '0',
+                leaveD: '0',
+                enterTR: '0.4',
+                leaveTR: '0.4',
+                enterDR: '0',
+                leaveDR: '0'}})
+          ]);
+        }
+        case ('high') : {
+          return trigger('slideTitleDownBlocks', [
+            transition('* <=> *', useAnimation(slideTitleDownBlocksA), {params: {
+                enterT: '1.3',
+                leaveT: '1.3',
+                enterD: '0',
+                leaveD: '0',
+                enterTR: '0.2',
+                leaveTR: '0.2',
+                enterDR: '0',
+                leaveDR: '0'}})
+          ]);
+        }
+      }
+
+    }
+    // tslint:disable-next-line:no-switch-case-fall-through
+    case ('high') : {
+      switch (downSpeed) {
+        case ('low') : {
+          return trigger('slideTitleDownBlocks', [
+            transition('* <=> *', useAnimation(slideTitleDownBlocksA), {params: {
+                enterT: '0.35',
+                leaveT: '0.35',
+                enterD: '0',
+                leaveD: '0',
+                enterTR: '0.6',
+                leaveTR: '0.6',
+                enterDR: '0',
+                leaveDR: '0'}})
+          ]);
+        }
+        // tslint:disable-next-line:no-switch-case-fall-through
+        case ('medium') : {
+          return trigger('slideTitleDownBlocks', [
+            transition('* <=> *', useAnimation(slideTitleDownBlocksA), {params: {
+                enterT: '0.35',
+                leaveT: '0.35',
+                enterD: '0',
+                leaveD: '0',
+                enterTR: '0.4',
+                leaveTR: '0.4',
+                enterDR: '0',
+                leaveDR: '0'}})
+          ]);
+        }
+        case ('high') : {
+          return trigger('slideTitleDownBlocks', [
+            transition('* <=> *', useAnimation(slideTitleDownBlocksA), {params: {
+                enterT: '0.35',
+                leaveT: '0.35',
+                enterD: '0',
+                leaveD: '0',
+                enterTR: '0.2',
+                leaveTR: '0.2',
+                enterDR: '0',
+                leaveDR: '0'}})
+          ]);
+        }
+      }
+
+    }}}
+
+
+export function slideTitleDownBlocks(): AnimationTriggerMetadata {
+          return trigger('slideTitleDownBlocks', [
+            transition('* <=> *', useAnimation(slideTitleDownBlocksA), {params: {
+                enterT: '0.7',
+                leaveT: '0.7',
+                enterD: '0',
+                leaveD: '0',
+                enterTR: '0.6',
+                leaveTR: '0.6',
+                enterDR: '0',
+                leaveDR: '0'}})
+          ]);
+        }

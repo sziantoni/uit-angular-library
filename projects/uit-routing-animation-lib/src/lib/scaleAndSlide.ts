@@ -9,71 +9,195 @@ import {
 
 const ROUTING_ELEMENT = 'route-animations-element';
 
-export function scaleAndSlideAnimation(): AnimationTriggerMetadata {
+export function scaleAndSlide(): AnimationTriggerMetadata {
   return trigger('scaleAndSlide', [
     transition('* => scrollLeft', scale('-'), { params: {
-        enterT: '0.5',
-        leaveT: '0.5',
+        enterT: '0.6',
+        leaveT: '0.8',
         enterD: '0',
         leaveD: '0' } }),
     transition('* => scrollRight', scale('+'), { params: {
-        enterT: '0.5',
-        leaveT: '0.5',
+        enterT: '0.6',
+        leaveT: '0.8',
         enterD: '0',
         leaveD: '0' } }),
     transition('scrollRight => *', scale('-'), { params: {
-        enterT: '0.5',
-        leaveT: '0.5',
+        enterT: '0.6',
+        leaveT: '0.8',
         enterD: '0',
         leaveD: '0' } }),
     transition('scrollLeft => *', scale('+'), { params: {
-        enterT: '0.5',
-        leaveT: '0.5',
+        enterT: '0.6',
+        leaveT: '0.8',
         enterD: '0',
         leaveD: '0' } }),
     transition('* <=> *', scale('+'), { params: {
-        enterT: '0.5',
-        leaveT: '0.5',
+        enterT: '0.6',
+        leaveT: '0.8',
         enterD: '0',
         leaveD: '0' } }),
   ]);
 }
 
 
+export function scaleAndSlide_customAll(direction: string, speed: string): AnimationTriggerMetadata {
+  switch (direction) {
+    case('left'): {
+      switch (speed) {
+        case ('low') : {
+          return trigger('scaleAndSlide', [
+            transition('* <=> *', scale('-'), { params: {
+                enterT: '1.2',
+                leaveT: '1.4',
+                enterD: '0',
+                leaveD: '0' } })]);
+        }
+        case ('medium') : {
+          return trigger('scaleAndSlide', [
+            transition('* <=> *', scale('-'), { params: {
+                enterT: '0.6',
+                leaveT: '0.8',
+                enterD: '0',
+                leaveD: '0' } })]);
+        }
+        case ('high') : {
+          return trigger('scaleAndSlide', [
+            transition('* <=> *', scale('-'), { params: {
+                enterT: '0.3',
+                leaveT: '0.5',
+                enterD: '0',
+                leaveD: '0' } })]);
+        }
+      }
 
-export function scaleAndSlideAnimation_setParametres(
-  entert: string ,
-  enterd: string,
-  leavet: string,
-  leaved: string,
-): AnimationTriggerMetadata {
-  return trigger('scaleAndSlide', [
-    transition('* => scrollLeft', scale('-'), { params: {
-        enterT: entert,
-        leaveT: leavet,
-        enterD: enterd,
-        leaveD: leaved } }),
-    transition('* => scrollRight', scale('+'), { params: {
-        enterT: entert,
-        leaveT: leavet,
-        enterD: enterd,
-        leaveD: leaved } }),
-    transition('scrollRight => *', scale('-'), { params: {
-        enterT: entert,
-        leaveT: leavet,
-        enterD: enterd,
-        leaveD: leaved } }),
-    transition('scrollLeft => *', scale('+'), { params: {
-        enterT: entert,
-        leaveT: leavet,
-        enterD: enterd,
-        leaveD: leaved } }),
-    transition('* <=> *', scale('+'), { params: {
-        enterT: entert,
-        leaveT: leavet,
-        enterD: enterd,
-        leaveD: leaved} }),
-  ]);
+    }
+    // tslint:disable-next-line:no-switch-case-fall-through
+    case('right'): {
+      switch (speed) {
+        case ('low') : {
+          return trigger('scaleAndSlide', [
+            transition('* <=> *', scale('+'), { params: {
+                enterT: '1.2',
+                leaveT: '1.4',
+                enterD: '0',
+                leaveD: '0' } })]);
+        }
+        case ('medium') : {
+          return trigger('scaleAndSlide', [
+            transition('* <=> *', scale('+'), { params: {
+                enterT: '0.6',
+                leaveT: '0.8',
+                enterD: '0',
+                leaveD: '0' } })]);
+        }
+        case ('high') : {
+          return trigger('scaleAndSlide', [
+            transition('* <=> *', scale('+'), { params: {
+                enterT: '0.3',
+                leaveT: '0.5',
+                enterD: '0',
+                leaveD: '0' } })]);
+        }
+      }
+
+    }
+  }
+
+}
+
+export function scaleAndSlide_customSpeed(speed: string): AnimationTriggerMetadata {
+  switch (speed) {
+    case ('low') : {
+      return trigger('scaleAndSlide', [
+        transition('* => scrollLeft', scale('-'), { params: {
+            enterT: '1.2',
+            leaveT: '1.4',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('* => scrollRight', scale('+'), { params: {
+            enterT: '1.2',
+            leaveT: '1.4',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('scrollRight => *', scale('-'), { params: {
+            enterT: '1.2',
+            leaveT: '1.4',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('scrollLeft => *', scale('+'), { params: {
+            enterT: '1.2',
+            leaveT: '1.4',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('* <=> *', scale('+'), { params: {
+            enterT: '1.2',
+            leaveT: '1.4',
+            enterD: '0',
+            leaveD: '0' } }),
+      ]);
+    }
+    // tslint:disable-next-line:no-switch-case-fall-through
+    case ('medium') : {
+      return trigger('scaleAndSlide', [
+        transition('* => scrollLeft', scale('-'), { params: {
+            enterT: '0.6',
+            leaveT: '0.8',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('* => scrollRight', scale('+'), { params: {
+            enterT: '0.6',
+            leaveT: '0.8',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('scrollRight => *', scale('-'), { params: {
+            enterT: '0.6',
+            leaveT: '0.8',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('scrollLeft => *', scale('+'), { params: {
+            enterT: '0.6',
+            leaveT: '0.8',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('* <=> *', scale('+'), { params: {
+            enterT: '0.6',
+            leaveT: '0.8',
+            enterD: '0',
+            leaveD: '0' } }),
+      ]);
+    }
+    case ('high') : {
+      return trigger('scaleAndSlide', [
+        transition('* => scrollLeft', scale('-'), { params: {
+            enterT: '0.3',
+            leaveT: '0.5',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('* => scrollRight', scale('+'), { params: {
+            enterT: '0.3',
+            leaveT: '0.5',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('scrollRight => *', scale('-'), { params: {
+            enterT: '0.3',
+            leaveT: '0.5',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('scrollLeft => *', scale('+'), { params: {
+            enterT: '0.3',
+            leaveT: '0.5',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('* <=> *', scale('+'), { params: {
+            enterT: '0.3',
+            leaveT: '0.5',
+            enterD: '0',
+            leaveD: '0' } }),
+      ]);
+    }
+
+  }
+
 }
 
 
@@ -111,8 +235,8 @@ function scale(direction) {
       query(':leave', [
         animate('{{leaveT}}s {{leaveD}}s ease-in', keyframes([
           style({ opacity: 1 , transform: 'scale(1)', offset: 0}),
-          style({opacity: 1, transform: 'scale(.7)', offset: 0.55 }),
-          style({opacity: 1, transform: 'scale(.7) translateX(' + [opposite] + '300%)', offset: 0.65 }),
+          style({opacity: 1, transform: 'scale(.7)', offset: 0.5 }),
+          style({opacity: 1, transform: 'scale(.7) translateX(' + [opposite] + '0%)', offset: 0.55 }),
           style({opacity: 0, transform: 'scale(.7) translateX(' + [opposite] + '300%)',  offset: 1 }),
         ])),
         style({position: 'fixed'})

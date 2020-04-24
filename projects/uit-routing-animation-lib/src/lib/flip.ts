@@ -26,7 +26,7 @@ const flipA = animation([
         stagger(-200, [
           style({ transform: 'perspective(3000px) rotate3d(0, 1, 0, 0)', position: 'relative',  opacity: 1, flex: 'inherit' }),
           animate(
-            '{{enterTR}}s {{enterDR}}s ease-in',
+            '{{leaveTR}}s {{leaveDR}}s ease-in',
             style({transform: 'perspective(2000px) rotate3d(0, 1, 0, 90deg)',
               opacity: 0, offset: 1, flex: 'inherit' }),
           )

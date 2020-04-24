@@ -10,8 +10,9 @@ import {
   AnimationTriggerMetadata
 } from '@angular/animations';
 
-function rotate(direction) {
-  if (direction === '+') {
+
+function rotateA(dir) {
+  if (dir === '+') {
     return [
       query(':enter, :leave', style({
         position: 'fixed',
@@ -84,29 +85,29 @@ function rotate(direction) {
 }
 
 
-export function rotate3DAnimation(): AnimationTriggerMetadata {
+export function rotate3D(): AnimationTriggerMetadata {
   return trigger('rotate3D', [
-    transition('* => scrollLeft', rotate('-'), { params: {
+    transition('* => scrollLeft', rotateA('-'), { params: {
         enterT: '0.6',
         leaveT: '0.3',
         enterD: '0',
         leaveD: '0' } }),
-    transition('* => scrollRight', rotate('+'), { params: {
+    transition('* => scrollRight', rotateA('+'), { params: {
         enterT: '0.6',
         leaveT: '0.3',
         enterD: '0',
         leaveD: '0' } }),
-    transition('scrollRight => *', rotate('-'), { params: {
+    transition('scrollRight => *', rotateA('-'), { params: {
         enterT: '0.6',
         leaveT: '0.3',
         enterD: '0',
         leaveD: '0' } }),
-    transition('scrollLeft => *', rotate('+'), { params: {
+    transition('scrollLeft => *', rotateA('+'), { params: {
         enterT: '0.6',
         leaveT: '0.3',
         enterD: '0',
         leaveD: '0' } }),
-    transition('* <=> *', rotate('+'), { params: {
+    transition('* <=> *', rotateA('+'), { params: {
         enterT: '0.6',
         leaveT: '0.3',
         enterD: '0',
@@ -115,38 +116,162 @@ export function rotate3DAnimation(): AnimationTriggerMetadata {
 }
 
 
+export function rotate3D_customAll(direction: string, speed: string): AnimationTriggerMetadata {
+  switch (direction) {
+    case('left'): {
+      switch (speed) {
+        case ('low') : {
+          return trigger('rotate3D', [
+            transition('* <=> *', rotateA('-'), { params: {
+                enterT: '1.2',
+                leaveT: '0.6',
+                enterD: '0',
+                leaveD: '0' } })]);
+        }
+        case ('medium') : {
+          return trigger('rotate3D', [
+            transition('* <=> *', rotateA('-'), { params: {
+                enterT: '0.6',
+                leaveT: '0.3',
+                enterD: '0',
+                leaveD: '0' } })]);
+        }
+        case ('high') : {
+          return trigger('rotate3D', [
+            transition('* <=> *', rotateA('-'), { params: {
+                enterT: '0.3',
+                leaveT: '0.15',
+                enterD: '0',
+                leaveD: '0' } })]);
+        }
+      }
 
-export function rotate3DAnimation_setParametres(
-  entert: string ,
-  enterd: string,
-  leavet: string,
-  leaved: string,
-): AnimationTriggerMetadata {
-  return trigger('rotate3D', [
-    transition('* => scrollLeft', rotate('-'), { params: {
-        enterT: entert,
-        leaveT: leavet,
-        enterD: enterd,
-        leaveD: leaved } }),
-    transition('* => scrollRight', rotate('+'), { params: {
-        enterT: entert,
-        leaveT: leavet,
-        enterD: enterd,
-        leaveD: leaved } }),
-    transition('scrollRight => *', rotate('-'), { params: {
-        enterT: entert,
-        leaveT: leavet,
-        enterD: enterd,
-        leaveD: leaved } }),
-    transition('scrollLeft => *', rotate('+'), { params: {
-        enterT: entert,
-        leaveT: leavet,
-        enterD: enterd,
-        leaveD: leaved } }),
-    transition('* <=> *', rotate('+'), { params: {
-        enterT: entert,
-        leaveT: leavet,
-        enterD: enterd,
-        leaveD: leaved} }),
-  ]);
+    }
+    // tslint:disable-next-line:no-switch-case-fall-through
+    case('right'): {
+      switch (speed) {
+        case ('low') : {
+          return trigger('rotate3D', [
+            transition('* <=> *', rotateA('+'), { params: {
+                enterT: '1.2',
+                leaveT: '0.6',
+                enterD: '0',
+                leaveD: '0' } })]);
+        }
+        case ('medium') : {
+          return trigger('rotate3D', [
+            transition('* <=> *', rotateA('+'), { params: {
+                enterT: '0.6',
+                leaveT: '0.3',
+                enterD: '0',
+                leaveD: '0' } })]);
+        }
+        case ('high') : {
+          return trigger('rotate3D', [
+            transition('* <=> *', rotateA('+'), { params: {
+                enterT: '0.3',
+                leaveT: '0.15',
+                enterD: '0',
+                leaveD: '0' } })]);
+        }
+      }
+
+    }
+    }
+
+  }
+
+export function rotate3D_customSpeed(speed: string): AnimationTriggerMetadata {
+  switch (speed) {
+    case ('low') : {
+      return trigger('rotate3D', [
+        transition('* => scrollLeft', rotateA('-'), { params: {
+            enterT: '1.2',
+            leaveT: '0.6',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('* => scrollRight', rotateA('+'), { params: {
+            enterT: '1.2',
+            leaveT: '0.6',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('scrollRight => *', rotateA('-'), { params: {
+            enterT: '1.2',
+            leaveT: '0.6',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('scrollLeft => *', rotateA('+'), { params: {
+            enterT: '1.2',
+            leaveT: '0.6',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('* <=> *', rotateA('+'), { params: {
+            enterT: '1.2',
+            leaveT: '0.6',
+            enterD: '0',
+            leaveD: '0' } }),
+      ]);
+    }
+    // tslint:disable-next-line:no-switch-case-fall-through
+    case ('medium') : {
+      return trigger('rotate3D', [
+        transition('* => scrollLeft', rotateA('-'), { params: {
+            enterT: '0.6',
+            leaveT: '0.3',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('* => scrollRight', rotateA('+'), { params: {
+            enterT: '0.6',
+            leaveT: '0.3',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('scrollRight => *', rotateA('-'), { params: {
+            enterT: '0.6',
+            leaveT: '0.3',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('scrollLeft => *', rotateA('+'), { params: {
+            enterT: '0.6',
+            leaveT: '0.3',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('* <=> *', rotateA('+'), { params: {
+            enterT: '0.6',
+            leaveT: '0.3',
+            enterD: '0',
+            leaveD: '0' } }),
+      ]);
+    }
+    case ('high') : {
+      return trigger('rotate3D', [
+        transition('* => scrollLeft', rotateA('-'), { params: {
+            enterT: '0.3',
+            leaveT: '0.15',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('* => scrollRight', rotateA('+'), { params: {
+            enterT: '0.3',
+            leaveT: '0.15',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('scrollRight => *', rotateA('-'), { params: {
+            enterT: '0.3',
+            leaveT: '0.15',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('scrollLeft => *', rotateA('+'), { params: {
+            enterT: '0.3',
+            leaveT: '0.15',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('* <=> *', rotateA('+'), { params: {
+            enterT: '0.3',
+            leaveT: '0.15',
+            enterD: '0',
+            leaveD: '0' } }),
+      ]);
+    }
+
+  }
+
 }

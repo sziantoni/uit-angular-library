@@ -9,7 +9,7 @@ import {
 } from '@angular/animations';
 
 
-const fadeBack = animation([
+const fadeBackA = animation([
     query(':enter' ,
       style({
         opacity: 0,
@@ -55,31 +55,51 @@ const fadeBack = animation([
         ] )], {optional: true} )])
   ])
 ;
-export function fadeBackAnimation_setParametres(
-  entert: string ,
-  enterd: string,
-  leavet: string,
-  leaved: string,
-  entertr: string,
-  leavetr: string,
-  enterdr: string,
-  leavedr: string ): AnimationTriggerMetadata {
-  return trigger('fadeBack', [
-    transition('* <=> *', useAnimation(fadeBack), {params: {
-        enterT: entert,
-        leaveT: leavet,
-        enterD: enterd,
-        leaveD: leaved,
-        enterTR: entertr,
-        leaveTR: leavetr,
-        enterDR: enterdr,
-        leaveDR: leavedr} })
-  ]);
-}
+export function fadeBack_customSpeed(speed: string): AnimationTriggerMetadata {
+  switch (speed){
+    case ('medium') : {
+      return trigger('fadeBack', [
+        transition('* <=> *', useAnimation(fadeBackA), {params: {
+            enterT: '0.6',
+            leaveT: '0.5',
+            enterD: '0',
+            leaveD: '0',
+            enterTR: '0.6',
+            leaveTR: '0.5',
+            enterDR: '0',
+            leaveDR: '0'}})
+      ]);
+    }
+    case ('low') : {
+      return trigger('fadeBack', [
+        transition('* <=> *', useAnimation(fadeBackA), {params: {
+            enterT: '1.2',
+            leaveT: '0.8',
+            enterD: '0',
+            leaveD: '0',
+            enterTR: '1.2',
+            leaveTR: '1',
+            enterDR: '0',
+            leaveDR: '0'} })
+      ]);
+    }
+    case ('high') : {
+      return trigger('fadeBack', [
+        transition('* <=> *', useAnimation(fadeBackA), {params: {
+            enterT: '0.3',
+            leaveT: '0.2',
+            enterD: '0',
+            leaveD: '0',
+            enterTR: '0.3',
+            leaveTR: '0.2',
+            enterDR: '0',
+            leaveDR: '0'} })
+      ]);
+    }}}
 
-export function fadeBackAnimation(): AnimationTriggerMetadata {
+export function fadeBack(): AnimationTriggerMetadata {
   return trigger('fadeBack', [
-    transition('* <=> *', useAnimation(fadeBack), {params: {
+    transition('* <=> *', useAnimation(fadeBackA), {params: {
         enterT: '0.6',
         leaveT: '0.5',
         enterD: '0',
@@ -88,5 +108,6 @@ export function fadeBackAnimation(): AnimationTriggerMetadata {
         leaveTR: '0.5',
         enterDR: '0',
         leaveDR: '0'} })
-  ]);
-}
+  ]); }
+
+

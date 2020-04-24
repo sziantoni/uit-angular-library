@@ -9,7 +9,7 @@ import {
   sequence, stagger, keyframes, animation, AnimationTriggerMetadata, useAnimation,
 } from '@angular/animations';
 
-export const surprise =
+export const surpriseA =
 animation([
       query(':enter', [
         style({
@@ -65,31 +65,52 @@ animation([
 
 
 
-export function surpriseAnimation_setParametres(
-  entert: string ,
-  enterd: string,
-  leavet: string,
-  leaved: string,
-  entertr: string,
-  leavetr: string,
-  enterdr: string,
-  leavedr: string ): AnimationTriggerMetadata {
-  return trigger('surprise', [
-    transition('* <=> *', useAnimation(surprise), {params: {
-        enterT: entert,
-        leaveT: leavet,
-        enterD: enterd,
-        leaveD: leaved,
-        enterTR: entertr,
-        leaveTR: leavetr,
-        enterDR: enterdr,
-        leaveDR: leavedr} })
-  ]);
-}
 
-export function surpriseAnimation(): AnimationTriggerMetadata {
+export function surprise_customSpeed(speed: string): AnimationTriggerMetadata {
+  switch (speed){
+    case ('medium') : {
+      return trigger('surprise', [
+        transition('* <=> *', useAnimation(surpriseA), {params: {
+            enterT: '0.7',
+            leaveT: '0.5',
+            enterD: '0',
+            leaveD: '0',
+            enterTR: '0.5',
+            leaveTR: '0.5',
+            enterDR: '0',
+            leaveDR: '0'} })
+      ]);
+    }
+    case ('low') : {
+      return trigger('surprise', [
+        transition('* <=> *', useAnimation(surpriseA), {params: {
+            enterT: '1.4',
+            leaveT: '1.2',
+            enterD: '0',
+            leaveD: '0',
+            enterTR: '1.2',
+            leaveTR: '1.2',
+            enterDR: '0',
+            leaveDR: '0'} })
+      ]);
+    }
+    case ('high') : {
+      return trigger('surprise', [
+        transition('* <=> *', useAnimation(surpriseA), {params: {
+            enterT: '0.35',
+            leaveT: '0.25',
+            enterD: '0',
+            leaveD: '0',
+            enterTR: '0.25',
+            leaveTR: '0.25',
+            enterDR: '0',
+            leaveDR: '0'} })
+      ]);
+    }}}
+
+export function surprise(): AnimationTriggerMetadata {
   return trigger('surprise', [
-    transition('* <=> *', useAnimation(surprise), {params: {
+    transition('* <=> *', useAnimation(surpriseA), {params: {
         enterT: '0.7',
         leaveT: '0.5',
         enterD: '0',
@@ -98,5 +119,6 @@ export function surpriseAnimation(): AnimationTriggerMetadata {
         leaveTR: '0.5',
         enterDR: '0',
         leaveDR: '0'} })
-  ]);
-}
+  ]); }
+
+

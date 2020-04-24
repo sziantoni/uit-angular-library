@@ -1,12 +1,4 @@
 import { Component, HostBinding } from '@angular/core';
-import {ScrollSideComponent} from './loading/scroll-side/scroll-side.component';
-import {LeftUpComponent} from './loading/left-up/left-up.component';
-import {RightUpComponent} from './loading/right-up/right-up.component';
-import {FadeBackComponent} from './loading/fade-back/fade-back.component';
-import {ScaleAndSlideComponent} from './loading/scale-and-slide/scale-and-slide.component';
-import {SurpriseComponent} from './loading/surprise/surprise.component';
-import {SlideTitleDownBlocksComponent} from './loading/slide-title-down-blocks/slide-title-down-blocks.component';
-import {Rotate3dComponent} from './loading/rotate3d/rotate3d.component';
 import {SlideHighBottomComponent} from './loading/slide/slide-high-bottom/slide-high-bottom.component';
 import {SlideHighTopComponent} from './loading/slide/slide-high-top/slide-high-top.component';
 import {SlideLowTopComponent} from './loading/slide/slide-low-top/slide-low-top.component';
@@ -22,6 +14,36 @@ import {RotateRightHighComponent} from './loading/rotate/rotate-right-high/rotat
 import {RotateLeftLowComponent} from './loading/rotate/rotate-left-low/rotate-left-low.component';
 import {RotateLeftMediumComponent} from './loading/rotate/rotate-left-medium/rotate-left-medium.component';
 import {RotateLeftHighComponent} from './loading/rotate/rotate-left-high/rotate-left-high.component';
+import {FadeBackLowComponent} from './loading/fade-back/fade-back-low/fade-back-low.component';
+import {FadeBackMediumComponent} from './loading/fade-back/fade-back-medium/fade-back-medium.component';
+import {FadeBackHighComponent} from './loading/fade-back/fade-back-high/fade-back-high.component';
+import {MoveUpLeftLowComponent} from './loading/moveUp/move-up-left-low/move-up-left-low.component';
+import {MoveUpLeftMediumComponent} from './loading/moveUp/move-up-left-medium/move-up-left-medium.component';
+import {MoveUpLeftHighComponent} from './loading/moveUp/move-up-left-high/move-up-left-high.component';
+import {MoveUpRightLowComponent} from './loading/moveUp/move-up-right-low/move-up-right-low.component';
+import {MoveUpRightMediumComponent} from './loading/moveUp/move-up-right-medium/move-up-right-medium.component';
+import {MoveUpRightHighComponent} from './loading/moveUp/move-up-right-high/move-up-right-high.component';
+import {Rotate3dLowComponent} from './loading/rotate3d/rotate3d-low/rotate3d-low.component';
+import {Rotate3dMediumComponent} from './loading/rotate3d/rotate3d-medium/rotate3d-medium.component';
+import {Rotate3dHighComponent} from './loading/rotate3d/rotate3d-high/rotate3d-high.component';
+import {ScaleAndSlideLowComponent} from './loading/scale-and-slide/scale-and-slide-low/scale-and-slide-low.component';
+import {ScaleAndSlideMediumComponent} from './loading/scale-and-slide/scale-and-slide-medium/scale-and-slide-medium.component';
+import {ScaleAndSlideHighComponent} from './loading/scale-and-slide/scale-and-slide-high/scale-and-slide-high.component';
+import {ScrollSideLowComponent} from './loading/scroll-side/scroll-side-low/scroll-side-low.component';
+import {ScrollSideMediumComponent} from './loading/scroll-side/scroll-side-medium/scroll-side-medium.component';
+import {ScrollSideHighComponent} from './loading/scroll-side/scroll-side-high/scroll-side-high.component';
+import {StdbLowLowComponent} from './loading/slide-title-down-blocks/stdb-low-low/stdb-low-low.component';
+import {StdbLowMediumComponent} from './loading/slide-title-down-blocks/stdb-low-medium/stdb-low-medium.component';
+import {StdbLowHighComponent} from './loading/slide-title-down-blocks/stdb-low-high/stdb-low-high.component';
+import {StdbMediumLowComponent} from './loading/slide-title-down-blocks/stdb-medium-low/stdb-medium-low.component';
+import {StdbMediumMediumComponent} from './loading/slide-title-down-blocks/stdb-medium-medium/stdb-medium-medium.component';
+import {StdbMediumHighComponent} from './loading/slide-title-down-blocks/stdb-medium-high/stdb-medium-high.component';
+import {StdbHighHighComponent} from './loading/slide-title-down-blocks/stdb-high-high/stdb-high-high.component';
+import {StdbHighMediumComponent} from './loading/slide-title-down-blocks/stdb-high-medium/stdb-high-medium.component';
+import {StdbHighLowComponent} from './loading/slide-title-down-blocks/stdb-high-low/stdb-high-low.component';
+import {SurpriseLowComponent} from './loading/surprise/surprise-low/surprise-low.component';
+import {SurpriseMediumComponent} from './loading/surprise/surprise-medium/surprise-medium.component';
+import {SurpriseHighComponent} from './loading/surprise/surprise-high/surprise-high.component';
 
 
 @Component({
@@ -34,7 +56,7 @@ import {RotateLeftHighComponent} from './loading/rotate/rotate-left-high/rotate-
 
 export class AppComponent {
   animationSelected = SlideHighBottomComponent;
-  animationString = 'Slide';
+  animationString = 'Slide - Bottom/High';
   @HostBinding('@.disabled')
   public animationsDisabled = false;
 
@@ -70,9 +92,19 @@ export class AppComponent {
         this.animationString = 'Slide - Top/Medium';
         break;
       }
-      case 'scrollSide': {
-        this.animationSelected = ScrollSideComponent;
-        this.animationString = 'Scroll Side';
+      case 'scrollSideLow': {
+        this.animationSelected = ScrollSideLowComponent;
+        this.animationString = 'Scroll Side - Low';
+        break;
+      }
+      case 'scrollSideMedium': {
+        this.animationSelected = ScrollSideMediumComponent;
+        this.animationString = 'Scroll Side - Medium';
+        break;
+      }
+      case 'scrollSideHigh': {
+        this.animationSelected = ScrollSideHighComponent;
+        this.animationString = 'Scroll Side - High';
         break;
       }
       case 'rotateRightLow': {
@@ -105,14 +137,30 @@ export class AppComponent {
         this.animationString = 'Rotate - Left/High ';
         break;
       }
-      case 'leftUp': {
-        this.animationSelected = LeftUpComponent;
-        this.animationString = 'Left Up';
+      case 'moveUpLeftLow': {
+        this.animationSelected = MoveUpLeftLowComponent ;
+        this.animationString = 'Move Up - Left/Low';
         break;
       }
-      case 'rightUp': {
-        this.animationSelected = RightUpComponent;
-        this.animationString = 'Right Up';
+      case 'moveUpLeftMedium': {
+        this.animationSelected = MoveUpLeftMediumComponent;
+        this.animationString = 'Move Up - Left/Medium';
+        break;
+      }   case 'moveUpLeftHigh': {
+        this.animationSelected = MoveUpLeftHighComponent;
+        this.animationString = 'Move Up - Left/High';
+        break;
+      }   case 'moveUpRightLow': {
+        this.animationSelected = MoveUpRightLowComponent;
+        this.animationString = 'Move Up - Right/Low';
+        break;
+      }   case 'moveUpRightMedium': {
+        this.animationSelected = MoveUpRightMediumComponent;
+        this.animationString = 'Move Up - Right/Medium';
+        break;
+      }   case 'moveUpRightHigh': {
+        this.animationSelected = MoveUpRightHighComponent;
+        this.animationString = 'Move Up - Right/High';
         break;
       }
       case 'flipLow': {
@@ -130,29 +178,110 @@ export class AppComponent {
         this.animationString = 'Flip - High';
         break;
       }
-      case 'fadeBack': {
-        this.animationSelected = FadeBackComponent;
-        this.animationString = 'Fade Back';
+      case 'fadeBackLow': {
+        this.animationSelected = FadeBackLowComponent;
+        this.animationString = 'Fade Back - Low';
         break;
       }
-      case 'scaleAndSlide': {
-          this.animationSelected = ScaleAndSlideComponent;
-          this.animationString = 'Scale and Slide';
-          break;
-      }
-      case 'surprise': {
-        this.animationSelected = SurpriseComponent;
-        this.animationString = 'Surprise';
+      case 'fadeBackMedium': {
+        this.animationSelected = FadeBackMediumComponent;
+        this.animationString = 'Fade Back - Medium';
         break;
       }
-      case 'stdb': {
-        this.animationSelected = SlideTitleDownBlocksComponent;
-        this.animationString = 'Slide Title Down Blocks';
+      case 'fadeBackHigh': {
+        this.animationSelected = FadeBackHighComponent;
+        this.animationString = 'Fade Back - High';
         break;
       }
-      case 'rotate3d': {
-        this.animationSelected = Rotate3dComponent;
-        this.animationString = 'Rotate 3D';
+      case 'scaleAndSlideLow': {
+        this.animationSelected = ScaleAndSlideLowComponent;
+        this.animationString = 'Scale and Slide - Low';
+        break;
+
+      }
+      case 'scaleAndSlideMedium': {
+        this.animationSelected = ScaleAndSlideMediumComponent;
+        this.animationString = 'Scale and Slide - Medium';
+        break;
+      }
+      case 'scaleAndSlideHigh': {
+        this.animationSelected = ScaleAndSlideHighComponent;
+        this.animationString = 'Scale and Slide - High';
+        break;
+      }
+      case 'surpriseLow': {
+        this.animationSelected = SurpriseLowComponent;
+        this.animationString = 'Surprise - Low';
+        break;
+      }
+      case 'surpriseMedium': {
+        this.animationSelected = SurpriseMediumComponent;
+        this.animationString = 'Surprise - Medium';
+        break;
+      }
+      case 'surpriseHigh': {
+        this.animationSelected = SurpriseHighComponent;
+        this.animationString = 'Surprise - High';
+        break;
+      }
+      case 'stdbLowLow': {
+        this.animationSelected = StdbLowLowComponent;
+        this.animationString = 'Slide Title Down Blocks - Low/Low';
+        break;
+      }
+      case 'stdbLowMedium': {
+        this.animationSelected = StdbLowMediumComponent;
+        this.animationString = 'Slide Title Down Blocks - Low/Medium';
+        break;
+      }
+      case 'stdbLowHigh': {
+        this.animationSelected = StdbLowHighComponent;
+        this.animationString = 'Slide Title Down Blocks - Low/High';
+        break;
+      }
+      case 'stdbMediumLow': {
+        this.animationSelected = StdbMediumLowComponent;
+        this.animationString = 'Slide Title Down Blocks - Medium/Low';
+        break;
+      }
+      case 'stdbMediumMedium': {
+        this.animationSelected = StdbMediumMediumComponent;
+        this.animationString = 'Slide Title Down Blocks - Medium/Medium';
+        break;
+      }
+      case 'stdbMediumHigh': {
+        this.animationSelected = StdbMediumHighComponent;
+        this.animationString = 'Slide Title Down Blocks - Medium/High';
+        break;
+      }
+      case 'stdbHighHigh': {
+        this.animationSelected = StdbHighHighComponent;
+        this.animationString = 'Slide Title Down Blocks - High/High';
+        break;
+      }
+      case 'stdbHighMedium': {
+        this.animationSelected = StdbHighMediumComponent;
+        this.animationString = 'Slide Title Down Blocks - High/Medium';
+        break;
+      }
+      case 'stdbHighLow': {
+        this.animationSelected = StdbHighLowComponent;
+        this.animationString = 'Slide Title Down Blocks - High/Low';
+        break;
+      }
+      case 'rotate3dLow': {
+        this.animationSelected = Rotate3dLowComponent;
+        this.animationString = 'Rotate 3D - Low';
+        break;
+      }
+      case 'rotate3dMedium': {
+        this.animationSelected = Rotate3dMediumComponent;
+        this.animationString = 'Rotate 3D - Medium';
+        break;
+      }
+      case 'rotate3dHigh': {
+        this.animationSelected = Rotate3dHighComponent;
+        this.animationString = 'Rotate 3D - High';
         break;
       }
 

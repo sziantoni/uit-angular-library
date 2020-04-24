@@ -7,71 +7,197 @@ import {
   keyframes, sequence, AnimationTriggerMetadata,
 } from '@angular/animations';
 
-export function scrollSideAnimation(): AnimationTriggerMetadata {
+export function scrollSide(): AnimationTriggerMetadata {
   return trigger('scrollSide', [
     transition('* => scrollLeft', scroll('-'), { params: {
-        enterT: '0.5',
-        leaveT: '0.5',
+        enterT: '0.6',
+        leaveT: '0.6',
         enterD: '0',
         leaveD: '0' } }),
     transition('* => scrollRight', scroll('+'), { params: {
-        enterT: '0.5',
-        leaveT: '0.5',
+        enterT: '0.6',
+        leaveT: '0.6',
         enterD: '0',
         leaveD: '0' } }),
     transition('scrollRight => *', scroll('-'), { params: {
-        enterT: '0.5',
-        leaveT: '0.5',
+        enterT: '0.6',
+        leaveT: '0.6',
         enterD: '0',
         leaveD: '0' } }),
     transition('scrollLeft => *', scroll('+'), { params: {
-        enterT: '0.5',
-        leaveT: '0.5',
+        enterT: '0.6',
+        leaveT: '0.6',
         enterD: '0',
         leaveD: '0' } }),
     transition('* <=> *', scroll('+'), { params: {
-        enterT: '0.5',
-        leaveT: '0.5',
+        enterT: '0.6',
+        leaveT: '0.6',
         enterD: '0',
         leaveD: '0' } }),
   ]);
 }
 
 
-export function scrollSideAnimation_setParametres(
-  entert: string ,
-  enterd: string,
-  leavet: string,
-  leaved: string,
-): AnimationTriggerMetadata {
-  return trigger('scrollSide', [
-    transition('* => scrollLeft', scroll('-'), { params: {
-        enterT: entert,
-        leaveT: leavet,
-        enterD: enterd,
-        leaveD: leaved } }),
-    transition('* => scrollRight', scroll('+'), { params: {
-        enterT: entert,
-        leaveT: leavet,
-        enterD: enterd,
-        leaveD: leaved } }),
-    transition('scrollRight => *', scroll('-'), { params: {
-        enterT: entert,
-        leaveT: leavet,
-        enterD: enterd,
-        leaveD: leaved } }),
-    transition('scrollLeft => *', scroll('+'), { params: {
-        enterT: entert,
-        leaveT: leavet,
-        enterD: enterd,
-        leaveD: leaved } }),
-    transition('* <=> *', scroll('+'), { params: {
-        enterT: entert,
-        leaveT: leavet,
-        enterD: enterd,
-        leaveD: leaved} }),
-  ]);
+export function scrollSide_customAll(direction: string, speed: string): AnimationTriggerMetadata {
+  switch (direction) {
+    case('left'): {
+      switch (speed) {
+        case ('low') : {
+          return trigger('scrollSide', [
+            transition('* <=> *', scroll('-'), { params: {
+                enterT: '1.2',
+                leaveT: '1.2',
+                enterD: '0',
+                leaveD: '0' } })]);
+        }
+        case ('medium') : {
+          return trigger('scrollSide', [
+            transition('* <=> *', scroll('-'), { params: {
+                enterT: '0.6',
+                leaveT: '0.6',
+                enterD: '0',
+                leaveD: '0' } })]);
+        }
+        case ('high') : {
+          return trigger('scrollSide', [
+            transition('* <=> *', scroll('-'), { params: {
+                enterT: '0.3',
+                leaveT: '0.3',
+                enterD: '0',
+                leaveD: '0' } })]);
+        }
+      }
+
+    }
+    // tslint:disable-next-line:no-switch-case-fall-through
+    case('right'): {
+      switch (speed) {
+        case ('low') : {
+          return trigger('scrollSide', [
+            transition('* <=> *', scroll('+'), { params: {
+                enterT: '1.2',
+                leaveT: '1.2',
+                enterD: '0',
+                leaveD: '0' } })]);
+        }
+        case ('medium') : {
+          return trigger('scrollSide', [
+            transition('* <=> *', scroll('+'), { params: {
+                enterT: '0.6',
+                leaveT: '0.6',
+                enterD: '0',
+                leaveD: '0' } })]);
+        }
+        case ('high') : {
+          return trigger('scrollSide', [
+            transition('* <=> *', scroll('+'), { params: {
+                enterT: '0.3',
+                leaveT: '0.3',
+                enterD: '0',
+                leaveD: '0' } })]);
+        }
+      }
+
+    }
+  }
+
 }
+
+export function scrollSide_customSpeed(speed: string): AnimationTriggerMetadata {
+  switch (speed) {
+    case ('low') : {
+      return trigger('scrollSide', [
+        transition('* => scrollLeft', scroll('-'), { params: {
+            enterT: '1.2',
+            leaveT: '1.2',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('* => scrollRight', scroll('+'), { params: {
+            enterT: '1.2',
+            leaveT: '1.2',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('scrollRight => *', scroll('-'), { params: {
+            enterT: '1.2',
+            leaveT: '1.2',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('scrollLeft => *', scroll('+'), { params: {
+            enterT: '1.2',
+            leaveT: '1.2',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('* <=> *', scroll('+'), { params: {
+            enterT: '1.2',
+            leaveT: '1.2',
+            enterD: '0',
+            leaveD: '0' } }),
+      ]);
+    }
+    // tslint:disable-next-line:no-switch-case-fall-through
+    case ('medium') : {
+      return trigger('scrollSide', [
+        transition('* => scrollLeft', scroll('-'), { params: {
+            enterT: '0.6',
+            leaveT: '0.6',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('* => scrollRight', scroll('+'), { params: {
+            enterT: '0.6',
+            leaveT: '0.6',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('scrollRight => *', scroll('-'), { params: {
+            enterT: '0.6',
+            leaveT: '0.6',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('scrollLeft => *', scroll('+'), { params: {
+            enterT: '0.6',
+            leaveT: '0.6',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('* <=> *', scroll('+'), { params: {
+            enterT: '0.6',
+            leaveT: '0.6',
+            enterD: '0',
+            leaveD: '0' } }),
+      ]);
+    }
+    case ('high') : {
+      return trigger('scrollSide', [
+        transition('* => scrollLeft', scroll('-'), { params: {
+            enterT: '0.3',
+            leaveT: '0.3',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('* => scrollRight', scroll('+'), { params: {
+            enterT: '0.3',
+            leaveT: '0.3',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('scrollRight => *', scroll('-'), { params: {
+            enterT: '0.3',
+            leaveT: '0.3',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('scrollLeft => *', scroll('+'), { params: {
+            enterT: '0.3',
+            leaveT: '0.3',
+            enterD: '0',
+            leaveD: '0' } }),
+        transition('* <=> *', scroll('+'), { params: {
+            enterT: '0.3',
+            leaveT: '0.3',
+            enterD: '0',
+            leaveD: '0' } }),
+      ]);
+    }
+
+  }
+
+}
+
 
 function scroll(direction) {
   let opposite;

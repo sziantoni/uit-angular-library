@@ -54,46 +54,60 @@ a {
 
 
 .animSelector{
-  display: block;
+  display: inline-block;
   width: 100%;
   position: fixed;
-  bottom: 0;
+  top: 0;
+  margin-left: 2%;
+  height: 30px;
 }
 
 .microButtonStyle{
   color: #d9d7e5;
   text-decoration: none;
-  width: 130px;
+  width: 100%;
 }
 
 .anim_box{
-  padding-left: 1%;
   position: relative;
   bottom: 0;
-  width: 150px;
+  width: 9%;
   text-align: center;
   float: left ;
-  background-color: #1b73af;
+  background-color: #1e42b5;
+  margin-right: 5px;
+  height: 30px;
+}
+
+.anim_box_2{
+  position: relative;
+  bottom: 0;
+  width: 10%;
+  text-align: center;
+  float: left ;
+  background-color: #1e42b5;
   margin-right: 5px;
 }
 
 .animBoxTitle{
-  background-color: #1b73af;
+  background-color: #1e42b5;
   color: white;
   padding: 10px;
-  font-size: 20px;
+  position: static;
   font-style: italic;
   border: none;
   float: left;
+  bottom: 0;
+  height: 30px;
 }
 
 
 .activeAnimation{
   color: #e8fbff;
   background-color: #0f2753;
-  font-size: 1em;
+  font-size: 0.9em;
   position: fixed;
-  top: 2%;
+  bottom: 2%;
   height: 50px;
   width: 300px;
   text-align: center;
@@ -103,7 +117,7 @@ a {
 .dropContent{
   display: none;
   position: relative;
-  min-width: 100px;
+  width: 130px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   z-index: 1;
   color: #e9ebf5;
@@ -112,10 +126,17 @@ a {
 }
 
 
-.dropContent a:hover {background-color: #ddd;}
+.dropContent a:hover {background-color: #1e42b5; height: 500px}
 
 /* Show the dropdown menu on hover */
-.anim_box:hover .dropContent {display: block;}
+.anim_box:hover .dropContent {display: inline-block;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .anim_box:hover .microButtonStyle {background-color: #1e42b5;}
+
+/* Show the dropdown menu on hover */
+.anim_box_2:hover .dropContent {display: inline-block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.anim_box_2:hover .microButtonStyle {background-color: #1e42b5;}
+

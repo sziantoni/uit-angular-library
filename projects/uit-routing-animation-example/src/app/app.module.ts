@@ -7,15 +7,7 @@ import { AboutComponent } from './about/about.component';
 import { FeaturesOfSiteComponent } from './features-of-site/features-of-site.component';
 import {RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
-import { ScrollSideComponent } from './loading/scroll-side/scroll-side.component';
 import { PageExampleComponent } from './page-example/page-example.component';
-import { LeftUpComponent } from './loading/left-up/left-up.component';
-import { RightUpComponent } from './loading/right-up/right-up.component';
-import { FadeBackComponent } from './loading/fade-back/fade-back.component';
-import { ScaleAndSlideComponent } from './loading/scale-and-slide/scale-and-slide.component';
-import { SurpriseComponent } from './loading/surprise/surprise.component';
-import { SlideTitleDownBlocksComponent } from './loading/slide-title-down-blocks/slide-title-down-blocks.component';
-import { Rotate3dComponent } from './loading/rotate3d/rotate3d.component';
 import { SlideHighBottomComponent} from './loading/slide/slide-high-bottom/slide-high-bottom.component';
 import { SlideMediumTopComponent } from './loading/slide/slide-medium-top/slide-medium-top.component';
 import { SlideMediumBottomComponent } from './loading/slide/slide-medium-bottom/slide-medium-bottom.component';
@@ -31,6 +23,36 @@ import { RotateRightHighComponent } from './loading/rotate/rotate-right-high/rot
 import { RotateLeftLowComponent } from './loading/rotate/rotate-left-low/rotate-left-low.component';
 import { RotateLeftMediumComponent } from './loading/rotate/rotate-left-medium/rotate-left-medium.component';
 import { RotateLeftHighComponent } from './loading/rotate/rotate-left-high/rotate-left-high.component';
+import { FadeBackLowComponent } from './loading/fade-back/fade-back-low/fade-back-low.component';
+import { FadeBackMediumComponent } from './loading/fade-back/fade-back-medium/fade-back-medium.component';
+import { FadeBackHighComponent } from './loading/fade-back/fade-back-high/fade-back-high.component';
+import { MoveUpLeftLowComponent } from './loading/moveUp/move-up-left-low/move-up-left-low.component';
+import { MoveUpLeftMediumComponent } from './loading/moveUp/move-up-left-medium/move-up-left-medium.component';
+import { MoveUpLeftHighComponent } from './loading/moveUp/move-up-left-high/move-up-left-high.component';
+import { MoveUpRightLowComponent } from './loading/moveUp/move-up-right-low/move-up-right-low.component';
+import { MoveUpRightMediumComponent } from './loading/moveUp/move-up-right-medium/move-up-right-medium.component';
+import { MoveUpRightHighComponent } from './loading/moveUp/move-up-right-high/move-up-right-high.component';
+import { Rotate3dLowComponent } from './loading/rotate3d/rotate3d-low/rotate3d-low.component';
+import { Rotate3dMediumComponent } from './loading/rotate3d/rotate3d-medium/rotate3d-medium.component';
+import { Rotate3dHighComponent } from './loading/rotate3d/rotate3d-high/rotate3d-high.component';
+import { ScaleAndSlideLowComponent } from './loading/scale-and-slide/scale-and-slide-low/scale-and-slide-low.component';
+import { ScaleAndSlideMediumComponent } from './loading/scale-and-slide/scale-and-slide-medium/scale-and-slide-medium.component';
+import { ScaleAndSlideHighComponent } from './loading/scale-and-slide/scale-and-slide-high/scale-and-slide-high.component';
+import { ScrollSideLowComponent } from './loading/scroll-side/scroll-side-low/scroll-side-low.component';
+import { ScrollSideMediumComponent } from './loading/scroll-side/scroll-side-medium/scroll-side-medium.component';
+import { ScrollSideHighComponent } from './loading/scroll-side/scroll-side-high/scroll-side-high.component';
+import { StdbLowLowComponent } from './loading/slide-title-down-blocks/stdb-low-low/stdb-low-low.component';
+import { StdbLowMediumComponent } from './loading/slide-title-down-blocks/stdb-low-medium/stdb-low-medium.component';
+import { StdbLowHighComponent } from './loading/slide-title-down-blocks/stdb-low-high/stdb-low-high.component';
+import { StdbMediumLowComponent } from './loading/slide-title-down-blocks/stdb-medium-low/stdb-medium-low.component';
+import { StdbMediumMediumComponent } from './loading/slide-title-down-blocks/stdb-medium-medium/stdb-medium-medium.component';
+import { StdbMediumHighComponent } from './loading/slide-title-down-blocks/stdb-medium-high/stdb-medium-high.component';
+import { StdbHighLowComponent } from './loading/slide-title-down-blocks/stdb-high-low/stdb-high-low.component';
+import { StdbHighMediumComponent } from './loading/slide-title-down-blocks/stdb-high-medium/stdb-high-medium.component';
+import { StdbHighHighComponent } from './loading/slide-title-down-blocks/stdb-high-high/stdb-high-high.component';
+import { SurpriseLowComponent } from './loading/surprise/surprise-low/surprise-low.component';
+import { SurpriseMediumComponent } from './loading/surprise/surprise-medium/surprise-medium.component';
+import { SurpriseHighComponent } from './loading/surprise/surprise-high/surprise-high.component';
 
 
 @NgModule({
@@ -39,15 +61,7 @@ import { RotateLeftHighComponent } from './loading/rotate/rotate-left-high/rotat
     HomeComponent,
     AboutComponent,
     FeaturesOfSiteComponent,
-    ScrollSideComponent,
     PageExampleComponent,
-    LeftUpComponent,
-    RightUpComponent,
-    FadeBackComponent,
-    ScaleAndSlideComponent,
-    SurpriseComponent,
-    SlideTitleDownBlocksComponent,
-    Rotate3dComponent,
     SlideHighBottomComponent,
     SlideMediumTopComponent,
     SlideMediumBottomComponent,
@@ -63,6 +77,36 @@ import { RotateLeftHighComponent } from './loading/rotate/rotate-left-high/rotat
     RotateLeftLowComponent,
     RotateLeftMediumComponent,
     RotateLeftHighComponent,
+    FadeBackLowComponent,
+    FadeBackMediumComponent,
+    FadeBackHighComponent,
+    MoveUpLeftLowComponent,
+    MoveUpLeftMediumComponent,
+    MoveUpLeftHighComponent,
+    MoveUpRightLowComponent,
+    MoveUpRightMediumComponent,
+    MoveUpRightHighComponent,
+    Rotate3dLowComponent,
+    Rotate3dMediumComponent,
+    Rotate3dHighComponent,
+    ScaleAndSlideLowComponent,
+    ScaleAndSlideMediumComponent,
+    ScaleAndSlideHighComponent,
+    ScrollSideLowComponent,
+    ScrollSideMediumComponent,
+    ScrollSideHighComponent,
+    StdbLowLowComponent,
+    StdbLowMediumComponent,
+    StdbLowHighComponent,
+    StdbMediumLowComponent,
+    StdbMediumMediumComponent,
+    StdbMediumHighComponent,
+    StdbHighLowComponent,
+    StdbHighMediumComponent,
+    StdbHighHighComponent,
+    SurpriseLowComponent,
+    SurpriseMediumComponent,
+    SurpriseHighComponent,
   ],
   imports: [
     BrowserModule,
