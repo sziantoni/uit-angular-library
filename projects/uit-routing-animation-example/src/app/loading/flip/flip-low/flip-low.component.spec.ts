@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RotateSxComponent } from './rotate-sx.component';
+import { FlipLowComponent } from './flip-low.component';
 
-describe('RotateSxComponent', () => {
-  let component: RotateSxComponent;
-  let fixture: ComponentFixture<RotateSxComponent>;
+describe('FlipLowComponent', () => {
+  let component: FlipLowComponent;
+  let fixture: ComponentFixture<FlipLowComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RotateSxComponent ]
+      declarations: [ FlipLowComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RotateSxComponent);
+    fixture = TestBed.createComponent(FlipLowComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

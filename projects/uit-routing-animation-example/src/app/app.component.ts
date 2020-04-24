@@ -1,10 +1,7 @@
 import { Component, HostBinding } from '@angular/core';
 import {ScrollSideComponent} from './loading/scroll-side/scroll-side.component';
-import {RotateSxComponent} from './loading/rotate-sx/rotate-sx.component';
 import {LeftUpComponent} from './loading/left-up/left-up.component';
 import {RightUpComponent} from './loading/right-up/right-up.component';
-import {RotateDxComponent} from './loading/rotate-dx/rotate-dx.component';
-import {FlipComponent} from './loading/flip/flip.component';
 import {FadeBackComponent} from './loading/fade-back/fade-back.component';
 import {ScaleAndSlideComponent} from './loading/scale-and-slide/scale-and-slide.component';
 import {SurpriseComponent} from './loading/surprise/surprise.component';
@@ -16,6 +13,15 @@ import {SlideLowTopComponent} from './loading/slide/slide-low-top/slide-low-top.
 import {SlideLowBottomComponent} from './loading/slide/slide-low-bottom/slide-low-bottom.component';
 import {SlideMediumBottomComponent} from './loading/slide/slide-medium-bottom/slide-medium-bottom.component';
 import {SlideMediumTopComponent} from './loading/slide/slide-medium-top/slide-medium-top.component';
+import {FlipLowComponent} from './loading/flip/flip-low/flip-low.component';
+import {FlipMediumComponent} from './loading/flip/flip-medium/flip-medium.component';
+import {FlipHighComponent} from './loading/flip/flip-high/flip-high.component';
+import {RotateRightLowComponent} from './loading/rotate/rotate-right-low/rotate-right-low.component';
+import {RotateRightMediumComponent} from './loading/rotate/rotate-right-medium/rotate-right-medium.component';
+import {RotateRightHighComponent} from './loading/rotate/rotate-right-high/rotate-right-high.component';
+import {RotateLeftLowComponent} from './loading/rotate/rotate-left-low/rotate-left-low.component';
+import {RotateLeftMediumComponent} from './loading/rotate/rotate-left-medium/rotate-left-medium.component';
+import {RotateLeftHighComponent} from './loading/rotate/rotate-left-high/rotate-left-high.component';
 
 
 @Component({
@@ -69,14 +75,34 @@ export class AppComponent {
         this.animationString = 'Scroll Side';
         break;
       }
-      case 'rotateSx': {
-        this.animationSelected = RotateSxComponent;
-        this.animationString = 'Rotate Sx';
+      case 'rotateRightLow': {
+        this.animationSelected = RotateRightLowComponent;
+        this.animationString = 'Rotate - Right/Low ';
         break;
       }
-      case 'rotateDx': {
-        this.animationSelected = RotateDxComponent;
-        this.animationString = 'Rotate Dx';
+      case 'rotateRightMedium': {
+        this.animationSelected = RotateRightMediumComponent;
+        this.animationString = 'Rotate - Right/Medium ';
+        break;
+      }
+      case 'rotateRightHigh': {
+        this.animationSelected = RotateRightHighComponent;
+        this.animationString = 'Rotate - Right/High ';
+        break;
+      }
+      case 'rotateLeftLow': {
+        this.animationSelected = RotateLeftLowComponent;
+        this.animationString = 'Rotate - Left/Low ';
+        break;
+      }
+      case 'rotateLeftMedium': {
+        this.animationSelected = RotateLeftMediumComponent;
+        this.animationString = 'Rotate - Left/Medium ';
+        break;
+      }
+      case 'rotateLeftHigh': {
+        this.animationSelected = RotateLeftHighComponent;
+        this.animationString = 'Rotate - Left/High ';
         break;
       }
       case 'leftUp': {
@@ -89,9 +115,19 @@ export class AppComponent {
         this.animationString = 'Right Up';
         break;
       }
-      case 'flip': {
-        this.animationSelected = FlipComponent;
-        this.animationString = 'Flip';
+      case 'flipLow': {
+        this.animationSelected = FlipLowComponent;
+        this.animationString = 'Flip - Low';
+        break;
+      }
+      case 'flipMedium': {
+        this.animationSelected = FlipMediumComponent;
+        this.animationString = 'Flip - Medium';
+        break;
+      }
+      case 'flipHigh': {
+        this.animationSelected = FlipHighComponent;
+        this.animationString = 'Flip - High';
         break;
       }
       case 'fadeBack': {

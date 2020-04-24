@@ -8,12 +8,9 @@ import { FeaturesOfSiteComponent } from './features-of-site/features-of-site.com
 import {RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
 import { ScrollSideComponent } from './loading/scroll-side/scroll-side.component';
-import { RotateSxComponent } from './loading/rotate-sx/rotate-sx.component';
 import { PageExampleComponent } from './page-example/page-example.component';
 import { LeftUpComponent } from './loading/left-up/left-up.component';
 import { RightUpComponent } from './loading/right-up/right-up.component';
-import { RotateDxComponent } from './loading/rotate-dx/rotate-dx.component';
-import { FlipComponent } from './loading/flip/flip.component';
 import { FadeBackComponent } from './loading/fade-back/fade-back.component';
 import { ScaleAndSlideComponent } from './loading/scale-and-slide/scale-and-slide.component';
 import { SurpriseComponent } from './loading/surprise/surprise.component';
@@ -25,6 +22,15 @@ import { SlideMediumBottomComponent } from './loading/slide/slide-medium-bottom/
 import { SlideLowBottomComponent } from './loading/slide/slide-low-bottom/slide-low-bottom.component';
 import { SlideLowTopComponent } from './loading/slide/slide-low-top/slide-low-top.component';
 import { SlideHighTopComponent } from './loading/slide/slide-high-top/slide-high-top.component';
+import { FlipLowComponent } from './loading/flip/flip-low/flip-low.component';
+import { FlipMediumComponent } from './loading/flip/flip-medium/flip-medium.component';
+import { FlipHighComponent } from './loading/flip/flip-high/flip-high.component';
+import { RotateRightLowComponent } from './loading/rotate/rotate-right-low/rotate-right-low.component';
+import { RotateRightMediumComponent } from './loading/rotate/rotate-right-medium/rotate-right-medium.component';
+import { RotateRightHighComponent } from './loading/rotate/rotate-right-high/rotate-right-high.component';
+import { RotateLeftLowComponent } from './loading/rotate/rotate-left-low/rotate-left-low.component';
+import { RotateLeftMediumComponent } from './loading/rotate/rotate-left-medium/rotate-left-medium.component';
+import { RotateLeftHighComponent } from './loading/rotate/rotate-left-high/rotate-left-high.component';
 
 
 @NgModule({
@@ -34,12 +40,9 @@ import { SlideHighTopComponent } from './loading/slide/slide-high-top/slide-high
     AboutComponent,
     FeaturesOfSiteComponent,
     ScrollSideComponent,
-    RotateSxComponent,
     PageExampleComponent,
     LeftUpComponent,
     RightUpComponent,
-    RotateDxComponent,
-    FlipComponent,
     FadeBackComponent,
     ScaleAndSlideComponent,
     SurpriseComponent,
@@ -51,6 +54,15 @@ import { SlideHighTopComponent } from './loading/slide/slide-high-top/slide-high
     SlideLowBottomComponent,
     SlideLowTopComponent,
     SlideHighTopComponent,
+    FlipLowComponent,
+    FlipMediumComponent,
+    FlipHighComponent,
+    RotateRightLowComponent,
+    RotateRightMediumComponent,
+    RotateRightHighComponent,
+    RotateLeftLowComponent,
+    RotateLeftMediumComponent,
+    RotateLeftHighComponent,
   ],
   imports: [
     BrowserModule,

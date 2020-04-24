@@ -1,13 +1,13 @@
 
 html {
-  margin: 0px;
+  margin: 0;
   height: 100%;
   width: 300px;
   overflow:hidden;
 }
 
 body {
-  margin: 0px;
+  margin: 0;
   min-height: 100%;
   overflow: hidden;
   width: 100%;
@@ -53,29 +53,28 @@ a {
 }
 
 
-.buttonStyle{
-  color: #e8fbff;
-  background-color: #184adc;
-  text-align: center;
-  font-size: 0.8em;
-  margin-left: 1%;
-  margin-right: 1%;
+.animSelector{
+  display: block;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
 }
 
 .microButtonStyle{
   color: #d9d7e5;
   text-decoration: none;
-  display: block;
   width: 130px;
 }
 
 .anim_box{
-  position: fixed;
   padding-left: 1%;
-  bottom: 0px;
+  position: relative;
+  bottom: 0;
   width: 150px;
   text-align: center;
+  float: left ;
   background-color: #1b73af;
+  margin-right: 5px;
 }
 
 .animBoxTitle{
@@ -105,7 +104,7 @@ a {
   display: none;
   position: relative;
   min-width: 100px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   z-index: 1;
   color: #e9ebf5;
   font-size: 1em;

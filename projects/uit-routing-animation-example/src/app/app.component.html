@@ -19,7 +19,7 @@
 
 </div>
 </div>
-
+<div class="animSelector">
 <div class="anim_box">
   <button class="animBoxTitle">Slide</button>
   <div class="dropContent">
@@ -43,8 +43,44 @@
   </button>
   </div>
 </div>
-
-
+<div class="anim_box">
+  <button class="animBoxTitle">Flip</button>
+  <div class="dropContent">
+    <button class="microButtonStyle" (click)="assignComponent('flipHigh')">
+      High
+    </button>
+    <button class="microButtonStyle" (click)="assignComponent('flipMedium')">
+      Medium
+    </button>
+    <button class="microButtonStyle" (click)="assignComponent('flipLow')">
+      Low
+    </button>
+  </div>
+</div>
+  <div class="anim_box">
+    <button class="animBoxTitle">Rotate</button>
+    <div class="dropContent">
+      <button class="microButtonStyle" (click)="assignComponent('rotateRightLow')">
+        Right / Low
+      </button>
+      <button class="microButtonStyle" (click)="assignComponent('rotateRightMedium')">
+        Right / Medium
+      </button>
+      <button class="microButtonStyle" (click)="assignComponent('rotateRightHigh')">
+        Right / High
+      </button>
+      <button class="microButtonStyle" (click)="assignComponent('rotateLeftLow')">
+        Left / Low
+      </button>
+      <button class="microButtonStyle" (click)="assignComponent('rotateLeftMedium')">
+        Left / Medium
+      </button>
+      <button class="microButtonStyle" (click)="assignComponent('rotateLeftHigh')">
+        Left / High
+      </button>
+    </div>
+  </div>
+</div>
 
 
 </body>

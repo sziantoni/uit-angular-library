@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FlipComponent } from './flip.component';
+import { FlipMediumComponent } from './flip-medium.component';
 
-describe('FlipComponent', () => {
-  let component: FlipComponent;
-  let fixture: ComponentFixture<FlipComponent>;
+describe('FlipMediumComponent', () => {
+  let component: FlipMediumComponent;
+  let fixture: ComponentFixture<FlipMediumComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FlipComponent ]
+      declarations: [ FlipMediumComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FlipComponent);
+    fixture = TestBed.createComponent(FlipMediumComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

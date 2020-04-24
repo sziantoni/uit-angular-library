@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RotateDxComponent } from './rotate-dx.component';
+import { RotateLeftHighComponent } from './rotate-left-high.component';
 
-describe('RotateDxComponent', () => {
-  let component: RotateDxComponent;
-  let fixture: ComponentFixture<RotateDxComponent>;
+describe('RotateLeftHighComponent', () => {
+  let component: RotateLeftHighComponent;
+  let fixture: ComponentFixture<RotateLeftHighComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RotateDxComponent ]
+      declarations: [ RotateLeftHighComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RotateDxComponent);
+    fixture = TestBed.createComponent(RotateLeftHighComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

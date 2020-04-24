@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {RouterOutlet} from '@angular/router';
-import { flipAnimation } from 'uit-routing-animation-lib';
+import { flip_customSpeed} from '../../../../../../uit-routing-animation-lib/src/lib/flip';
 
 @Component({
   selector: 'app-flip',
-  templateUrl: './flip.component.html',
-  styleUrls: ['./flip.component.css'],
-  animations: [ flipAnimation()]
+  templateUrl: './flip-high.component.html',
+  animations: [ flip_customSpeed('high')]
 })
-export class FlipComponent implements OnInit {
+export class FlipHighComponent implements OnInit {
 
   prepareRoute(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData;
