@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RouterOutlet} from '@angular/router';
-import {slideTitleDownBlocks_customSpeed} from '../../../../../../uit-routing-animation-lib/src/lib/slideTitleDownBlocks';
+import {slideTitleDownBlocks_customSpeed} from 'uit-routing-animation-lib';
 
 @Component({
   selector: 'app-stdb-low-low',

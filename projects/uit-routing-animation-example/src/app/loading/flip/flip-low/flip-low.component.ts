@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RouterOutlet} from '@angular/router';
-import {flip_customSpeed} from '../../../../../../uit-routing-animation-lib/src/lib/flip';
+import {flip_customSpeed} from 'uit-routing-animation-lib';
 
 @Component({
   selector: 'app-flip-low',

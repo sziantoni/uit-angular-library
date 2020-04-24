@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {scaleAndSlide_customSpeed} from '../../../../../../uit-routing-animation-lib/src/lib/scaleAndSlide';
+import {scaleAndSlide_customSpeed} from 'uit-routing-animation-lib';
 import {RouterOutlet} from '@angular/router';
 
 @Component({

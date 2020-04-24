@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {moveUp_customSpeed} from '../../../../../../uit-routing-animation-lib/src/lib/moveUp';
+import {moveUp_customSpeed} from 'uit-routing-animation-lib';
 import {RouterOutlet} from '@angular/router';
 
 @Component({

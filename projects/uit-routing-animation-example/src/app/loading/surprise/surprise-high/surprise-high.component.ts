@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RouterOutlet} from '@angular/router';
-import {surprise_customSpeed} from '../../../../../../uit-routing-animation-lib/src/public-api';
+import {surprise_customSpeed} from 'uit-routing-animation-lib';
 
 @Component({
   selector: 'app-surprise-high',

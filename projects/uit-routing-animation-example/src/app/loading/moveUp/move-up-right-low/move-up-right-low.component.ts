@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RouterOutlet} from '@angular/router';
-import {moveUp_customSpeed} from '../../../../../../uit-routing-animation-lib/src/lib/moveUp';
+import {moveUp_customSpeed} from 'uit-routing-animation-lib';
 
 @Component({
   selector: 'app-move-up-right-low',

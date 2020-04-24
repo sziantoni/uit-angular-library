@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RouterOutlet} from '@angular/router';
-import {rotate_customSpeed} from '../../../../../../uit-routing-animation-lib/src/lib/rotate';
+import {rotate_customSpeed} from 'uit-routing-animation-lib';
 
 @Component({
   selector: 'app-rotate-right-medium',

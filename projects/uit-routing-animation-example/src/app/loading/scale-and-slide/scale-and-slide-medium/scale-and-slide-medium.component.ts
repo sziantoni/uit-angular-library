@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RouterOutlet} from '@angular/router';
-import {scaleAndSlide_customSpeed} from '../../../../../../uit-routing-animation-lib/src/lib/scaleAndSlide';
+import {scaleAndSlide_customSpeed} from 'uit-routing-animation-lib';
 
 @Component({
   selector: 'app-scale-and-slide-medium',
