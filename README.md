@@ -21,7 +21,7 @@ Flip : [ flip(), flip_customSpeed(speed: string) ]
 
 FadeBack : [ fadeBack(), fadeBack_customSpeed(speed: string)  ]
 
-Scale and Slide: [ scaleAndSlide(), scaleAndSlide_customAll(direction: string, speed: string), {direction: left, right} scaleAndSlide_customSpeed(speed: string)  ]                                  
+Scale and Slide: [ scaleAndSlide(), scaleAndSlide_customAll(direction: string, speedScale: string, speedSlide: string),  scaleAndSlide_customSpeed(speedScale: string, speedSlide: string) {direction: left, right} ]                                  
 
 Surprise: [ surprise(), surprise_customSpeed(speed: string) ]
  
