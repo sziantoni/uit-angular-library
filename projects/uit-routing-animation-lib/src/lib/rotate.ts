@@ -107,8 +107,8 @@ export function rotate_customSpeed(direction: string, speed: string): AnimationT
             transition('* <=> *', useAnimation(rotateA), {params: {
                 tr: 'left',
                 dir: '+',
-                enterT: '0.8',
-                leaveT: '0.8',
+                enterT: '1',
+                leaveT: '1',
                 enterD: '0',
                 leaveD: '0',
                 enterTR: '0.8',
@@ -119,8 +119,8 @@ export function rotate_customSpeed(direction: string, speed: string): AnimationT
             transition('* <=> *', useAnimation(rotateA), {params: {
                 tr: 'right',
                 dir: '-',
-                enterT: '0.8',
-                leaveT: '0.8',
+                enterT: '1',
+                leaveT: '1',
                 enterD: '0',
                 leaveD: '0',
                 enterTR: '0.8',

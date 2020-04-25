@@ -26,9 +26,6 @@ import {MoveUpRightHighComponent} from './loading/moveUp/move-up-right-high/move
 import {Rotate3dLowComponent} from './loading/rotate3d/rotate3d-low/rotate3d-low.component';
 import {Rotate3dMediumComponent} from './loading/rotate3d/rotate3d-medium/rotate3d-medium.component';
 import {Rotate3dHighComponent} from './loading/rotate3d/rotate3d-high/rotate3d-high.component';
-import {ScaleAndSlideLowComponent} from './loading/scale-and-slide/scale-and-slide-low/scale-and-slide-low.component';
-import {ScaleAndSlideMediumComponent} from './loading/scale-and-slide/scale-and-slide-medium/scale-and-slide-medium.component';
-import {ScaleAndSlideHighComponent} from './loading/scale-and-slide/scale-and-slide-high/scale-and-slide-high.component';
 import {ScrollSideLowComponent} from './loading/scroll-side/scroll-side-low/scroll-side-low.component';
 import {ScrollSideMediumComponent} from './loading/scroll-side/scroll-side-medium/scroll-side-medium.component';
 import {ScrollSideHighComponent} from './loading/scroll-side/scroll-side-high/scroll-side-high.component';
@@ -44,6 +41,17 @@ import {StdbHighLowComponent} from './loading/slide-title-down-blocks/stdb-high-
 import {SurpriseLowComponent} from './loading/surprise/surprise-low/surprise-low.component';
 import {SurpriseMediumComponent} from './loading/surprise/surprise-medium/surprise-medium.component';
 import {SurpriseHighComponent} from './loading/surprise/surprise-high/surprise-high.component';
+import {ScaleAndSlideLowLowComponent} from './loading/scale-and-slide/scale-and-slide-low-low/scale-and-slide-low-low.component';
+import {ScaleAndSlideMediumMediumComponent} from './loading/scale-and-slide/scale-and-slide-medium-medium/scale-and-slide-medium-medium.component';
+import {ScaleAndSlideHighHighComponent} from './loading/scale-and-slide/scale-and-slide-high-high/scale-and-slide-high-high.component';
+import {ScaleAndSlideLowHighComponent} from './loading/scale-and-slide/scale-and-slide-low-high/scale-and-slide-low-high.component';
+// tslint:disable-next-line:max-line-length
+import {ScaleAndSlideMediumHighComponent} from './loading/scale-and-slide/scale-and-slide-medium-high/scale-and-slide-medium-high.component';
+// tslint:disable-next-line:max-line-length
+import {ScaleAndSlideHighMediumComponent} from './loading/scale-and-slide/scale-and-slide-high-medium/scale-and-slide-high-medium.component';
+import {ScaleAndSlideLowMediumComponent} from './loading/scale-and-slide/scale-and-slide-low-medium/scale-and-slide-low-medium.component';
+import {ScaleAndSlideMediumLowComponent} from './loading/scale-and-slide/scale-and-slide-medium-low/scale-and-slide-medium-low.component';
+import {ScaleAndSlideHighLowComponent} from './loading/scale-and-slide/scale-and-slide-high-low/scale-and-slide-high-low.component';
 
 
 @Component({
@@ -193,20 +201,57 @@ export class AppComponent {
         this.animationString = 'Fade Back - High';
         break;
       }
-      case 'scaleAndSlideLow': {
-        this.animationSelected = ScaleAndSlideLowComponent;
-        this.animationString = 'Scale and Slide - Low';
+      case 'scaleAndSlideLowLow': {
+        this.animationSelected = ScaleAndSlideLowLowComponent;
+        this.animationString = 'Scale and Slide - Low/Low';
         break;
 
       }
-      case 'scaleAndSlideMedium': {
-        this.animationSelected = ScaleAndSlideMediumComponent;
-        this.animationString = 'Scale and Slide - Medium';
+      case 'scaleAndSlideMediumMedium': {
+        this.animationSelected = ScaleAndSlideMediumMediumComponent;
+        this.animationString = 'Scale and Slide - Medium/Medium';
         break;
       }
-      case 'scaleAndSlideHigh': {
-        this.animationSelected = ScaleAndSlideHighComponent;
-        this.animationString = 'Scale and Slide - High';
+      case 'scaleAndSlideHighHigh': {
+        this.animationSelected = ScaleAndSlideHighHighComponent;
+        this.animationString = 'Scale and Slide - High/High';
+        break;
+      }
+      case 'scaleAndSlideLowHigh': {
+        this.animationSelected = ScaleAndSlideLowHighComponent;
+        this.animationString = 'Scale and Slide - Low/High';
+        break;
+
+      }
+      case 'scaleAndSlideMediumHigh': {
+        this.animationSelected = ScaleAndSlideMediumHighComponent;
+        this.animationString = 'Scale and Slide - Medium/High';
+        break;
+      }
+      case 'scaleAndSlideHighMedium': {
+        this.animationSelected = ScaleAndSlideHighMediumComponent;
+        this.animationString = 'Scale and Slide - High/Medium';
+        break;
+      }
+      case 'scaleAndSlideLowMedium': {
+        this.animationSelected = ScaleAndSlideLowMediumComponent;
+        this.animationString = 'Scale and Slide - Low/Medium';
+        break;
+
+      }
+      case 'scaleAndSlideMediumLow': {
+        this.animationSelected = ScaleAndSlideMediumLowComponent;
+        this.animationString = 'Scale and Slide - Medium/Low';
+        break;
+      }
+      case 'scaleAndSlideHighLow': {
+        this.animationSelected = ScaleAndSlideHighLowComponent;
+        this.animationString = 'Scale and Slide - High/Low';
+        break;
+      }
+      case 'surpriseLowLow': {
+        this.animationSelected = SurpriseLowComponent;
+        this.animationString = 'Surprise - Low';
         break;
       }
       case 'surpriseLow': {

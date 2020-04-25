@@ -4,204 +4,10 @@ import {
   style,
   query,
   animate,
-  keyframes, sequence,  AnimationTriggerMetadata,
+  keyframes, sequence, AnimationTriggerMetadata,
 } from '@angular/animations';
 
-const ROUTING_ELEMENT = 'route-animations-element';
-
-export function scaleAndSlide(): AnimationTriggerMetadata {
-  return trigger('scaleAndSlide', [
-    transition('* => scrollLeft', scale('-'), { params: {
-        enterT: '0.6',
-        leaveT: '0.8',
-        enterD: '0',
-        leaveD: '0' } }),
-    transition('* => scrollRight', scale('+'), { params: {
-        enterT: '0.6',
-        leaveT: '0.8',
-        enterD: '0',
-        leaveD: '0' } }),
-    transition('scrollRight => *', scale('-'), { params: {
-        enterT: '0.6',
-        leaveT: '0.8',
-        enterD: '0',
-        leaveD: '0' } }),
-    transition('scrollLeft => *', scale('+'), { params: {
-        enterT: '0.6',
-        leaveT: '0.8',
-        enterD: '0',
-        leaveD: '0' } }),
-    transition('* <=> *', scale('+'), { params: {
-        enterT: '0.6',
-        leaveT: '0.8',
-        enterD: '0',
-        leaveD: '0' } }),
-  ]);
-}
-
-
-export function scaleAndSlide_customAll(direction: string, speed: string): AnimationTriggerMetadata {
-  switch (direction) {
-    case('left'): {
-      switch (speed) {
-        case ('low') : {
-          return trigger('scaleAndSlide', [
-            transition('* <=> *', scale('-'), { params: {
-                enterT: '1.2',
-                leaveT: '1.4',
-                enterD: '0',
-                leaveD: '0' } })]);
-        }
-        case ('medium') : {
-          return trigger('scaleAndSlide', [
-            transition('* <=> *', scale('-'), { params: {
-                enterT: '0.6',
-                leaveT: '0.8',
-                enterD: '0',
-                leaveD: '0' } })]);
-        }
-        case ('high') : {
-          return trigger('scaleAndSlide', [
-            transition('* <=> *', scale('-'), { params: {
-                enterT: '0.3',
-                leaveT: '0.5',
-                enterD: '0',
-                leaveD: '0' } })]);
-        }
-      }
-
-    }
-    // tslint:disable-next-line:no-switch-case-fall-through
-    case('right'): {
-      switch (speed) {
-        case ('low') : {
-          return trigger('scaleAndSlide', [
-            transition('* <=> *', scale('+'), { params: {
-                enterT: '1.2',
-                leaveT: '1.4',
-                enterD: '0',
-                leaveD: '0' } })]);
-        }
-        case ('medium') : {
-          return trigger('scaleAndSlide', [
-            transition('* <=> *', scale('+'), { params: {
-                enterT: '0.6',
-                leaveT: '0.8',
-                enterD: '0',
-                leaveD: '0' } })]);
-        }
-        case ('high') : {
-          return trigger('scaleAndSlide', [
-            transition('* <=> *', scale('+'), { params: {
-                enterT: '0.3',
-                leaveT: '0.5',
-                enterD: '0',
-                leaveD: '0' } })]);
-        }
-      }
-
-    }
-  }
-
-}
-
-export function scaleAndSlide_customSpeed(speed: string): AnimationTriggerMetadata {
-  switch (speed) {
-    case ('low') : {
-      return trigger('scaleAndSlide', [
-        transition('* => scrollLeft', scale('-'), { params: {
-            enterT: '1.2',
-            leaveT: '1.4',
-            enterD: '0',
-            leaveD: '0' } }),
-        transition('* => scrollRight', scale('+'), { params: {
-            enterT: '1.2',
-            leaveT: '1.4',
-            enterD: '0',
-            leaveD: '0' } }),
-        transition('scrollRight => *', scale('-'), { params: {
-            enterT: '1.2',
-            leaveT: '1.4',
-            enterD: '0',
-            leaveD: '0' } }),
-        transition('scrollLeft => *', scale('+'), { params: {
-            enterT: '1.2',
-            leaveT: '1.4',
-            enterD: '0',
-            leaveD: '0' } }),
-        transition('* <=> *', scale('+'), { params: {
-            enterT: '1.2',
-            leaveT: '1.4',
-            enterD: '0',
-            leaveD: '0' } }),
-      ]);
-    }
-    // tslint:disable-next-line:no-switch-case-fall-through
-    case ('medium') : {
-      return trigger('scaleAndSlide', [
-        transition('* => scrollLeft', scale('-'), { params: {
-            enterT: '0.6',
-            leaveT: '0.8',
-            enterD: '0',
-            leaveD: '0' } }),
-        transition('* => scrollRight', scale('+'), { params: {
-            enterT: '0.6',
-            leaveT: '0.8',
-            enterD: '0',
-            leaveD: '0' } }),
-        transition('scrollRight => *', scale('-'), { params: {
-            enterT: '0.6',
-            leaveT: '0.8',
-            enterD: '0',
-            leaveD: '0' } }),
-        transition('scrollLeft => *', scale('+'), { params: {
-            enterT: '0.6',
-            leaveT: '0.8',
-            enterD: '0',
-            leaveD: '0' } }),
-        transition('* <=> *', scale('+'), { params: {
-            enterT: '0.6',
-            leaveT: '0.8',
-            enterD: '0',
-            leaveD: '0' } }),
-      ]);
-    }
-    case ('high') : {
-      return trigger('scaleAndSlide', [
-        transition('* => scrollLeft', scale('-'), { params: {
-            enterT: '0.3',
-            leaveT: '0.5',
-            enterD: '0',
-            leaveD: '0' } }),
-        transition('* => scrollRight', scale('+'), { params: {
-            enterT: '0.3',
-            leaveT: '0.5',
-            enterD: '0',
-            leaveD: '0' } }),
-        transition('scrollRight => *', scale('-'), { params: {
-            enterT: '0.3',
-            leaveT: '0.5',
-            enterD: '0',
-            leaveD: '0' } }),
-        transition('scrollLeft => *', scale('+'), { params: {
-            enterT: '0.3',
-            leaveT: '0.5',
-            enterD: '0',
-            leaveD: '0' } }),
-        transition('* <=> *', scale('+'), { params: {
-            enterT: '0.3',
-            leaveT: '0.5',
-            enterD: '0',
-            leaveD: '0' } }),
-      ]);
-    }
-
-  }
-
-}
-
-
-function scale(direction) {
+function scale(direction: string) {
   let opposite;
   if (direction === '-') {
     opposite = '+';
@@ -221,37 +27,840 @@ function scale(direction) {
       style({
         opacity: 0,
         position: 'fixed',
-        overflow: 'hidden',
-        backfaceVisibility: 'hidden',
         transformStyle: 'preserve-3d',
-      }),
-    ], {optional: true}),
-    query(':enter .' + ROUTING_ELEMENT, [
-      style({
-        opacity: 0
       }),
     ], {optional: true}),
     sequence([
       query(':leave', [
-        animate('{{leaveT}}s {{leaveD}}s ease-in', keyframes([
+        animate('{{leaveTS}}s {{leaveDS}}s ease-out', keyframes([
           style({ opacity: 1 , transform: 'scale(1)', offset: 0}),
-          style({opacity: 1, transform: 'scale(.7)', offset: 0.5 }),
-          style({opacity: 1, transform: 'scale(.7) translateX(' + [opposite] + '0%)', offset: 0.55 }),
-          style({opacity: 0, transform: 'scale(.7) translateX(' + [opposite] + '300%)',  offset: 1 }),
+          style({opacity: 1, transform: 'scale(.7)', offset: 1 })])),
+        animate('{{leaveTSL}}s {{leaveDSL}}s ease-out', keyframes([
+          style({opacity: 1, transform: 'scale(.7) translateX(' + [opposite] + '0%)', offset: 0 }),
+          style({opacity: 0, transform: 'scale(.7) translateX(' + [opposite] + '300%)',  offset: 1 })
         ])),
         style({position: 'fixed'})
       ], {optional: true}),
-      query(':enter ' , [
-          style({opacity: 0, transform: 'scale(.7)', width: 'auto', flex: 'inherit'}),
-          animate('{{enterT}}s {{enterD}}s ease-out', keyframes([
-            style({
-              opacity: 0.5,
-              transform: 'scale(.7) translateX(' + [direction] + '200%) scale(.4)',
-              flex: 'inherit',
-              offset: 0}),
-            style({opacity: 1, transform: 'scale(.7)', offset: 0.55 , flex: 'inherit', position: 'relative'}),
-            style({opacity: 1, transform: 'scale(1) translate3d(0,0,0)', offset: 1, position: 'relative' , flex: 'inherit'})
-          ]))], {optional: true})
-    ])
+      query(':enter', [
+        style({opacity: 0, transform: 'scale(.7) translateX(' + [direction] + '200%)' }),
+        animate('{{enterTSL}}s {{enterDSL}}s ease-out',
+          style({opacity: 1, transform: 'scale(.7) translateX(0%)', position: 'relative'})
+        ),
+        style({opacity: 1, transform: 'scale(.7)', position: 'relative'}),
+        animate('{{enterTS}}s {{enterDS}}s ease-out',
+          style({ opacity: 1 , transform: 'scale(1)', position: 'relative'})
+        ),
+      ], {optional: true})]),
   ];
 }
+
+
+/*MEDIUM MEDIUM */
+export function scaleAndSlide(): AnimationTriggerMetadata {
+  return trigger('scaleAndSlide', [
+    transition('* => scrollLeft', scale('-'), { params: {
+        enterTS: '0.3',
+        leaveTS: '0.4',
+        enterDS: '0',
+        leaveDS: '0',
+        enterTSL: '0.8',
+        leaveTSL: '0.9',
+        enterDSL: '0',
+        leaveDSL: '0'} }),
+    transition('* => scrollRight', scale('+'), { params: {
+        enterTS: '0.3',
+        leaveTS: '0.4',
+        enterDS: '0',
+        leaveDS: '0',
+        enterTSL: '0.8',
+        leaveTSL: '0.9',
+        enterDSL: '0',
+        leaveDSL: '0' } }),
+    transition('scrollRight => *', scale('-'), { params: {
+        enterTS: '0.3',
+        leaveTS: '0.4',
+        enterDS: '0',
+        leaveDS: '0',
+        enterTSL: '0.8',
+        leaveTSL: '0.9',
+        enterDSL: '0',
+        leaveDSL: '0' } }),
+    transition('scrollLeft => *', scale('+'), { params: {
+        enterTS: '0.3',
+        leaveTS: '0.4',
+        enterDS: '0',
+        leaveDS: '0',
+        enterTSL: '0.8',
+        leaveTSL: '0.9',
+        enterDSL: '0',
+        leaveDSL: '0'} }),
+    transition('* <=> *', scale('+'), { params: {
+        enterTS: '0.3',
+        leaveTS: '0.4',
+        enterDS: '0',
+        leaveDS: '0',
+        enterTSL: '0.8',
+        leaveTSL: '0.9',
+        enterDSL: '0',
+        leaveDSL: '0' } }),
+  ]);
+}
+
+export function scaleAndSlide_customAll(direction: string, speedScale: string, speedSlide: string): AnimationTriggerMetadata {
+  switch (direction) {
+    case('left'): {
+      switch (speedScale) {
+        case ('low') : {
+          switch (speedSlide) {
+            case ('low'): {
+              return trigger('scaleAndSlide', [
+                transition('* <=> *', scale('-'), { params: {
+                    enterTS: '0.6',
+                    leaveTS: '0.8',
+                    enterDS: '0',
+                    leaveDS: '0',
+                    enterTSL: '0.7',
+                    leaveTSL: '0.8',
+                    enterDSL: '0',
+                    leaveDSL: '0' } }),
+              ]);
+            }
+            // tslint:disable-next-line:no-switch-case-fall-through
+            case ('medium'): {
+              return trigger('scaleAndSlide', [
+                transition('* <=> *', scale('-'), { params: {
+                    enterTS: '0.6',
+                    leaveTS: '0.8',
+                    enterDS: '0',
+                    leaveDS: '0',
+                    enterTSL: '0.8',
+                    leaveTSL: '0.9',
+                    enterDSL: '0',
+                    leaveDSL: '0'} }),
+              ]);
+            }
+            // tslint:disable-next-line:no-switch-case-fall-through
+            case ('high'): {
+              return trigger('scaleAndSlide', [
+                transition('* <=> *', scale('-'), { params: {
+                    enterTS: '0.5',
+                    leaveTS: '0.7',
+                    enterDS: '0',
+                    leaveDS: '0',
+                    enterTSL: '0.4',
+                    leaveTSL: '0.5',
+                    enterDSL: '0',
+                    leaveDSL: '0' } }),
+              ]);
+            }
+          }
+        }
+        // tslint:disable-next-line:no-switch-case-fall-through
+        case ('medium') : {
+          switch (speedSlide) {
+            case ('low'): {
+              return trigger('scaleAndSlide', [
+                transition('* <=> *', scale('-'), { params: {
+                    enterTS: '0.3',
+                    leaveTS: '0.4',
+                    enterDS: '0',
+                    leaveDS: '0',
+                    enterTSL: '1.2',
+                    leaveTSL: '1.2',
+                    enterDSL: '0',
+                    leaveDSL: '0'} }),
+              ]);
+            }
+            // tslint:disable-next-line:no-switch-case-fall-through
+            case ('medium'): {
+              return trigger('scaleAndSlide', [
+                transition('* <=> *', scale('-'), { params: {
+                    enterTS: '0.3',
+                    leaveTS: '0.4',
+                    enterDS: '0',
+                    leaveDS: '0',
+                    enterTSL: '0.8',
+                    leaveTSL: '0.9',
+                    enterDSL: '0',
+                    leaveDSL: '0' } }),
+              ]);
+            }
+            // tslint:disable-next-line:no-switch-case-fall-through
+            case ('high'): {
+              return trigger('scaleAndSlide', [
+                transition('* <=> *', scale('-'), { params: {
+                    enterTS: '0.3',
+                    leaveTS: '0.4',
+                    enterDS: '0',
+                    leaveDS: '0',
+                    enterTSL: '0.4',
+                    leaveTSL: '0.5',
+                    enterDSL: '0',
+                    leaveDSL: '0' } }),
+              ]);
+            }
+          }
+      }
+        // tslint:disable-next-line:no-switch-case-fall-through
+        case ('high') : {
+          switch (speedSlide) {
+            case ('low'): {
+              return trigger('scaleAndSlide', [
+                transition('* <=> *', scale('-'), { params: {
+                    enterTS: '0.15',
+                    leaveTS: '0.2',
+                    enterDS: '0',
+                    leaveDS: '0',
+                    enterTSL: '1.2',
+                    leaveTSL: '1.2',
+                    enterDSL: '0',
+                    leaveDSL: '0' } }),
+              ]);
+            }
+            // tslint:disable-next-line:no-switch-case-fall-through
+            case ('medium'): {
+              return trigger('scaleAndSlide', [
+                transition('* <=> *', scale('-'), { params: {
+                    enterTS: '0.15',
+                    leaveTS: '0.2',
+                    enterDS: '0',
+                    leaveDS: '0',
+                    enterTSL: '0.8',
+                    leaveTSL: '0.9',
+                    enterDSL: '0',
+                    leaveDSL: '0' } }),
+              ]);
+            }
+            // tslint:disable-next-line:no-switch-case-fall-through
+            case ('high'): {
+              return trigger('scaleAndSlide', [
+                transition('* <=> *', scale('-'), { params: {
+                    enterTS: '0.15',
+                    leaveTS: '0.2',
+                    enterDS: '0',
+                    leaveDS: '0',
+                    enterTSL: '0.4',
+                    leaveTSL: '0.5',
+                    enterDSL: '0',
+                    leaveDSL: '0' } }),
+              ]);
+            }
+          }
+        }
+
+    }
+    }
+    // tslint:disable-next-line:no-switch-case-fall-through
+    case('right'): {
+      switch (speedScale) {
+        case ('low') : {
+          switch (speedSlide) {
+            case ('low'): {
+              return trigger('scaleAndSlide', [
+                transition('* <=> *', scale('+'), { params: {
+                    enterTS: '0.6',
+                    leaveTS: '0.8',
+                    enterDS: '0',
+                    leaveDS: '0',
+                    enterTSL: '1.2',
+                    leaveTSL: '1.2',
+                    enterDSL: '0',
+                    leaveDSL: '0' } }),
+              ]);
+            }
+            // tslint:disable-next-line:no-switch-case-fall-through
+            case ('medium'): {
+              return trigger('scaleAndSlide', [
+                transition('* <=> *', scale('+'), { params: {
+                    enterTS: '0.6',
+                    leaveTS: '0.8',
+                    enterDS: '0',
+                    leaveDS: '0',
+                    enterTSL: '0.3',
+                    leaveTSL: '0.4',
+                    enterDSL: '0',
+                    leaveDSL: '0' } }),
+              ]);
+            }
+            // tslint:disable-next-line:no-switch-case-fall-through
+            case ('high'): {
+              return trigger('scaleAndSlide', [
+                transition('* <=> *', scale('+'), { params: {
+                    enterTS: '0.6',
+                    leaveTS: '0.8',
+                    enterDS: '0',
+                    leaveDS: '0',
+                    enterTSL: '0.15',
+                    leaveTSL: '0.2',
+                    enterDSL: '0',
+                    leaveDSL: '0' } }),
+              ]);
+            }
+          }
+        }
+        // tslint:disable-next-line:no-switch-case-fall-through
+        case ('medium') : {
+          switch (speedSlide) {
+            case ('low'): {
+              return trigger('scaleAndSlide', [
+                transition('* <=> *', scale('+'), { params: {
+                    enterTS: '0.3',
+                    leaveTS: '0.4',
+                    enterDS: '0',
+                    leaveDS: '0',
+                    enterTSL: '0.7',
+                    leaveTSL: '0.8',
+                    enterDSL: '0',
+                    leaveDSL: '0' } }),
+              ]);
+            }
+            // tslint:disable-next-line:no-switch-case-fall-through
+            case ('medium'): {
+              return trigger('scaleAndSlide', [
+                transition('* <=> *', scale('+'), { params: {
+                    enterTS: '0.3',
+                    leaveTS: '0.4',
+                    enterDS: '0',
+                    leaveDS: '0',
+                    enterTSL: '0.3',
+                    leaveTSL: '0.4',
+                    enterDSL: '0',
+                    leaveDSL: '0' } }),
+              ]);
+            }
+            // tslint:disable-next-line:no-switch-case-fall-through
+            case ('high'): {
+              return trigger('scaleAndSlide', [
+                transition('* <=> *', scale('+'), { params: {
+                    enterTS: '0.3',
+                    leaveTS: '0.4',
+                    enterDS: '0',
+                    leaveDS: '0',
+                    enterTSL: '0.15',
+                    leaveTSL: '0.2',
+                    enterDSL: '0',
+                    leaveDSL: '0' } }),
+              ]);
+            }
+          }
+        }
+        // tslint:disable-next-line:no-switch-case-fall-through
+        case ('high') : {
+          switch (speedSlide) {
+            case ('low'): {
+              return trigger('scaleAndSlide', [
+                transition('* <=> *', scale('+'), { params: {
+                    enterTS: '0.15',
+                    leaveTS: '0.2',
+                    enterDS: '0',
+                    leaveDS: '0',
+                    enterTSL: '0.7',
+                    leaveTSL: '0.8',
+                    enterDSL: '0',
+                    leaveDSL: '0' } }),
+              ]);
+            }
+            // tslint:disable-next-line:no-switch-case-fall-through
+            case ('medium'): {
+              return trigger('scaleAndSlide', [
+                transition('* <=> *', scale('+'), { params: {
+                    enterTS: '0.15',
+                    leaveTS: '0.2',
+                    enterDS: '0',
+                    leaveDS: '0',
+                    enterTSL: '0.3',
+                    leaveTSL: '0.4',
+                    enterDSL: '0',
+                    leaveDSL: '0' } }),
+              ]);
+            }
+            // tslint:disable-next-line:no-switch-case-fall-through
+            case ('high'): {
+              return trigger('scaleAndSlide', [
+                transition('* <=> *', scale('+'), { params: {
+                    enterTS: '0.15',
+                    leaveTS: '0.2',
+                    enterDS: '0',
+                    leaveDS: '0',
+                    enterTSL: '0.15',
+                    leaveTSL: '0.2',
+                    enterDSL: '0',
+                    leaveDSL: '0' } }),
+              ]);
+            }
+          }
+        }
+
+      }
+    }
+  }}
+
+export function scaleAndSlide_customSpeed(speedScale: string, speedSlide: string): AnimationTriggerMetadata {
+  switch (speedScale) {
+    case ('low') : {
+      switch (speedSlide) {
+        case ('low'): {
+          return trigger('scaleAndSlide', [
+            transition('* => scrollLeft', scale('-'), { params: {
+                enterTS: '0.6',
+                leaveTS: '0.8',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '1.2',
+                leaveTSL: '1.2',
+                enterDSL: '0',
+                leaveDSL: '0'} }),
+            transition('* => scrollRight', scale('+'), { params: {
+                enterTS: '0.6',
+                leaveTS: '0.8',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '1.2',
+                leaveTSL: '1.2',
+                enterDSL: '0',
+                leaveDSL: '0' } }),
+            transition('scrollRight => *', scale('-'), { params: {
+                enterTS: '0.6',
+                leaveTS: '0.8',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '1.2',
+                leaveTSL: '1.2',
+                enterDSL: '0',
+                leaveDSL: '0' } }),
+            transition('scrollLeft => *', scale('+'), { params: {
+                enterTS: '0.6',
+                leaveTS: '0.8',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '1.2',
+                leaveTSL: '1.2',
+                enterDSL: '0',
+                leaveDSL: '0'} }),
+            transition('* <=> *', scale('+'), { params: {
+                enterTS: '0.6',
+                leaveTS: '0.8',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '1.2',
+                leaveTSL: '1.2',
+                enterDSL: '0',
+                leaveDSL: '0' } }),
+          ]);
+        }
+        // tslint:disable-next-line:no-switch-case-fall-through
+        case ('medium'): {
+          return trigger('scaleAndSlide', [
+            transition('* => scrollLeft', scale('-'), { params: {
+                enterTS: '0.6',
+                leaveTS: '0.8',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.8',
+                leaveTSL: '0.9',
+                enterDSL: '0',
+                leaveDSL: '0'} }),
+            transition('* => scrollRight', scale('+'), { params: {
+                enterTS: '0.6',
+                leaveTS: '0.8',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.8',
+                leaveTSL: '0.9',
+                enterDSL: '0',
+                leaveDSL: '0' } }),
+            transition('scrollRight => *', scale('-'), { params: {
+                enterTS: '0.6',
+                leaveTS: '0.8',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.8',
+                leaveTSL: '0.9',
+                enterDSL: '0',
+                leaveDSL: '0' } }),
+            transition('scrollLeft => *', scale('+'), { params: {
+                enterTS: '0.6',
+                leaveTS: '0.8',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.8',
+                leaveTSL: '0.9',
+                enterDSL: '0',
+                leaveDSL: '0'} }),
+            transition('* <=> *', scale('+'), { params: {
+                enterTS: '0.6',
+                leaveTS: '0.8',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.8',
+                leaveTSL: '0.9',
+                enterDSL: '0',
+                leaveDSL: '0' } }),
+          ]);
+        }
+        // tslint:disable-next-line:no-switch-case-fall-through
+        case ('high'): {
+          return trigger('scaleAndSlide', [
+            transition('* => scrollLeft', scale('-'), { params: {
+                enterTS: '0.5',
+                leaveTS: '0.7',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.4',
+                leaveTSL: '0.5',
+                enterDSL: '0',
+                leaveDSL: '0'} }),
+            transition('* => scrollRight', scale('+'), { params: {
+                enterTS: '0.5',
+                leaveTS: '0.7',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.4',
+                leaveTSL: '0.5',
+                enterDSL: '0',
+                leaveDSL: '0' } }),
+            transition('scrollRight => *', scale('-'), { params: {
+                enterTS: '0.5',
+                leaveTS: '0.7',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.4',
+                leaveTSL: '0.5',
+                enterDSL: '0',
+                leaveDSL: '0' } }),
+            transition('scrollLeft => *', scale('+'), { params: {
+                enterTS: '0.5',
+                leaveTS: '0.7',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.4',
+                leaveTSL: '0.5',
+                enterDSL: '0',
+                leaveDSL: '0'} }),
+            transition('* <=> *', scale('+'), { params: {
+                enterTS: '0.5',
+                leaveTS: '0.7',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.4',
+                leaveTSL: '0.5',
+                enterDSL: '0',
+                leaveDSL: '0' } }),
+          ]);
+        }
+      }
+    }
+    // tslint:disable-next-line:no-switch-case-fall-through
+    case ('medium') : {
+      switch (speedSlide) {
+        case ('low'): {
+          return trigger('scaleAndSlide', [
+            transition('* => scrollLeft', scale('-'), { params: {
+                enterTS: '0.3',
+                leaveTS: '0.4',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '1.2',
+                leaveTSL: '1.2',
+                enterDSL: '0',
+                leaveDSL: '0'} }),
+            transition('* => scrollRight', scale('+'), { params: {
+                enterTS: '0.3',
+                leaveTS: '0.4',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '1.2',
+                leaveTSL: '1.2',
+                enterDSL: '0',
+                leaveDSL: '0' } }),
+            transition('scrollRight => *', scale('-'), { params: {
+                enterTS: '0.3',
+                leaveTS: '0.4',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '1.2',
+                leaveTSL: '1.2',
+                enterDSL: '0',
+                leaveDSL: '0' } }),
+            transition('scrollLeft => *', scale('+'), { params: {
+                enterTS: '0.3',
+                leaveTS: '0.4',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '1.2',
+                leaveTSL: '1.2',
+                enterDSL: '0',
+                leaveDSL: '0'} }),
+            transition('* <=> *', scale('+'), { params: {
+                enterTS: '0.3',
+                leaveTS: '0.4',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '1.2',
+                leaveTSL: '1.2',
+                enterDSL: '0',
+                leaveDSL: '0' } }),
+          ]);
+        }
+        // tslint:disable-next-line:no-switch-case-fall-through
+        case ('medium'): {
+          return trigger('scaleAndSlide', [
+            transition('* => scrollLeft', scale('-'), { params: {
+                enterTS: '0.3',
+                leaveTS: '0.4',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.8',
+                leaveTSL: '0.9',
+                enterDSL: '0',
+                leaveDSL: '0'} }),
+            transition('* => scrollRight', scale('+'), { params: {
+                enterTS: '0.3',
+                leaveTS: '0.4',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.8',
+                leaveTSL: '0.9',
+                enterDSL: '0',
+                leaveDSL: '0' } }),
+            transition('scrollRight => *', scale('-'), { params: {
+                enterTS: '0.3',
+                leaveTS: '0.4',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.8',
+                leaveTSL: '0.9',
+                enterDSL: '0',
+                leaveDSL: '0' } }),
+            transition('scrollLeft => *', scale('+'), { params: {
+                enterTS: '0.3',
+                leaveTS: '0.4',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.8',
+                leaveTSL: '0.9',
+                enterDSL: '0',
+                leaveDSL: '0'} }),
+            transition('* <=> *', scale('+'), { params: {
+                enterTS: '0.3',
+                leaveTS: '0.4',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.8',
+                leaveTSL: '0.9',
+                enterDSL: '0',
+                leaveDSL: '0' } }),
+          ]);
+        }
+        // tslint:disable-next-line:no-switch-case-fall-through
+        case ('high'): {
+          return trigger('scaleAndSlide', [
+            transition('* => scrollLeft', scale('-'), { params: {
+                enterTS: '0.3',
+                leaveTS: '0.4',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.4',
+                leaveTSL: '0.5',
+                enterDSL: '0',
+                leaveDSL: '0'} }),
+            transition('* => scrollRight', scale('+'), { params: {
+                enterTS: '0.3',
+                leaveTS: '0.4',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.4',
+                leaveTSL: '0.5',
+                enterDSL: '0',
+                leaveDSL: '0' } }),
+            transition('scrollRight => *', scale('-'), { params: {
+                enterTS: '0.3',
+                leaveTS: '0.4',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.4',
+                leaveTSL: '0.5',
+                enterDSL: '0',
+                leaveDSL: '0' } }),
+            transition('scrollLeft => *', scale('+'), { params: {
+                enterTS: '0.3',
+                leaveTS: '0.4',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.4',
+                leaveTSL: '0.5',
+                enterDSL: '0',
+                leaveDSL: '0'} }),
+            transition('* <=> *', scale('+'), { params: {
+                enterTS: '0.3',
+                leaveTS: '0.4',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.4',
+                leaveTSL: '0.5',
+                enterDSL: '0',
+                leaveDSL: '0' } }),
+          ]);
+        }
+      }
+    }
+    // tslint:disable-next-line:no-switch-case-fall-through
+    case ('high') : {
+      switch (speedSlide) {
+        case ('low'): {
+          return trigger('scaleAndSlide', [
+            transition('* => scrollLeft', scale('-'), { params: {
+                enterTS: '0.15',
+                leaveTS: '0.2',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '1.2',
+                leaveTSL: '1.2',
+                enterDSL: '0',
+                leaveDSL: '0'} }),
+            transition('* => scrollRight', scale('+'), { params: {
+                enterTS: '0.15',
+                leaveTS: '0.2',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '1.2',
+                leaveTSL: '1.2',
+                enterDSL: '0',
+                leaveDSL: '0' } }),
+            transition('scrollRight => *', scale('-'), { params: {
+                enterTS: '0.15',
+                leaveTS: '0.2',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '1.2',
+                leaveTSL: '1.2',
+                enterDSL: '0',
+                leaveDSL: '0' } }),
+            transition('scrollLeft => *', scale('+'), { params: {
+                enterTS: '0.15',
+                leaveTS: '0.2',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '1.2',
+                leaveTSL: '1.2',
+                enterDSL: '0',
+                leaveDSL: '0'} }),
+            transition('* <=> *', scale('+'), { params: {
+                enterTS: '0.15',
+                leaveTS: '0.2',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '1.2',
+                leaveTSL: '1.2',
+                enterDSL: '0',
+                leaveDSL: '0' } }),
+          ]);
+        }
+        // tslint:disable-next-line:no-switch-case-fall-through
+        case ('medium'): {
+          return trigger('scaleAndSlide', [
+            transition('* => scrollLeft', scale('-'), { params: {
+                enterTS: '0.15',
+                leaveTS: '0.2',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.8',
+                leaveTSL: '0.9',
+                enterDSL: '0',
+                leaveDSL: '0'} }),
+            transition('* => scrollRight', scale('+'), { params: {
+                enterTS: '0.15',
+                leaveTS: '0.2',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.8',
+                leaveTSL: '0.9',
+                enterDSL: '0',
+                leaveDSL: '0' } }),
+            transition('scrollRight => *', scale('-'), { params: {
+                enterTS: '0.15',
+                leaveTS: '0.2',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.8',
+                leaveTSL: '0.9',
+                enterDSL: '0',
+                leaveDSL: '0' } }),
+            transition('scrollLeft => *', scale('+'), { params: {
+                enterTS: '0.15',
+                leaveTS: '0.2',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.8',
+                leaveTSL: '0.9',
+                enterDSL: '0',
+                leaveDSL: '0'} }),
+            transition('* <=> *', scale('+'), { params: {
+                enterTS: '0.15',
+                leaveTS: '0.2',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.8',
+                leaveTSL: '0.9',
+                enterDSL: '0',
+                leaveDSL: '0' } }),
+          ]);
+        }
+        // tslint:disable-next-line:no-switch-case-fall-through
+        case ('high'): {
+          return trigger('scaleAndSlide', [
+            transition('* => scrollLeft', scale('-'), { params: {
+                enterTS: '0.15',
+                leaveTS: '0.2',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.4',
+                leaveTSL: '0.5',
+                enterDSL: '0',
+                leaveDSL: '0'} }),
+            transition('* => scrollRight', scale('+'), { params: {
+                enterTS: '0.15',
+                leaveTS: '0.2',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.4',
+                leaveTSL: '0.5',
+                enterDSL: '0',
+                leaveDSL: '0' } }),
+            transition('scrollRight => *', scale('-'), { params: {
+                enterTS: '0.15',
+                leaveTS: '0.2',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.4',
+                leaveTSL: '0.5',
+                enterDSL: '0',
+                leaveDSL: '0' } }),
+            transition('scrollLeft => *', scale('+'), { params: {
+                enterTS: '0.15',
+                leaveTS: '0.2',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.4',
+                leaveTSL: '0.5',
+                enterDSL: '0',
+                leaveDSL: '0'} }),
+            transition('* <=> *', scale('+'), { params: {
+                enterTS: '0.15',
+                leaveTS: '0.2',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.4',
+                leaveTSL: '0.5',
+                enterDSL: '0',
+                leaveDSL: '0' } }),
+          ]);
+        }
+      }
+    }
+
+  }
+}
+
+
+

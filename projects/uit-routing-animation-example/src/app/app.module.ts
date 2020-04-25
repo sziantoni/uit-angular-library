@@ -35,9 +35,6 @@ import { MoveUpRightHighComponent } from './loading/moveUp/move-up-right-high/mo
 import { Rotate3dLowComponent } from './loading/rotate3d/rotate3d-low/rotate3d-low.component';
 import { Rotate3dMediumComponent } from './loading/rotate3d/rotate3d-medium/rotate3d-medium.component';
 import { Rotate3dHighComponent } from './loading/rotate3d/rotate3d-high/rotate3d-high.component';
-import { ScaleAndSlideLowComponent } from './loading/scale-and-slide/scale-and-slide-low/scale-and-slide-low.component';
-import { ScaleAndSlideMediumComponent } from './loading/scale-and-slide/scale-and-slide-medium/scale-and-slide-medium.component';
-import { ScaleAndSlideHighComponent } from './loading/scale-and-slide/scale-and-slide-high/scale-and-slide-high.component';
 import { ScrollSideLowComponent } from './loading/scroll-side/scroll-side-low/scroll-side-low.component';
 import { ScrollSideMediumComponent } from './loading/scroll-side/scroll-side-medium/scroll-side-medium.component';
 import { ScrollSideHighComponent } from './loading/scroll-side/scroll-side-high/scroll-side-high.component';
@@ -53,6 +50,15 @@ import { StdbHighHighComponent } from './loading/slide-title-down-blocks/stdb-hi
 import { SurpriseLowComponent } from './loading/surprise/surprise-low/surprise-low.component';
 import { SurpriseMediumComponent } from './loading/surprise/surprise-medium/surprise-medium.component';
 import { SurpriseHighComponent } from './loading/surprise/surprise-high/surprise-high.component';
+import { ScaleAndSlideLowLowComponent } from './loading/scale-and-slide/scale-and-slide-low-low/scale-and-slide-low-low.component';
+import { ScaleAndSlideLowMediumComponent } from './loading/scale-and-slide/scale-and-slide-low-medium/scale-and-slide-low-medium.component';
+import { ScaleAndSlideLowHighComponent } from './loading/scale-and-slide/scale-and-slide-low-high/scale-and-slide-low-high.component';
+import { ScaleAndSlideMediumLowComponent } from './loading/scale-and-slide/scale-and-slide-medium-low/scale-and-slide-medium-low.component';
+import { ScaleAndSlideMediumMediumComponent } from './loading/scale-and-slide/scale-and-slide-medium-medium/scale-and-slide-medium-medium.component';
+import { ScaleAndSlideMediumHighComponent } from './loading/scale-and-slide/scale-and-slide-medium-high/scale-and-slide-medium-high.component';
+import { ScaleAndSlideHighLowComponent } from './loading/scale-and-slide/scale-and-slide-high-low/scale-and-slide-high-low.component';
+import { ScaleAndSlideHighMediumComponent } from './loading/scale-and-slide/scale-and-slide-high-medium/scale-and-slide-high-medium.component';
+import { ScaleAndSlideHighHighComponent } from './loading/scale-and-slide/scale-and-slide-high-high/scale-and-slide-high-high.component';
 
 
 @NgModule({
@@ -89,9 +95,6 @@ import { SurpriseHighComponent } from './loading/surprise/surprise-high/surprise
     Rotate3dLowComponent,
     Rotate3dMediumComponent,
     Rotate3dHighComponent,
-    ScaleAndSlideLowComponent,
-    ScaleAndSlideMediumComponent,
-    ScaleAndSlideHighComponent,
     ScrollSideLowComponent,
     ScrollSideMediumComponent,
     ScrollSideHighComponent,
@@ -107,6 +110,15 @@ import { SurpriseHighComponent } from './loading/surprise/surprise-high/surprise
     SurpriseLowComponent,
     SurpriseMediumComponent,
     SurpriseHighComponent,
+    ScaleAndSlideLowLowComponent,
+    ScaleAndSlideLowMediumComponent,
+    ScaleAndSlideLowHighComponent,
+    ScaleAndSlideMediumLowComponent,
+    ScaleAndSlideMediumMediumComponent,
+    ScaleAndSlideMediumHighComponent,
+    ScaleAndSlideHighLowComponent,
+    ScaleAndSlideHighMediumComponent,
+    ScaleAndSlideHighHighComponent,
   ],
   imports: [
     BrowserModule,

@@ -11,7 +11,7 @@
 </div>
 
 <div class = 'activeAnimation'>
-  <p> Animation active: {{animationString}} </p>
+  <p> Animation: {{animationString}} </p>
 </div>
 
 <div class="outlet">
@@ -21,6 +21,40 @@
 </div>
 
 <div class="animSelector">
+
+  <div class="anim_box">
+    <button class="animBoxTitle">Scale and Slide</button>
+    <div class="dropContent">
+      <button class="microButtonStyle" (click)="assignComponent('scaleAndSlideHighHigh')">
+        High / High
+      </button>
+      <button class="microButtonStyle" (click)="assignComponent('scaleAndSlideHighMedium')">
+        High / Medium
+      </button>
+      <button class="microButtonStyle" (click)="assignComponent('scaleAndSlideHighLow')">
+        High / Low
+      </button>
+      <button class="microButtonStyle" (click)="assignComponent('scaleAndSlideMediumHigh')">
+        Medium / High
+      </button>
+      <button class="microButtonStyle" (click)="assignComponent('scaleAndSlideMediumMedium')">
+        Medium / Medium
+      </button>
+      <button class="microButtonStyle" (click)="assignComponent('scaleAndSlideMediumLow')">
+        Medium / Low
+      </button>
+      <button class="microButtonStyle" (click)="assignComponent('scaleAndSlideLowHigh')">
+        Low / High
+      </button>
+      <button class="microButtonStyle" (click)="assignComponent('scaleAndSlideLowMedium')">
+        Low / Medium
+      </button>
+      <button class="microButtonStyle" (click)="assignComponent('scaleAndSlideLowLow')">
+        Low / Low
+      </button>
+    </div>
+  </div>
+
 <div class="anim_box">
   <button class="animBoxTitle">Slide</button>
   <div class="dropContent">
@@ -44,6 +78,31 @@
   </button>
   </div>
 </div>
+
+  <div class="anim_box">
+    <button class="animBoxTitle">Rotate</button>
+    <div class="dropContent">
+      <button class="microButtonStyle" (click)="assignComponent('rotateRightLow')">
+        Right / Low
+      </button>
+      <button class="microButtonStyle" (click)="assignComponent('rotateRightMedium')">
+        Right / Medium
+      </button>
+      <button class="microButtonStyle" (click)="assignComponent('rotateRightHigh')">
+        Right / High
+      </button>
+      <button class="microButtonStyle" (click)="assignComponent('rotateLeftLow')">
+        Left / Low
+      </button>
+      <button class="microButtonStyle" (click)="assignComponent('rotateLeftMedium')">
+        Left / Medium
+      </button>
+      <button class="microButtonStyle" (click)="assignComponent('rotateLeftHigh')">
+        Left / High
+      </button>
+    </div>
+  </div>
+
 <div class="anim_box">
   <button class="animBoxTitle">Flip</button>
   <div class="dropContent">
@@ -75,30 +134,6 @@
 </div>
 
   <div class="anim_box">
-    <button class="animBoxTitle">Rotate</button>
-    <div class="dropContent">
-      <button class="microButtonStyle" (click)="assignComponent('rotateRightLow')">
-        Right / Low
-      </button>
-      <button class="microButtonStyle" (click)="assignComponent('rotateRightMedium')">
-        Right / Medium
-      </button>
-      <button class="microButtonStyle" (click)="assignComponent('rotateRightHigh')">
-        Right / High
-      </button>
-      <button class="microButtonStyle" (click)="assignComponent('rotateLeftLow')">
-        Left / Low
-      </button>
-      <button class="microButtonStyle" (click)="assignComponent('rotateLeftMedium')">
-        Left / Medium
-      </button>
-      <button class="microButtonStyle" (click)="assignComponent('rotateLeftHigh')">
-        Left / High
-      </button>
-    </div>
-  </div>
-
-  <div class="anim_box">
     <button class="animBoxTitle">Rotate 3D</button>
     <div class="dropContent">
       <button class="microButtonStyle" (click)="assignComponent('rotate3dHigh')">
@@ -114,20 +149,6 @@
   </div>
 
   <div class="anim_box">
-    <button class="animBoxTitle">Scale and Slide</button>
-    <div class="dropContent">
-      <button class="microButtonStyle" (click)="assignComponent('scaleAndSlideHigh')">
-        High
-      </button>
-      <button class="microButtonStyle" (click)="assignComponent('scaleAndSlideMedium')">
-        Medium
-      </button>
-      <button class="microButtonStyle" (click)="assignComponent('scaleAndSlideLow')">
-        Low
-      </button>
-    </div>
-  </div>
-  <div class="anim_box">
     <button class="animBoxTitle">Scroll Side</button>
     <div class="dropContent">
       <button class="microButtonStyle" (click)="assignComponent('scrollSideHigh')">
@@ -141,6 +162,7 @@
       </button>
     </div>
   </div>
+
   <div class="anim_box">
     <button class="animBoxTitle">Surprise</button>
     <div class="dropContent">
@@ -155,6 +177,7 @@
       </button>
     </div>
   </div>
+
   <div class="anim_box">
     <button class="animBoxTitle">Move Up</button>
     <div class="dropContent">
@@ -179,8 +202,8 @@
     </div>
   </div>
 
-  <div class="anim_box_2">
-    <button class="animBoxTitle">Slide title down blocks</button>
+  <div class="anim_box">
+    <button class="animBoxTitle">Slide T down B</button>
     <div class="dropContent">
       <button class="microButtonStyle" (click)="assignComponent('stdbHighHigh')">
         High / High
