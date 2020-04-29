@@ -9,36 +9,59 @@ import {
 
 const ROUTING_ELEMENT = 'route-animations-elements';
 
+export const rotateEnterParam = animation([
+  query(':enter', [
+    style({
+      position: 'fixed',
+      width: '100%',
+      opacity: 0
+    })
+  ], { optional: true}),
+  query(':enter .' + ROUTING_ELEMENT, style({ opacity: 0}), {
+    optional: true
+  })
+]);
+
+export const rotateLeaveParam = animation([
+  query(':leave', [
+    style({
+      position: 'fixed',
+      width: '100%',
+      opacity: 0
+    })
+  ], { optional: true})]);
+
+
+export const rotateLeavePart = animation([
+  query(':leave', [
+  style({opacity : 1 , transformOrigin: '{{tr}} bottom', transform: 'translate3d(0,0,0)'}),
+  animate( '{{leaveT}}s {{leaveD}}s ease-in' ,
+    style({
+      opacity: 0.5 , transform: ' rotate3d(0,0,1,{{dirR}}90deg) translate3d({{dirR}}50%,0,0)' , transformOrigin: '{{tr}} bottom'})
+  )
+], {optional: true })
+]);
+
+export const rotateEnterPart = animation([
+  query(':enter ', stagger( 0, [
+    style({ opacity: 0, transformOrigin: '{{tr}} bottom', transform: 'rotate3d(0, 0, 1, {{dirR}}90deg)'}),
+    animate('{{enterT}}s {{enterD}}s  ease-out',
+      style({opacity: 1, transformOrigin: '{{tr}} bottom' , transform: 'translate3d(0,0,0)', position: 'relative'}))
+  ]), {optional: true }),
+  query(':enter .' + ROUTING_ELEMENT, stagger( 75, [
+    style({ opacity: 0, transformOrigin: '{{tr}} bottom', transform: 'rotate3d(0, 0, 1, {{dirR}}90deg)'}),
+    animate('{{enterTR}}s {{enterDR}}s ease-out',
+      style({opacity: 1, transformOrigin: '{{tr}} bottom' , transform: 'translate3d(0,0,0)', position: 'relative'}))
+  ]), {optional: true })
+]);
+
 const rotateA = animation([
-      query(':enter, :leave', [
-        style({
-          position: 'fixed',
-          width: '100%',
-          opacity: 0
-        })
-      ], { optional: true}),
-      query(':enter .' + ROUTING_ELEMENT, style({ opacity: 0}), {
-        optional: true
-      }),
+      useAnimation(rotateLeaveParam),
+      useAnimation(rotateEnterParam),
       sequence([
-        query(':leave', [
-          style({opacity : 1 , transformOrigin: '{{tr}} bottom', transform: 'translate3d(0,0,0)'}),
-          animate( '{{leaveT}}s {{leaveD}}s ease-in' ,
-            style({
-              opacity: 0.5 , transform: ' rotate3d(0,0,1,{{dir}}90deg) translate3d({{dir}}50%,0,0)' , transformOrigin: '{{tr}} bottom'})
-          )
-        ], {optional: true }),
-        query(':enter ', stagger( 0, [
-          style({ opacity: 0, transformOrigin: '{{tr}} bottom', transform: 'rotate3d(0, 0, 1, {{dir}}90deg)'}),
-          animate('{{enterT}}s {{enterD}}s  ease-out',
-            style({opacity: 1, transformOrigin: '{{tr}} bottom' , transform: 'translate3d(0,0,0)', position: 'relative'}))
-        ]), {optional: true })
-      ]),
-      query(':enter .' + ROUTING_ELEMENT, stagger( 75, [
-        style({ opacity: 0, transformOrigin: '{{tr}} bottom', transform: 'rotate3d(0, 0, 1, {{dir}}90deg)'}),
-        animate('{{enterTR}}s {{enterDR}}s ease-out',
-          style({opacity: 1, transformOrigin: '{{tr}} bottom' , transform: 'translate3d(0,0,0)', position: 'relative'}))
-      ]), {optional: true })
+        useAnimation(rotateLeavePart),
+        useAnimation(rotateEnterPart)
+      ])
    ]);
 
 
@@ -50,7 +73,7 @@ export function rotate_customSpeed(direction: string, speed: string): AnimationT
           return trigger('rotate', [
             transition('* <=> *', useAnimation(rotateA), {params: {
                 tr: 'left',
-                dir: '+',
+                dirR: '+',
                 enterT: '0.5',
                 leaveT: '0.5',
                 enterD: '0',
@@ -62,7 +85,7 @@ export function rotate_customSpeed(direction: string, speed: string): AnimationT
           return trigger('rotate', [
             transition('* <=> *', useAnimation(rotateA), {params: {
                 tr: 'right',
-                dir: '-',
+                dirR: '-',
                 enterT: '0.5',
                 leaveT: '0.5',
                 enterD: '0',
@@ -78,7 +101,7 @@ export function rotate_customSpeed(direction: string, speed: string): AnimationT
           return trigger('rotate', [
             transition('* <=> *', useAnimation(rotateA), {params: {
                 tr: 'left',
-                dir: '+',
+                dirR: '+',
                 enterT: '0.25',
                 leaveT: '0.25',
                 enterD: '0',
@@ -90,7 +113,7 @@ export function rotate_customSpeed(direction: string, speed: string): AnimationT
           return trigger('rotate', [
             transition('* <=> *', useAnimation(rotateA), {params: {
                 tr: 'right',
-                dir: '-',
+                dirR: '-',
                 enterT: '0.25',
                 leaveT: '0.25',
                 enterD: '0',
@@ -106,7 +129,7 @@ export function rotate_customSpeed(direction: string, speed: string): AnimationT
           return trigger('rotate', [
             transition('* <=> *', useAnimation(rotateA), {params: {
                 tr: 'left',
-                dir: '+',
+                dirR: '+',
                 enterT: '1',
                 leaveT: '1',
                 enterD: '0',
@@ -118,7 +141,7 @@ export function rotate_customSpeed(direction: string, speed: string): AnimationT
           return trigger('rotate', [
             transition('* <=> *', useAnimation(rotateA), {params: {
                 tr: 'right',
-                dir: '-',
+                dirR: '-',
                 enterT: '1',
                 leaveT: '1',
                 enterD: '0',
@@ -134,7 +157,7 @@ export function rotate(direction: string): AnimationTriggerMetadata {
   if (direction === 'left') {
     return trigger('rotate', [
       transition('* <=> *', useAnimation(rotateA), {params: {
-          dir: '+',
+          dirR: '+',
           enterT: '0.5',
           leaveT: '0.5',
           enterD: '0',
@@ -145,7 +168,7 @@ export function rotate(direction: string): AnimationTriggerMetadata {
     return trigger('rotate', [
       transition('* <=> *', useAnimation(rotateA), {params: {
           tr: 'right',
-          dir: '-',
+          dirR: '-',
           enterT: '0.5',
           leaveT: '0.5',
           enterD: '0',

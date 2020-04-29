@@ -8,68 +8,85 @@ import {
 } from '@angular/animations';
 const ROUTING_ELEMENT = 'route-animations-elements';
 
+export const stdbLeavePart = animation(
+  [
+    query(':leave .' + ROUTING_ELEMENT, stagger( 75, [
+      stagger(75, [
+        style({ transform: 'translateY(0%)', opacity: 1 }),
+        animate(
+          '{{leaveTR}}s {{leaveTR}}s ease-in-out',
+          style({ transform: 'translateY(-30%)', opacity: 0 })
+        )])
+    ]), {optional: true }),
+    query(':leave', [
+      style({
+        opacity: 1,
+        transform: 'translateX(0%)',
+        offset: 1,
+        position: 'fixed'}),
+      animate('{{leaveT}}s {{leaveD}}s ease-in',
+        style({
+          opacity: 1,
+          transform: 'translateX(-100%)',
+          offset: 1,
+          position: 'fixed'})
+      )
+    ], { optional: true })
+  ]
+);
+
+export const stdbEnterPart = animation([
+  query(':enter', [
+    style({
+      opacity: 1,
+      transform: 'translateX(+100%)',
+      offset: 1}),
+    animate('{{enterT}}s {{enterD}}s ease-out',
+      style({
+        opacity: 1,
+        transform: 'translateX(0%)',
+        offset: 1,
+        position: 'relative'})
+    )
+  ] , { optional: true }),
+  query(':enter .' + ROUTING_ELEMENT, stagger( 75, [
+    stagger(75, [
+      style({ transform: 'translateY(-30%)', opacity: 0 }),
+      animate(
+        '{{enterTR}}s {{enterDR}}s ease-in-out',
+        style({ transform: 'translateY(0%)', opacity: 1 })
+      )])
+  ]), {optional: true })
+]);
+
+export const stdbEnterParams = animation([
+  query(':enter', [
+    style({
+      position: 'fixed',
+      width: '100%',
+      opacity: 0,
+      transform: 'translateX(100%)'
+    })
+  ], { optional: true}),
+  query(':enter .' + ROUTING_ELEMENT, style({ opacity: 0}), {
+    optional: true
+  })
+]);
+
+export const stdbLeaveParams = animation([
+  query(':leave', style({
+    position: 'relative'}), {
+    optional: true
+  })
+]);
 
 const slideTitleDownBlocksA =
   animation([
-    query(':leave', style({
-        position: 'relative'}), {
-        optional: true
-      }),
-      query(':enter', [
-        style({
-          position: 'fixed',
-          width: '100%',
-          opacity: 0,
-          transform: 'translateX(100%)'
-        })
-      ], { optional: true}),
-      query(':enter .' + ROUTING_ELEMENT, style({ opacity: 0}), {
-        optional: true
-      }),
+      useAnimation(stdbLeaveParams),
+      useAnimation(stdbEnterParams),
       sequence([
-        query(':leave .' + ROUTING_ELEMENT, stagger( 75, [
-          stagger(75, [
-            style({ transform: 'translateY(0%)', opacity: 1 }),
-            animate(
-              '{{leaveTR}}s {{enterTR}}s ease-in-out',
-              style({ transform: 'translateY(-30%)', opacity: 0 })
-            )])
-        ]), {optional: true }),
-          query(':leave', [
-            style({
-              opacity: 1,
-              transform: 'translateX(0%)',
-              offset: 1,
-              position: 'fixed'}),
-            animate('{{leaveT}}s {{leaveD}}s ease-in',
-              style({
-                opacity: 1,
-                transform: 'translateX(-100%)',
-                offset: 1,
-                position: 'fixed'})
-            )
-          ], { optional: true }),
-          query(':enter', [
-            style({
-              opacity: 1,
-              transform: 'translateX(+100%)',
-              offset: 1}),
-            animate('{{enterT}}s {{enterD}}s ease-out',
-              style({
-                opacity: 1,
-                transform: 'translateX(0%)',
-                offset: 1,
-                position: 'relative'})
-            )
-          ] , { optional: true }),
-      query(':enter .' + ROUTING_ELEMENT, stagger( 75, [
-        stagger(75, [
-          style({ transform: 'translateY(-30%)', opacity: 0 }),
-          animate(
-            '{{enterTR}}s {{enterDR}}s ease-in-out',
-            style({ transform: 'translateY(0%)', opacity: 1 })
-          )])
-      ]), {optional: true })
+        useAnimation(stdbLeavePart),
+        useAnimation(stdbEnterPart)
       ])]);
 
 

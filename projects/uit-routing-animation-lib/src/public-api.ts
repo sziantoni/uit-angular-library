@@ -16,3 +16,4 @@ export {scaleAndSlide, scaleAndSlide_customAll, scaleAndSlide_customSpeed} from 
 export {surprise, surprise_customSpeed} from './lib/surprise';
 export {slideTitleDownBlocks, slideTitleDownBlocks_customSpeed} from './lib/slideTitleDownBlocks';
 export {rotate3D, rotate3D_customAll, rotate3D_customSpeed} from './lib/rotate3D';
+export {animationComposerSimple, animationComposerComplex} from './lib/animationComposer';

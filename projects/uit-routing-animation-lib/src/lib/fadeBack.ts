@@ -8,51 +8,68 @@ import {
   sequence, stagger, keyframes,  animation, AnimationTriggerMetadata, useAnimation,
 } from '@angular/animations';
 
+export const fadeBackLeaveParam = animation([
+  query(':leave' ,
+    style({
+      position: 'relative'
+    }), {optional: true} )
+]);
+
+export const fadeBackEnterParams = animation([
+  query(':enter' ,
+    style({
+      opacity: 0,
+      position: 'fixed'
+    }), {optional: true} ),
+  query(':enter .' + ROUTING_ELEMENT , style({
+    opacity: 0
+  }) , {optional: true}),
+]);
+
+export const fadeBackLeavePart = animation([
+  query(
+    ':leave .' + ROUTING_ELEMENT, [
+      stagger(-50, [
+        animate('{{leaveTR}}s {{leaveDR}}s ease-out', keyframes([
+          style({ transform: 'scale(1)',  opacity: 1, offset: 0 }),
+          style({transform: 'scale(0.5)',   opacity: 0, offset: 1 })
+        ]))
+      ])], { optional: true }
+  ),
+  query(':leave', [
+    animate('{{leaveT}}s {{leaveD}}s ease-out', keyframes([
+        style({ transform: 'scale(1)',  opacity: 1, offset: 0, position: 'fixed'}),
+        style({transform: ' scale(0.5)',   opacity: 0, offset: 1, position: 'fixed'})
+      ])
+    )
+  ], {optional: true} ) ,
+]);
+
+
+export const fadeBackEnterPart = animation([
+  query(':enter', [
+    animate('{{enterT}}s {{enterD}}s ease-out', keyframes([
+      style({ transform: 'scale(0.5)', opacity: 0, offset: 0}),
+      style({transform: 'scale(1)',  opacity: 1, offset: 1, position: 'relative'}),
+    ]))
+  ], {optional: true} ),
+  query(':enter .' + ROUTING_ELEMENT, [
+    stagger( 200, [
+      animate('{{enterTR}}s {{enterDR}}s ease-out', keyframes([
+          style({ transform: 'scale(0.5)', opacity: 0, offset: 0}),
+          style({transform: 'scale(1)',  opacity: 1, offset: 1}),
+        ])
+      )
+    ] )], {optional: true} )
+]);
 
 const fadeBackA = animation([
-    query(':enter' ,
-      style({
-        opacity: 0,
-        position: 'fixed'
-      }), {optional: true} ),
-    query(':leave' ,
-      style({
-        position: 'relative'
-      }), {optional: true} ),
-    query(':enter .' + ROUTING_ELEMENT , style({
-      opacity: 0
-    }) , {optional: true}),
-    sequence([
-      query(
-        ':leave .' + ROUTING_ELEMENT, [
-          stagger(-50, [
-            animate('{{leaveTR}}s {{leaveDR}}s ease-out', keyframes([
-              style({ transform: 'scale(1)',  opacity: 1, offset: 0 }),
-              style({transform: 'scale(0.5)',   opacity: 0, offset: 1 })
-            ]))
-          ])], { optional: true }
-      ),
-      query(':leave', [
-        animate('{{leaveT}}s {{leaveD}}s ease-out', keyframes([
-            style({ transform: 'scale(1)',  opacity: 1, offset: 0, position: 'fixed'}),
-            style({transform: ' scale(0.5)',   opacity: 0, offset: 1, position: 'fixed'})
-          ])
-        )
-      ], {optional: true} ) ,
-      query(':enter', [
-        animate('{{enterT}}s {{enterD}}s ease-out', keyframes([
-          style({ transform: 'scale(0.5)', opacity: 0, offset: 0}),
-          style({transform: 'scale(1)',  opacity: 1, offset: 1, position: 'relative'}),
-        ]))
-      ], {optional: true} ),
-      query(':enter .' + ROUTING_ELEMENT, [
-        stagger( 200, [
-          animate('{{enterTR}}s {{enterDR}}s ease-out', keyframes([
-              style({ transform: 'scale(0.5)', opacity: 0, offset: 0}),
-              style({transform: 'scale(1)',  opacity: 1, offset: 1}),
-            ])
-          )
-        ] )], {optional: true} )])
+    useAnimation(fadeBackEnterParams),
+    useAnimation(fadeBackLeaveParam),
+  sequence([
+      useAnimation(fadeBackLeavePart),
+      useAnimation(fadeBackEnterPart)
+])
   ])
 ;
 export function fadeBack_customSpeed(speed: string): AnimationTriggerMetadata {

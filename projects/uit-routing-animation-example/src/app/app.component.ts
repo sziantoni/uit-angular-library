@@ -52,6 +52,13 @@ import {ScaleAndSlideHighMediumComponent} from './loading/scale-and-slide/scale-
 import {ScaleAndSlideLowMediumComponent} from './loading/scale-and-slide/scale-and-slide-low-medium/scale-and-slide-low-medium.component';
 import {ScaleAndSlideMediumLowComponent} from './loading/scale-and-slide/scale-and-slide-medium-low/scale-and-slide-medium-low.component';
 import {ScaleAndSlideHighLowComponent} from './loading/scale-and-slide/scale-and-slide-high-low/scale-and-slide-high-low.component';
+import {FadebackSlideComponent} from './loading/composer/fadeback-slide/fadeback-slide.component';
+import {MoveupRotateComponent} from './loading/composer/moveup-rotate/moveup-rotate.component';
+import {SlideRotateComponent} from './loading/composer/slide-rotate/slide-rotate.component';
+import {SlideStdbComponent} from './loading/composer/slide-stdb/slide-stdb.component';
+import {StdbRotateComponent} from './loading/composer/stdb-rotate/stdb-rotate.component';
+import {SurpriseFlipComponent} from './loading/composer/surprise-flip/surprise-flip.component';
+import {FadebackFlipComponent} from './loading/composer/fadeback-flip/fadeback-flip.component';
 
 
 @Component({
@@ -329,7 +336,41 @@ export class AppComponent {
         this.animationString = 'Rotate 3D - High';
         break;
       }
-
+      case 'composer1': {
+        this.animationSelected = FadebackSlideComponent;
+        this.animationString = 'Enter: Slide / Leave: Fade Back ';
+        break;
+      }
+      case 'composer2': {
+        this.animationSelected = MoveupRotateComponent;
+        this.animationString = 'Enter: Rotate / Leave: Move up ';
+        break;
+      }
+      case 'composer3': {
+        this.animationSelected = SlideRotateComponent;
+        this.animationString = 'Enter: Rotate / Leave: Slide ';
+        break;
+      }
+      case 'composer4': {
+        this.animationSelected = SlideStdbComponent;
+        this.animationString = 'Enter: S T D B / Leave: Slide';
+        break;
+      }
+      case 'composer5': {
+        this.animationSelected = FadebackFlipComponent;
+        this.animationString = 'Enter: Flip / Leave: Fade Back';
+        break;
+      }
+      case 'composer6': {
+        this.animationSelected = StdbRotateComponent;
+        this.animationString = 'Enter: Rotate / Leave: S T D B';
+        break;
+      }
+      case 'composer7': {
+        this.animationSelected = SurpriseFlipComponent;
+        this.animationString = 'Enter: Flip / Leave: Surprise';
+        break;
+      }
     }
   }
   toggleAnimations() {

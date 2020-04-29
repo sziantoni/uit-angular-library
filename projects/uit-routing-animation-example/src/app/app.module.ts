@@ -59,6 +59,14 @@ import { ScaleAndSlideMediumHighComponent } from './loading/scale-and-slide/scal
 import { ScaleAndSlideHighLowComponent } from './loading/scale-and-slide/scale-and-slide-high-low/scale-and-slide-high-low.component';
 import { ScaleAndSlideHighMediumComponent } from './loading/scale-and-slide/scale-and-slide-high-medium/scale-and-slide-high-medium.component';
 import { ScaleAndSlideHighHighComponent } from './loading/scale-and-slide/scale-and-slide-high-high/scale-and-slide-high-high.component';
+import { FadebackSlideComponent } from './loading/composer/fadeback-slide/fadeback-slide.component';
+import { SlideRotateComponent } from './loading/composer/slide-rotate/slide-rotate.component';
+import { SurpriseFlipComponent } from './loading/composer/surprise-flip/surprise-flip.component';
+import { StdbRotateComponent } from './loading/composer/stdb-rotate/stdb-rotate.component';
+import { MoveupRotateComponent } from './loading/composer/moveup-rotate/moveup-rotate.component';
+import { StdbMoveupComponent } from './loading/composer/stdb-moveup/stdb-moveup.component';
+import { SlideStdbComponent } from './loading/composer/slide-stdb/slide-stdb.component';
+import { FadebackFlipComponent } from './loading/composer/fadeback-flip/fadeback-flip.component';
 
 
 @NgModule({
@@ -119,6 +127,14 @@ import { ScaleAndSlideHighHighComponent } from './loading/scale-and-slide/scale-
     ScaleAndSlideHighLowComponent,
     ScaleAndSlideHighMediumComponent,
     ScaleAndSlideHighHighComponent,
+    FadebackSlideComponent,
+    SlideRotateComponent,
+    SurpriseFlipComponent,
+    StdbRotateComponent,
+    MoveupRotateComponent,
+    StdbMoveupComponent,
+    SlideStdbComponent,
+    FadebackFlipComponent,
   ],
   imports: [
     BrowserModule,
