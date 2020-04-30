@@ -4,8 +4,55 @@ import {
   style,
   query,
   animate,
-  keyframes, sequence, AnimationTriggerMetadata,
+  keyframes, sequence, AnimationTriggerMetadata, animation,
 } from '@angular/animations';
+
+export const scaleAndSlideEnterParam = animation([
+  query(':enter', [
+    style({
+      opacity: 0,
+      position: 'fixed',
+      transformStyle: 'preserve-3d',
+    }),
+  ], {optional: true})
+]);
+
+export const scaleAndSlideLeaveParam = animation([
+  query(':enter', [
+    style({
+      opacity: 0,
+      position: 'fixed',
+      transformStyle: 'preserve-3d',
+    }),
+  ], {optional: true})
+]);
+
+export const scaleAndSlideLeavePart = animation([
+  query(':leave', [
+    animate('{{leaveTS}}s {{leaveDS}}s ease-out', keyframes([
+      style({ opacity: 1 , transform: 'scale(1)', offset: 0}),
+      style({opacity: 1, transform: 'scale(.7)', offset: 1 })])),
+    animate('{{leaveTSL}}s {{leaveDSL}}s ease-out', keyframes([
+      style({opacity: 1, transform: 'scale(.7) translateX({{oppSAS}}0%)', offset: 0 }),
+      style({opacity: 0, transform: 'scale(.7) translateX({{oppSAS}}300%)',  offset: 1 })
+    ])),
+    style({position: 'fixed'})
+  ], {optional: true})
+]);
+
+export const scaleAndSlideEnterPart = animation([
+  query(':enter', [
+    style({opacity: 0, transform: 'scale(.7) translateX({{dirSAS}}200%)' }),
+    animate('{{enterTSL}}s {{enterDSL}}s ease-out',
+      style({opacity: 1, transform: 'scale(.7) translateX(0%)', position: 'relative'})
+    ),
+    style({opacity: 1, transform: 'scale(.7)', position: 'relative'}),
+    animate('{{enterTS}}s {{enterDS}}s ease-out',
+      style({ opacity: 1 , transform: 'scale(1)', position: 'relative'})
+    ),
+  ], {optional: true})
+]);
+
 
 function scale(direction: string) {
   let opposite;

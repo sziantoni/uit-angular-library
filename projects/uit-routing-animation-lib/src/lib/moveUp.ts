@@ -40,7 +40,7 @@ export const moveUpLeavePart = animation([
 
 export const moveUpEnterPart = animation([
   query(':enter' , [
-    style({ transform: 'translateX({{dir}}50%) translateY(-100%)',  opacity: 0}),
+    style({ transform: 'translateX({{dirM}}50%) translateY(-100%)',  opacity: 0}),
     stagger(100, [
       animate( '{{enterT}}s {{enterT}}s ease-out' , keyframes([
         style({transform: 'translateX({{dirM}}50%) translateY(-75%) scaleY(0.4) scaleX(0.4)',  opacity: 0.1,  offset: 0.1}),

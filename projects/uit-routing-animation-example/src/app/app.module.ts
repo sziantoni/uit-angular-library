@@ -67,6 +67,9 @@ import { MoveupRotateComponent } from './loading/composer/moveup-rotate/moveup-r
 import { StdbMoveupComponent } from './loading/composer/stdb-moveup/stdb-moveup.component';
 import { SlideStdbComponent } from './loading/composer/slide-stdb/slide-stdb.component';
 import { FadebackFlipComponent } from './loading/composer/fadeback-flip/fadeback-flip.component';
+import { ScaleandslideScrollsideComponent } from './loading/composer/scaleandslide-scrollside/scaleandslide-scrollside.component';
+import { FadebackScaleandslideComponent } from './loading/composer/fadeback-scaleandslide/fadeback-scaleandslide.component';
+import { ScrollsideFlipComponent } from './loading/composer/scrollside-flip/scrollside-flip.component';
 
 
 @NgModule({
@@ -135,6 +138,9 @@ import { FadebackFlipComponent } from './loading/composer/fadeback-flip/fadeback
     StdbMoveupComponent,
     SlideStdbComponent,
     FadebackFlipComponent,
+    ScaleandslideScrollsideComponent,
+    FadebackScaleandslideComponent,
+    ScrollsideFlipComponent,
   ],
   imports: [
     BrowserModule,

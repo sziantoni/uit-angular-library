@@ -59,6 +59,9 @@ import {SlideStdbComponent} from './loading/composer/slide-stdb/slide-stdb.compo
 import {StdbRotateComponent} from './loading/composer/stdb-rotate/stdb-rotate.component';
 import {SurpriseFlipComponent} from './loading/composer/surprise-flip/surprise-flip.component';
 import {FadebackFlipComponent} from './loading/composer/fadeback-flip/fadeback-flip.component';
+import {ScaleandslideScrollsideComponent} from './loading/composer/scaleandslide-scrollside/scaleandslide-scrollside.component';
+import {ScrollsideFlipComponent} from './loading/composer/scrollside-flip/scrollside-flip.component';
+import {FadebackScaleandslideComponent} from './loading/composer/fadeback-scaleandslide/fadeback-scaleandslide.component';
 
 
 @Component({
@@ -369,6 +372,21 @@ export class AppComponent {
       case 'composer7': {
         this.animationSelected = SurpriseFlipComponent;
         this.animationString = 'Enter: Flip / Leave: Surprise';
+        break;
+      }
+      case 'composer8': {
+        this.animationSelected = ScaleandslideScrollsideComponent;
+        this.animationString = 'Enter: Scroll Side / Leave: Scale and Slide';
+        break;
+      }
+      case 'composer9': {
+        this.animationSelected = ScrollsideFlipComponent;
+        this.animationString = 'Enter: Flip / Leave: Scroll Side';
+        break;
+      }
+      case 'composer10': {
+        this.animationSelected = FadebackScaleandslideComponent;
+        this.animationString = 'Enter: Scale and Slide / Leave: Fade Back';
         break;
       }
     }

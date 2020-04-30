@@ -10,7 +10,9 @@ import {
 } from '@angular/animations';
 
 export const slideLeaveParam = animation([
-  query(':leave', style({}))
+  query(':leave', style({}), {
+    optional: true
+  })
 ]);
 
 export const slideEnterParam = animation([

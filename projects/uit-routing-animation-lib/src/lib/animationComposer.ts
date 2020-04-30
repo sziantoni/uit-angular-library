@@ -6,6 +6,8 @@ import {rotateLeavePart, rotateLeaveParam, rotateEnterParam, rotateEnterPart} fr
 import {slideEnterPart, slideLeavePart, slideEnterParam, slideLeaveParam} from './slide';
 import {moveUpLeavePart, moveUpEnterParam, moveUpLeaveParam, moveUpEnterPart} from './moveUp';
 import {AnimationTriggerMetadata, sequence, transition, trigger, useAnimation} from '@angular/animations';
+import {scrollSideEnterParam, scrollSideLeaveParam, scrollSideEnterPart, scrollSideLeavePart} from './scrollSide';
+import {scaleAndSlideEnterParam, scaleAndSlideLeaveParam, scaleAndSlideEnterPart, scaleAndSlideLeavePart} from './scaleAndSlide';
 
 let leaveP;
 let leaveA;
@@ -276,6 +278,10 @@ let dirRc = '';
 let tRc = '';
 let dirMc = '';
 let dirSc = '';
+let dirss = '';
+let oppss = '';
+let dirsas = '';
+let oppsas = '';
 
 // flip, fadeback, stdb, surprise, rotate, moveUp, slide
 export function animationComposerComplex(
@@ -323,6 +329,34 @@ export function animationComposerComplex(
       leaveA = slideLeavePart;
       break;
     }
+    case('scrollSide'): {
+      if (directionLeave === 'left'){
+        leaveP = scrollSideLeaveParam;
+        leaveA = scrollSideLeavePart;
+        dirss = '-';
+        oppss = '+';
+      }else if (directionLeave === 'right'){
+        leaveP = scrollSideLeaveParam;
+        leaveA = scrollSideLeavePart;
+        dirss = '+';
+        oppss = '-';
+      }
+      break;
+    }
+    case('scaleAndSlide'): {
+      if (directionLeave === 'left'){
+        leaveP = scaleAndSlideLeaveParam;
+        leaveA = scaleAndSlideLeavePart;
+        dirsas = '-';
+        oppsas = '+';
+      }else if (directionLeave === 'right'){
+        leaveP = scaleAndSlideLeaveParam;
+        leaveA = scaleAndSlideLeavePart;
+        dirsas = '+';
+        oppsas = '-';
+      }
+      break;
+    }
     default: {
       throw new Error(
         'invalid leave animation in animationComposerSimple, maybe you wanted to write: { fadeBack, slideTitleDownBlocks, surprise, flip, moveUp, slide, rotate }'
@@ -363,6 +397,34 @@ export function animationComposerComplex(
     case('slide'): {
       enterP = slideEnterParam;
       enterA = slideEnterPart;
+      break;
+    }
+    case('scrollSide'): {
+      if (directionEnter === 'left'){
+        enterP = scrollSideEnterParam;
+        enterA = scrollSideEnterPart;
+        dirss = '-';
+        oppss = '+';
+      }else if (directionEnter === 'right'){
+        enterP = scrollSideEnterParam;
+        enterA = scrollSideEnterPart;
+        dirss = '+';
+        oppss = '-';
+      }
+      break;
+    }
+    case('scaleAndSlide'): {
+      if (directionEnter === 'left'){
+        enterP = scaleAndSlideEnterParam;
+        enterA = scaleAndSlideEnterPart;
+        dirsas = '-';
+        oppsas = '+';
+      }else if (directionEnter === 'right'){
+        enterP = scaleAndSlideEnterParam;
+        enterA = scaleAndSlideEnterPart;
+        dirsas = '+';
+        oppsas = '-';
+      }
       break;
     }
     default: {
@@ -431,6 +493,18 @@ export function animationComposerComplex(
                 dirM: dirMc,
                 dirR: dirRc,
                 dirS: dirSc,
+                dirSS: dirss,
+                oppSS: oppss,
+                dirSAS: dirsas,
+                oppSAS: oppsas,
+                enterTS: '1',
+                leaveTS: '1',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '1',
+                leaveTSL: '1',
+                enterDSL: '0',
+                leaveDSL: '0',
                 tr: tRc,
                 enterT: '1',
                 leaveT: '1',
@@ -455,7 +529,19 @@ export function animationComposerComplex(
                 dirM: dirMc,
                 dirR: dirRc,
                 dirS: dirSc,
+                dirSS: dirss,
+                oppSS: oppss,
                 tr: tRc,
+                dirSAS: dirsas,
+                oppSAS: oppsas,
+                enterTS: '0.6',
+                leaveTS: '1',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.6',
+                leaveTSL: '1',
+                enterDSL: '0',
+                leaveDSL: '0',
                 enterT: '0.6',
                 leaveT: '1',
                 enterD: '0',
@@ -479,7 +565,19 @@ export function animationComposerComplex(
                 dirM: dirMc,
                 dirR: dirRc,
                 dirS: dirSc,
+                dirSS: dirss,
+                oppSS: oppss,
                 tr: tRc,
+                dirSAS: dirsas,
+                oppSAS: oppsas,
+                enterTS: '0.4',
+                leaveTS: '1',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.4',
+                leaveTSL: '1',
+                enterDSL: '0',
+                leaveDSL: '0',
                 enterT: '0.4',
                 leaveT: '1',
                 enterD: '0',
@@ -508,7 +606,19 @@ export function animationComposerComplex(
                 dirM: dirMc,
                 dirR: dirRc,
                 dirS: dirSc,
+                dirSS: dirss,
+                oppSS: oppss,
                 tr: tRc,
+                dirSAS: dirsas,
+                oppSAS: oppsas,
+                enterTS: '1',
+                leaveTS: '0.6',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '1',
+                leaveTSL: '0.6',
+                enterDSL: '0',
+                leaveDSL: '0',
                 enterT: '1',
                 leaveT: '0.6',
                 enterD: '0',
@@ -532,7 +642,19 @@ export function animationComposerComplex(
                 dirM: dirMc,
                 dirR: dirRc,
                 dirS: dirSc,
+                dirSS: dirss,
+                oppSS: oppss,
                 tr: tRc,
+                dirSAS: dirsas,
+                oppSAS: oppsas,
+                enterTS: '0.6',
+                leaveTS: '0.6',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.6',
+                leaveTSL: '0.6',
+                enterDSL: '0',
+                leaveDSL: '0',
                 enterT: '0.6',
                 leaveT: '0.6',
                 enterD: '0',
@@ -556,7 +678,19 @@ export function animationComposerComplex(
                 dirM: dirMc,
                 dirR: dirRc,
                 dirS: dirSc,
+                dirSS: dirss,
+                oppSS: oppss,
                 tr: tRc,
+                dirSAS: dirsas,
+                oppSAS: oppsas,
+                enterTS: '0.4',
+                leaveTS: '0.6',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.4',
+                leaveTSL: '0.6',
+                enterDSL: '0',
+                leaveDSL: '0',
                 enterT: '0.4',
                 leaveT: '0.6',
                 enterD: '0',
@@ -585,7 +719,19 @@ export function animationComposerComplex(
                 dirM: dirMc,
                 dirR: dirRc,
                 dirS: dirSc,
+                dirSS: dirss,
+                oppSS: oppss,
                 tr: tRc,
+                dirSAS: dirsas,
+                oppSAS: oppsas,
+                enterTS: '1',
+                leaveTS: '0.4',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '1',
+                leaveTSL: '0.4',
+                enterDSL: '0',
+                leaveDSL: '0',
                 enterT: '1',
                 leaveT: '0.4',
                 enterD: '0',
@@ -609,7 +755,19 @@ export function animationComposerComplex(
                 dirM: dirMc,
                 dirR: dirRc,
                 dirS: dirSc,
+                dirSS: dirss,
+                oppSS: oppss,
                 tr: tRc,
+                dirSAS: dirsas,
+                oppSAS: oppsas,
+                enterTS: '0.6',
+                leaveTS: '0.4',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.6',
+                leaveTSL: '0.4',
+                enterDSL: '0',
+                leaveDSL: '0',
                 enterT: '0.6',
                 leaveT: '0.4',
                 enterD: '0',
@@ -633,7 +791,19 @@ export function animationComposerComplex(
                 dirM: dirMc,
                 dirR: dirRc,
                 dirS: dirSc,
+                dirSS: dirss,
+                oppSS: oppss,
                 tr: tRc,
+                dirSAS: dirsas,
+                oppSAS: oppsas,
+                enterTS: '0.4',
+                leaveTS: '0.4',
+                enterDS: '0',
+                leaveDS: '0',
+                enterTSL: '0.4',
+                leaveTSL: '0.4',
+                enterDSL: '0',
+                leaveDSL: '0',
                 enterT: '0.4',
                 leaveT: '0.4',
                 enterD: '0',

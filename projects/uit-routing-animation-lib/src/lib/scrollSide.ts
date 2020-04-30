@@ -4,8 +4,7 @@ import {
   style,
   query,
   animate,
-  keyframes, sequence, AnimationTriggerMetadata,
-} from '@angular/animations';
+  keyframes, sequence, AnimationTriggerMetadata, animation, } from '@angular/animations';
 
 export function scrollSide(): AnimationTriggerMetadata {
   return trigger('scrollSide', [
@@ -197,6 +196,74 @@ export function scrollSide_customSpeed(speed: string): AnimationTriggerMetadata 
   }
 
 }
+
+export const scrollSideLeaveParam = animation([
+    query(' :leave', [
+      style({
+        position: 'fixed',
+        overflow: 'hidden',
+        backfaceVisibility: 'hidden',
+        transformStyle: 'preserve-3d',
+        width: '100%'
+      })
+    ], { optional: true })]);
+
+
+
+export const scrollSideEnterParam = animation([
+  query(':enter', [
+    style({
+      transform: 'translateX({{dirSS}}100%)',
+      opacity: 0,
+      position: 'fixed',
+      width: '100%'
+    })
+  ] , { optional: true })]);
+
+
+
+export const scrollSideLeavePart = animation([
+  query(':leave', [
+    animate('{{leaveT}}s {{leaveD}}s ease-in',
+      keyframes([
+        style({
+          opacity: 1,
+          transform: 'translateX({{dirSS}}0%)',
+          offset: 0}),
+        style({
+          opacity: 1,
+          transform: 'translateX({{dirSS}}10%)',
+          offset: 0.3}),
+        style({
+          opacity: 1,
+          transform: 'translateX({{oppSS}}100%)',
+          offset: 1})
+      ]))
+  ], { optional: true })]);
+
+
+
+export const scrollSideEnterPart = animation([
+  query(':enter', [
+    animate('{{enterT}}s {{enterD}}s ease-out',
+      keyframes([
+        style({
+          position: 'fixed',
+          opacity: 1,
+          transform: 'translateX({{dirSS}}100%)',
+          offset: 0}),
+        style({
+          position: 'fixed',
+          opacity: 1,
+          transform: 'translateX({{dirSS}}0%)',
+          offset: 0.8}),
+        style({
+          position: 'fixed',
+          opacity: 1,
+          transform: 'translateX({{oppSS}}10%)',
+          offset: 1})
+      ]))
+  ] , { optional: true })]);
 
 
 function scroll(direction) {
