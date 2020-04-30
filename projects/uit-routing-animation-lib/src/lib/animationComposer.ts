@@ -40,6 +40,11 @@ export function animationComposerSimple(
       leaveA = stdbLeavePart;
       break;
     }
+    default: {
+      throw new Error(
+        'invalid enter animation in animationComposerSimple, maybe you wanted to write: { fadeBack, slideTitleDownBlocks, surprise or flip }'
+      );
+    }
   }
     switch (enterAnimation) {
       case('flip'): {
@@ -61,6 +66,11 @@ export function animationComposerSimple(
         enterP = stdbEnterParams;
         enterA = stdbEnterPart;
         break;
+      }
+      default: {
+        throw new Error(
+          'invalid leave animation in animationComposerSimple, maybe you wanted to write: { fadeBack, slideTitleDownBlocks, surprise or flip }'
+        );
       }
     }
     switch (leaveSpeed) {
@@ -313,6 +323,11 @@ export function animationComposerComplex(
       leaveA = slideLeavePart;
       break;
     }
+    default: {
+      throw new Error(
+        'invalid leave animation in animationComposerSimple, maybe you wanted to write: { fadeBack, slideTitleDownBlocks, surprise, flip, moveUp, slide, rotate }'
+      );
+    }
   }
   switch (enterAnimation) {
     case('flip'): {
@@ -350,6 +365,11 @@ export function animationComposerComplex(
       enterA = slideEnterPart;
       break;
     }
+    default: {
+      throw new Error(
+        'invalid leave animation in animationComposerSimple, maybe you wanted to write: { fadeBack, slideTitleDownBlocks, surprise, flip, moveUp, slide, rotate }'
+      );
+    }
   }
   if ((enterA === rotateEnterPart) && (directionEnter === 'right')){
     dirRc = '-';
@@ -384,7 +404,17 @@ export function animationComposerComplex(
   }else if ((leaveA === slideLeavePart) && directionLeave === 'top') {
     dirSc = '+';
   }
-
+  // tslint:disable-next-line:max-line-length
+  if (directionEnter !== 'bottom' && directionEnter !== 'top' && directionEnter !== 'right' && directionEnter !== 'left' && directionEnter !== ''){
+    throw new Error(
+      'invalid directionEnter in animationComposerComplex, maybe you wanted to write: { top, bottom, left, right, void }'
+    );
+    // tslint:disable-next-line:max-line-length
+  }else if (directionLeave !== 'bottom' && directionLeave !== 'top' && directionLeave !== 'right' && directionLeave !== 'left' && directionLeave !== ''){
+    throw new Error(
+      'invalid directionLeave in animationComposerComplex, maybe you wanted to write: { top, bottom, left, right, void }'
+    );
+  }else{
   switch (leaveSpeed) {
     case('low'): {
       switch (enterSpeed) {
@@ -617,6 +647,7 @@ export function animationComposerComplex(
       }
     }
 
+  }
   }
  }
 

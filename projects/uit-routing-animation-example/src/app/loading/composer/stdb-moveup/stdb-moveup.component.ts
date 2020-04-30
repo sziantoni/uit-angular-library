@@ -5,7 +5,7 @@ import {animationComposerComplex} from 'uit-routing-animation-lib';
 @Component({
   selector: 'app-stdb-moveup',
   templateUrl: './stdb-moveup.component.html',
-  animations: [ animationComposerComplex('slideTitleDownBlock', 'medium', '', 'moveUp', 'medium', 'right') ]
+  animations: [ animationComposerComplex('slideTitleDownBlocks', 'medium', '', 'moveUp', 'medium', 'right') ]
 
 })
 export class StdbMoveupComponent implements OnInit {
