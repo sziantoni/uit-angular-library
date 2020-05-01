@@ -12,5 +12,5 @@ Animation library table:
 
 Animation composer table:
 
-![Image description](https://imagizer.imageshack.com/img924/7697/EHEqxR.jpg)
+![Image description](https://imagizer.imageshack.com/img923/7950/aE9JvO.jpg)
 
