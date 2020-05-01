@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ROUTING_ELEMENT, ROUTING_ELEMENT_SECOND_LEVEL} from 'uit-routing-animation-lib';
+import { ROUTING_ELEMENT} from 'uit-routing-animation-lib';
 
 
 @Component({
@@ -9,7 +9,6 @@ import { ROUTING_ELEMENT, ROUTING_ELEMENT_SECOND_LEVEL} from 'uit-routing-animat
 })
 export class FeaturesOfSiteComponent implements OnInit {
   routeElement = ROUTING_ELEMENT;
-  routeElement2 = ROUTING_ELEMENT_SECOND_LEVEL;
 
   ngOnInit(): void {
   }

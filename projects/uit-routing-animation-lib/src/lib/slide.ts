@@ -76,6 +76,15 @@ const slideA = animation([
 
 
 export function slide_customSpeed(direction: string, speed: string): AnimationTriggerMetadata {
+  if (speed !== 'low' && speed !== 'medium' && speed !== 'high') {
+    throw new Error(
+      'invalid speed in slide_customSpeed, maybe you wanted to write: { low , medium, high }'
+    );
+  }else if (direction !== 'top' && direction !== 'bottom' ){
+    throw new Error(
+      'invalid direction in slide_customSpeed, maybe you wanted to write: { top , bottom }'
+    );
+  }else {
   switch (speed){
     case ('medium') : {
       switch (direction) {
@@ -155,9 +164,14 @@ export function slide_customSpeed(direction: string, speed: string): AnimationTr
           ]); }
       }}
        }
-}
+}}
 
 export function slide(direction: string): AnimationTriggerMetadata {
+  if (direction !== 'top' && direction !== 'bottom' ){
+    throw new Error(
+      'invalid direction in slide, maybe you wanted to write: { top , bottom }'
+    );
+  }else {
     if (direction === 'top') {
       return trigger('slide', [
         transition('* <=> *', useAnimation(slideA), {params: {
@@ -178,5 +192,5 @@ export function slide(direction: string): AnimationTriggerMetadata {
             leaveD: '0',
             enterTR: '0.55',
             enterDR: '0'} })
-      ]); }}
+      ]); }}}
 

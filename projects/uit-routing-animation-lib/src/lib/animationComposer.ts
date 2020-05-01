@@ -5,16 +5,25 @@ import {surpriseEnterPart, surpriseLeaveParam, surpriseLeavePart, surpriseEnterP
 import {rotateLeavePart, rotateLeaveParam, rotateEnterParam, rotateEnterPart} from './rotate';
 import {slideEnterPart, slideLeavePart, slideEnterParam, slideLeaveParam} from './slide';
 import {moveUpLeavePart, moveUpEnterParam, moveUpLeaveParam, moveUpEnterPart} from './moveUp';
-import {AnimationTriggerMetadata, sequence, transition, trigger, useAnimation} from '@angular/animations';
 import {scrollSideEnterParam, scrollSideLeaveParam, scrollSideEnterPart, scrollSideLeavePart} from './scrollSide';
 import {scaleAndSlideEnterParam, scaleAndSlideLeaveParam, scaleAndSlideEnterPart, scaleAndSlideLeavePart} from './scaleAndSlide';
+import {AnimationTriggerMetadata, sequence, transition, trigger, useAnimation} from '@angular/animations';
 
 let leaveP;
 let leaveA;
 let enterP;
 let enterA;
+// all direction parameters for all animation that request it es: dirRc = direction rotate custom
+let dirRc = '';
+let tRc = '';
+let dirMc = '';
+let dirSc = '';
+let dirss = '';
+let oppss = '';
+let dirsas = '';
+let oppsas = '';
 
-// flip, fadeback, stdb, surprise
+// flip, fadeBack, slideTitleDownBlocks, surprise
 export function animationComposerSimple(
   leaveAnimation: string,
   leaveSpeed: string,
@@ -274,16 +283,7 @@ export function animationComposerSimple(
     }
 }
 
-let dirRc = '';
-let tRc = '';
-let dirMc = '';
-let dirSc = '';
-let dirss = '';
-let oppss = '';
-let dirsas = '';
-let oppsas = '';
-
-// flip, fadeback, stdb, surprise, rotate, moveUp, slide
+// flip, fadeBack, slideTitleDownBlocks, surprise, rotate, moveUp, slide, scrollSide, scaleAndSlide
 export function animationComposerComplex(
   leaveAnimation: string,
   leaveSpeed: string,

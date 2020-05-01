@@ -38,6 +38,15 @@ export function scrollSide(): AnimationTriggerMetadata {
 
 
 export function scrollSide_customAll(direction: string, speed: string): AnimationTriggerMetadata {
+  if (speed !== 'low' && speed !== 'medium' && speed !== 'high') {
+    throw new Error(
+      'invalid speed in scrollSide_customAll, maybe you wanted to write: { low , medium, high }'
+    );
+  }else if (direction !== 'left' && direction !== 'right' ){
+    throw new Error(
+      'invalid direction in scrollSide_customAll, maybe you wanted to write: { left , right }'
+    );
+  }else {
   switch (direction) {
     case('left'): {
       switch (speed) {
@@ -100,9 +109,14 @@ export function scrollSide_customAll(direction: string, speed: string): Animatio
     }
   }
 
-}
+}}
 
 export function scrollSide_customSpeed(speed: string): AnimationTriggerMetadata {
+  if (speed !== 'low' && speed !== 'medium' && speed !== 'high') {
+    throw new Error(
+      'invalid speed in scrollSide_customSpeed, maybe you wanted to write: { low , medium, high }'
+    );
+  }else  {
   switch (speed) {
     case ('low') : {
       return trigger('scrollSide', [
@@ -195,7 +209,7 @@ export function scrollSide_customSpeed(speed: string): AnimationTriggerMetadata 
 
   }
 
-}
+}}
 
 export const scrollSideLeaveParam = animation([
     query(' :leave', [

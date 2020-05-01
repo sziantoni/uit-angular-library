@@ -3,8 +3,6 @@
  */
 
 export const ROUTING_ELEMENT = 'route-animations-elements';
-export const ROUTING_ELEMENT_SECOND_LEVEL = 'route-animations-elements-2-level';
-export const ROUTE_ANIMATIONS_TEXT = 'route-animation-text';
 
 export {slide, slide_customSpeed} from './lib/slide';
 export {scrollSide, scrollSide_customAll, scrollSide_customSpeed} from './lib/scrollSide';

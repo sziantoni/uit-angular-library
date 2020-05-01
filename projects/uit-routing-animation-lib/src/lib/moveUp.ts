@@ -77,6 +77,15 @@ const moveUpA = animation([
 
 
 export function moveUp_customSpeed(direction: string, speed: string): AnimationTriggerMetadata {
+  if (speed !== 'low' && speed !== 'medium' && speed !== 'high') {
+    throw new Error(
+      'invalid speed in moveUp_customSpeed, maybe you wanted to write: { low , medium, high }'
+    );
+  }else if (direction !== 'left' && direction !== 'right' ){
+    throw new Error(
+      'invalid direction in moveUp_customSpeed, maybe you wanted to write: { left , right }'
+    );
+  }else {
   switch (speed){
     case ('medium') : {
       switch (direction) {
@@ -156,9 +165,14 @@ export function moveUp_customSpeed(direction: string, speed: string): AnimationT
           ]); }
       }}
   }
-}
+}}
 
 export function moveUp(direction: string): AnimationTriggerMetadata {
+  if (direction !== 'left' && direction !== 'right' ){
+    throw new Error(
+      'invalid direction in moveUp, maybe you wanted to write: { left , right }'
+    );
+  }else {
   if (direction === 'left') {
     return trigger('moveUp', [
       transition('* <=> *', useAnimation(moveUpA), {params: {
@@ -179,5 +193,5 @@ export function moveUp(direction: string): AnimationTriggerMetadata {
           leaveD: '0',
           enterTR: '0.7',
           enterDR: '0'} })
-    ]); }}
+    ]); }}}
 

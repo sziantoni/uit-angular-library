@@ -154,6 +154,19 @@ export function scaleAndSlide(): AnimationTriggerMetadata {
 }
 
 export function scaleAndSlide_customAll(direction: string, speedScale: string, speedSlide: string): AnimationTriggerMetadata {
+  if (speedScale !== 'low' && speedScale !== 'medium' && speedScale !== 'high') {
+    throw new Error(
+      'invalid speedScale in scaleAndSlide_customAll, maybe you wanted to write: { low , medium, high }'
+    );
+  }else if (direction !== 'left' && direction !== 'right' ){
+    throw new Error(
+      'invalid direction in scaleAndSlide_customAll, maybe you wanted to write: { left , right }'
+    );
+  }else if (speedSlide !== 'low' && speedSlide !== 'medium' && speedSlide !== 'high') {
+    throw new Error(
+      'invalid speedSlide in scaleAndSlide_customAll, maybe you wanted to write: { low , medium, high }'
+    );
+  }else {
   switch (direction) {
     case('left'): {
       switch (speedScale) {
@@ -440,9 +453,18 @@ export function scaleAndSlide_customAll(direction: string, speedScale: string, s
 
       }
     }
-  }}
+  }}}
 
 export function scaleAndSlide_customSpeed(speedScale: string, speedSlide: string): AnimationTriggerMetadata {
+  if (speedScale !== 'low' && speedScale !== 'medium' && speedScale !== 'high') {
+    throw new Error(
+      'invalid speedScale in scaleAndSlide_customSpeed, maybe you wanted to write: { low , medium, high }'
+    );
+  }else if (speedSlide !== 'low' && speedSlide !== 'medium' && speedSlide !== 'high') {
+    throw new Error(
+      'invalid speedSlide in scaleAndSlide_customSpeed, maybe you wanted to write: { low , medium, high }'
+    );
+  }else {
   switch (speedScale) {
     case ('low') : {
       switch (speedSlide) {
@@ -907,7 +929,7 @@ export function scaleAndSlide_customSpeed(speedScale: string, speedSlide: string
     }
 
   }
-}
+}}
 
 
 

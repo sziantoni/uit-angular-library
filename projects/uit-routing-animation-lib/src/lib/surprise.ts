@@ -82,6 +82,11 @@ export const surpriseA = animation([
 
 
 export function surprise_customSpeed(speed: string): AnimationTriggerMetadata {
+  if (speed !== 'low' && speed !== 'medium' && speed !== 'high' ){
+    throw new Error(
+      'invalid direction in  surprise_customSpeed, maybe you wanted to write: { top , bottom }'
+    );
+  }else {
   switch (speed){
     case ('medium') : {
       return trigger('surprise', [
@@ -121,7 +126,7 @@ export function surprise_customSpeed(speed: string): AnimationTriggerMetadata {
             enterDR: '0',
             leaveDR: '0'} })
       ]);
-    }}}
+    }}}}
 
 export function surprise(): AnimationTriggerMetadata {
   return trigger('surprise', [

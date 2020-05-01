@@ -91,6 +91,15 @@ const slideTitleDownBlocksA =
 
 
 export function slideTitleDownBlocks_customSpeed(slideSpeed: string, downSpeed: string): AnimationTriggerMetadata {
+  if (slideSpeed !== 'low' && slideSpeed !== 'medium' && slideSpeed !== 'high') {
+    throw new Error(
+      'invalid slideSpeed in slideTitleDownBlocks_customSpeed, maybe you wanted to write: { low , medium, high }'
+    );
+  }else if (downSpeed !== 'low' && downSpeed !== 'medium' && downSpeed !== 'high' ){
+    throw new Error(
+      'invalid downSpeed in slideTitleDownBlocks_customSpeed, maybe you wanted to write: { low , medium, high }'
+    );
+  }else {
   switch (slideSpeed){
     case ('medium') : {
       switch (downSpeed) {
@@ -228,7 +237,7 @@ export function slideTitleDownBlocks_customSpeed(slideSpeed: string, downSpeed: 
         }
       }
 
-    }}}
+    }}}}
 
 
 export function slideTitleDownBlocks(): AnimationTriggerMetadata {

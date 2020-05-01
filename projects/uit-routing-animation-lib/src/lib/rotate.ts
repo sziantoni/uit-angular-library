@@ -66,6 +66,15 @@ const rotateA = animation([
 
 
 export function rotate_customSpeed(direction: string, speed: string): AnimationTriggerMetadata {
+  if (speed !== 'low' && speed !== 'medium' && speed !== 'high') {
+    throw new Error(
+      'invalid speed in rotate_customSpeed, maybe you wanted to write: { low , medium, high }'
+    );
+  }else if (direction !== 'left' && direction !== 'right' ){
+    throw new Error(
+      'invalid direction in rotate_customSpeed, maybe you wanted to write: { left , right }'
+    );
+  }else {
   switch (speed){
     case ('medium') : {
       switch (direction) {
@@ -151,9 +160,14 @@ export function rotate_customSpeed(direction: string, speed: string): AnimationT
           ]); }
       }}
   }
-}
+}}
 
 export function rotate(direction: string): AnimationTriggerMetadata {
+  if (direction !== 'left' && direction !== 'right' ){
+    throw new Error(
+      'invalid direction in rotate, maybe you wanted to write: { left , right }'
+    );
+  }else {
   if (direction === 'left') {
     return trigger('rotate', [
       transition('* <=> *', useAnimation(rotateA), {params: {
@@ -175,5 +189,5 @@ export function rotate(direction: string): AnimationTriggerMetadata {
           leaveD: '0',
           enterTR: '0.5',
           enterDR: '0'} })
-    ]); }}
+    ]); }}}
 

@@ -117,6 +117,15 @@ export function rotate3D(): AnimationTriggerMetadata {
 
 
 export function rotate3D_customAll(direction: string, speed: string): AnimationTriggerMetadata {
+  if (speed !== 'low' && speed !== 'medium' && speed !== 'high') {
+    throw new Error(
+      'invalid speed in rotate3D_customAll, maybe you wanted to write: { low , medium, high }'
+    );
+  }else if (direction !== 'left' && direction !== 'right' ){
+    throw new Error(
+      'invalid direction in rotate3D_customAll, maybe you wanted to write: { left , right }'
+    );
+  }else {
   switch (direction) {
     case('left'): {
       switch (speed) {
@@ -179,9 +188,14 @@ export function rotate3D_customAll(direction: string, speed: string): AnimationT
     }
     }
 
-  }
+  }}
 
 export function rotate3D_customSpeed(speed: string): AnimationTriggerMetadata {
+  if (speed !== 'low' && speed !== 'medium' && speed !== 'high') {
+    throw new Error(
+      'invalid speed in rotate3D_customSpeed, maybe you wanted to write: { low , medium, high }'
+    );
+  }else{
   switch (speed) {
     case ('low') : {
       return trigger('rotate3D', [
@@ -274,4 +288,4 @@ export function rotate3D_customSpeed(speed: string): AnimationTriggerMetadata {
 
   }
 
-}
+}}

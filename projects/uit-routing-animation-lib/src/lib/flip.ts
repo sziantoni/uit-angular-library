@@ -86,6 +86,11 @@ const flipA = animation([
 
 
 export function flip_customSpeed(speed: string): AnimationTriggerMetadata {
+  if (speed !== 'low' && speed !== 'medium' && speed !== 'high') {
+    throw new Error(
+      'invalid speed in flip_customSpeed, maybe you wanted to write: { low , medium, high }'
+    );
+  } else {
   switch (speed){
     case ('medium') : {
           return trigger('flip', [
@@ -125,7 +130,7 @@ export function flip_customSpeed(speed: string): AnimationTriggerMetadata {
             enterDR: '0',
             leaveDR: '0'} })
       ]);
-    }}}
+    }}}}
 
 export function flip(): AnimationTriggerMetadata {
     return trigger('flip', [
